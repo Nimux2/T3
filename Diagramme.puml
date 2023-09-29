@@ -1,0 +1,50 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class main
+{
+
+}
+
+class jour
+{
+    Liste de personnages
+}
+
+class question
+{
+    Id de question
+    Liste de reponses
+    Genere x stress
+    Genere x compréhension
+}
+
+class personnage
+{
+    Liste de traits
+    Compréhension
+    Stress
+    Diagnostique
+}
+
+class traits
+{
+    Effet sur Compréhension
+    Effet sur Stress
+}
+
+class maladie
+{
+    symptomes
+}
+
+class reponse
+
+question --> maladie : "Se base sur"
+reponse -> personnage : "Se base sur"
+
+main -> jour : "lance et organise"
+jour -> personnage : "a plusieurs"
+personnage --> traits : "a plusieurs"
+question -> reponse
+@enduml

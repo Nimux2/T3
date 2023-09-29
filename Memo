@@ -1,0 +1,17 @@
+flutter run -d web-server
+
+Pov du medecin
+Sur plusieurs jours (7 ou 5 pour le moment)
+Ou sur un jour
+Plusieurs patients
+Barre de (compréhension) et stress pour patient (satisfaction aussi)
+Barre de diagnostique pour le joueur
+Commence par une question
+10sec par question
+1min par patient
+5 patients par jour/partie
+5-7 questions par patient ( a revoir )
+Gains de stress variables entre patient
+Maladies random
+Traits de caractère avec effets sur les barres
+Le joueur peut voir les pensées du patient (peut-être)
