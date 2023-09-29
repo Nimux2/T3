@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dl7uyvawwemrq"]
+[gd_scene load_steps=12 format=3 uid="uid://dl7uyvawwemrq"]
 
 [ext_resource type="Texture2D" uid="uid://bakr78hu3nx6i" path="res://background.png" id="1_0vihu"]
+[ext_resource type="Script" path="res://GamePlay.cs" id="1_b4sn4"]
 [ext_resource type="FontFile" uid="uid://8avf506sxwr5" path="res://Sunday Mango.ttf" id="2_3x8co"]
 [ext_resource type="Texture2D" uid="uid://bwt1lcgykw6i5" path="res://Question.png" id="3_n7kws"]
 [ext_resource type="Texture2D" uid="uid://by7cuymjkv2l6" path="res://Button.png" id="4_ii7xg"]
@@ -9,8 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://dd5ap6ui8o8xs" path="res://patient/personnage2.png" id="7_vyr4y"]
 [ext_resource type="Texture2D" uid="uid://b60npndwqktj8" path="res://patient/personnage4.png" id="8_1nvtc"]
 [ext_resource type="Texture2D" uid="uid://bd7x6n60c4e4r" path="res://patient/personnage3.png" id="8_5idq3"]
+[ext_resource type="Script" path="res://Tools/Database/DATABASE.cs" id="11_6arfc"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_b4sn4")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(1142.5, 649)
@@ -156,7 +159,9 @@ scale = Vector2(4.08434, 3.73617)
 texture = ExtResource("8_5idq3")
 
 [node name="Personnage4" type="Sprite2D" parent="Patient"]
-visible = false
 position = Vector2(1284, 460)
 scale = Vector2(5.07143, 5.09437)
 texture = ExtResource("8_1nvtc")
+
+[node name="DATABASE" type="Node" parent="."]
+script = ExtResource("11_6arfc")

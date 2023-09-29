@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="T 3 Projet"
+config/name="T3_Projet"
 run/main_scene="res://GamePlay.tscn"
-config/features=PackedStringArray("4.1", "C#", "GL Compatibility")
+config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
