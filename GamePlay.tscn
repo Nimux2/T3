@@ -1,0 +1,162 @@
+[gd_scene load_steps=10 format=3 uid="uid://dl7uyvawwemrq"]
+
+[ext_resource type="Texture2D" uid="uid://bakr78hu3nx6i" path="res://background.png" id="1_0vihu"]
+[ext_resource type="FontFile" uid="uid://8avf506sxwr5" path="res://Sunday Mango.ttf" id="2_3x8co"]
+[ext_resource type="Texture2D" uid="uid://bwt1lcgykw6i5" path="res://Question.png" id="3_n7kws"]
+[ext_resource type="Texture2D" uid="uid://by7cuymjkv2l6" path="res://Button.png" id="4_ii7xg"]
+[ext_resource type="Texture2D" uid="uid://6e4np2qw2g5x" path="res://Answer.png" id="5_nu23g"]
+[ext_resource type="Texture2D" uid="uid://tyi0qxhuwwp2" path="res://patient/personnage1.png" id="6_wmspq"]
+[ext_resource type="Texture2D" uid="uid://dd5ap6ui8o8xs" path="res://patient/personnage2.png" id="7_vyr4y"]
+[ext_resource type="Texture2D" uid="uid://b60npndwqktj8" path="res://patient/personnage4.png" id="8_1nvtc"]
+[ext_resource type="Texture2D" uid="uid://bd7x6n60c4e4r" path="res://patient/personnage3.png" id="8_5idq3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(1142.5, 649)
+scale = Vector2(2.22754, 1.26367)
+texture = ExtResource("1_0vihu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 709.0
+offset_bottom = 1296.0
+color = Color(0.0862304, 0.281986, 0.285897, 1)
+
+[node name="TimeLine" type="Node2D" parent="."]
+
+[node name="Day" type="Label" parent="TimeLine"]
+offset_left = 100.0
+offset_top = 20.0
+offset_right = 282.0
+offset_bottom = 78.0
+theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_font_sizes/font_size = 50
+text = "Journée 1"
+
+[node name="Time" type="Label" parent="TimeLine"]
+offset_left = 400.0
+offset_top = 20.0
+offset_right = 523.0
+offset_bottom = 78.0
+theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_font_sizes/font_size = 50
+text = "08:00"
+
+[node name="Questions" type="Node2D" parent="."]
+
+[node name="QuestionBulle1" type="Sprite2D" parent="Questions"]
+position = Vector2(360, 250)
+scale = Vector2(1.5, 0.6)
+texture = ExtResource("3_n7kws")
+
+[node name="QuestionLabel1" type="RichTextLabel" parent="Questions/QuestionBulle1"]
+offset_left = -184.0
+offset_top = -60.0
+offset_right = 194.0
+offset_bottom = 58.0
+
+[node name="QuestionBulle2" type="Sprite2D" parent="Questions"]
+position = Vector2(360, 400)
+scale = Vector2(1.5, 0.6)
+texture = ExtResource("3_n7kws")
+
+[node name="QuestionLabel2" type="RichTextLabel" parent="Questions/QuestionBulle2"]
+offset_left = -184.0
+offset_top = -60.0
+offset_right = 194.0
+offset_bottom = 58.0
+
+[node name="QuestionBulle3" type="Sprite2D" parent="Questions"]
+position = Vector2(360, 550)
+scale = Vector2(1.5, 0.6)
+texture = ExtResource("3_n7kws")
+
+[node name="QuestionLabel3" type="RichTextLabel" parent="Questions/QuestionBulle3"]
+offset_left = -184.0
+offset_top = -60.0
+offset_right = 194.0
+offset_bottom = 58.0
+
+[node name="QuestionBulle4" type="Sprite2D" parent="Questions"]
+position = Vector2(360, 700)
+scale = Vector2(1.5, 0.6)
+texture = ExtResource("3_n7kws")
+
+[node name="QuestionLabel4" type="RichTextLabel" parent="Questions/QuestionBulle4"]
+offset_left = -184.0
+offset_top = -60.0
+offset_right = 194.0
+offset_bottom = 58.0
+
+[node name="DiseaseLine" type="Node2D" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="DiseaseLine"]
+offset_left = 21.0
+offset_top = 883.0
+offset_right = 691.0
+offset_bottom = 928.0
+
+[node name="ButtonDiag" type="Sprite2D" parent="DiseaseLine"]
+position = Vector2(360, 1002)
+scale = Vector2(1, 0.6)
+texture = ExtResource("4_ii7xg")
+
+[node name="TextButtonDiag" type="Label" parent="DiseaseLine"]
+offset_left = 207.0
+offset_top = 976.0
+offset_right = 524.0
+offset_bottom = 1035.0
+theme_override_colors/font_color = Color(0.0862304, 0.281986, 0.285897, 1)
+theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_font_sizes/font_size = 50
+text = "Diagnostique"
+
+[node name="Answer" type="Node2D" parent="."]
+
+[node name="AnswerBulle" type="Sprite2D" parent="Answer"]
+position = Vector2(1300, 960)
+scale = Vector2(4, 2)
+texture = ExtResource("5_nu23g")
+
+[node name="AnswerLabel" type="RichTextLabel" parent="Answer"]
+anchors_preset = -1
+anchor_left = 0.099
+anchor_top = 0.195
+anchor_right = 0.099
+anchor_bottom = 0.195
+offset_left = 812.0
+offset_top = 887.0
+offset_right = 1858.0
+offset_bottom = 1041.0
+theme_override_colors/default_color = Color(0.0862304, 0.281986, 0.285897, 1)
+theme_override_fonts/normal_font = ExtResource("2_3x8co")
+theme_override_font_sizes/normal_font_size = 30
+text = "Good morning doctor,
+I have ...
+"
+
+[node name="Patient" type="Node2D" parent="."]
+
+[node name="Personnage1" type="Sprite2D" parent="Patient"]
+visible = false
+position = Vector2(1282, 419)
+scale = Vector2(5.05224, 4.92341)
+texture = ExtResource("6_wmspq")
+
+[node name="Personnage2" type="Sprite2D" parent="Patient"]
+visible = false
+position = Vector2(1271, 451)
+scale = Vector2(4.05749, 4.23086)
+texture = ExtResource("7_vyr4y")
+
+[node name="Personnage3" type="Sprite2D" parent="Patient"]
+visible = false
+position = Vector2(1269, 437.375)
+scale = Vector2(4.08434, 3.73617)
+texture = ExtResource("8_5idq3")
+
+[node name="Personnage4" type="Sprite2D" parent="Patient"]
+visible = false
+position = Vector2(1284, 460)
+scale = Vector2(5.07143, 5.09437)
+texture = ExtResource("8_1nvtc")
