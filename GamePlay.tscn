@@ -1,95 +1,226 @@
-[gd_scene load_steps=12 format=3 uid="uid://dl7uyvawwemrq"]
+[gd_scene load_steps=40 format=3 uid="uid://dl7uyvawwemrq"]
 
 [ext_resource type="Texture2D" uid="uid://bakr78hu3nx6i" path="res://background.png" id="1_0vihu"]
-[ext_resource type="Script" path="res://GamePlay.cs" id="1_b4sn4"]
 [ext_resource type="FontFile" uid="uid://8avf506sxwr5" path="res://Sunday Mango.ttf" id="2_3x8co"]
+[ext_resource type="Script" path="res://Tools/Principal_event/CloseButton.cs" id="3_kiuaq"]
 [ext_resource type="Texture2D" uid="uid://bwt1lcgykw6i5" path="res://Question.png" id="3_n7kws"]
 [ext_resource type="Texture2D" uid="uid://by7cuymjkv2l6" path="res://Button.png" id="4_ii7xg"]
+[ext_resource type="Texture2D" uid="uid://btf6jeg6532hh" path="res://close.png" id="4_jeoe8"]
 [ext_resource type="Texture2D" uid="uid://6e4np2qw2g5x" path="res://Answer.png" id="5_nu23g"]
+[ext_resource type="Script" path="res://Tools/Processed/Timer_controller.cs" id="5_uobe7"]
+[ext_resource type="Script" path="res://Tools/Principal_event/QuestionsButton.cs" id="6_7ug4b"]
 [ext_resource type="Texture2D" uid="uid://tyi0qxhuwwp2" path="res://patient/personnage1.png" id="6_wmspq"]
 [ext_resource type="Texture2D" uid="uid://dd5ap6ui8o8xs" path="res://patient/personnage2.png" id="7_vyr4y"]
 [ext_resource type="Texture2D" uid="uid://b60npndwqktj8" path="res://patient/personnage4.png" id="8_1nvtc"]
 [ext_resource type="Texture2D" uid="uid://bd7x6n60c4e4r" path="res://patient/personnage3.png" id="8_5idq3"]
 [ext_resource type="Script" path="res://Tools/Database/DATABASE.cs" id="11_6arfc"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r5x0r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qhksw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wj03g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_da8dc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jikvf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vfmc8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0aahw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xa7m2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s8g0r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_quij2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ldod1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mtiv2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wl83u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y7wqt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n2qkd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_73lwf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cdqny"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7w5yj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bo4ls"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dj3rd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lgvew"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i4gf7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8e2t3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6yoe6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mf8k4"]
+
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_b4sn4")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(1142.5, 649)
 scale = Vector2(2.22754, 1.26367)
 texture = ExtResource("1_0vihu")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect1" type="ColorRect" parent="."]
 offset_right = 709.0
 offset_bottom = 1296.0
 color = Color(0.0862304, 0.281986, 0.285897, 1)
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 2288.0
+offset_bottom = 80.0
+color = Color(0.0862304, 0.281986, 0.285897, 1)
+
+[node name="CloseButton" type="Button" parent="."]
+offset_left = 1850.0
+offset_top = 5.0
+offset_right = 2083.0
+offset_bottom = 238.0
+scale = Vector2(0.3, 0.3)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r5x0r")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qhksw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wj03g")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_da8dc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jikvf")
+icon = ExtResource("4_jeoe8")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_kiuaq")
+
 [node name="TimeLine" type="Node2D" parent="."]
 
-[node name="Day" type="Label" parent="TimeLine"]
-offset_left = 100.0
+[node name="Day(not use)" type="Label" parent="TimeLine"]
+offset_left = 150.0
 offset_top = 20.0
-offset_right = 282.0
-offset_bottom = 78.0
+offset_right = 376.0
+offset_bottom = 79.0
 theme_override_fonts/font = ExtResource("2_3x8co")
 theme_override_font_sizes/font_size = 50
-text = "Journée 1"
 
-[node name="Time" type="Label" parent="TimeLine"]
-offset_left = 400.0
-offset_top = 20.0
-offset_right = 523.0
-offset_bottom = 78.0
+[node name="Timer" type="Timer" parent="TimeLine"]
+editor_description = "Meta"
+wait_time = 5.0
+script = ExtResource("5_uobe7")
+
+[node name="Time" type="Label" parent="TimeLine/Timer"]
+offset_left = 289.0
+offset_top = 22.0
+offset_right = 412.0
+offset_bottom = 81.0
 theme_override_fonts/font = ExtResource("2_3x8co")
 theme_override_font_sizes/font_size = 50
 text = "08:00"
 
 [node name="Questions" type="Node2D" parent="."]
+script = ExtResource("6_7ug4b")
 
-[node name="QuestionBulle1" type="Sprite2D" parent="Questions"]
-position = Vector2(360, 250)
+[node name="QuestionLabel1" type="RichTextLabel" parent="Questions"]
+offset_left = 83.0
+offset_top = 215.0
+offset_right = 633.0
+offset_bottom = 285.0
+theme_override_fonts/normal_font = ExtResource("2_3x8co")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "La question est telle que plusieur jour"
+
+[node name="QuestionBulle1" type="Button" parent="Questions"]
+offset_left = 38.0
+offset_top = 191.0
+offset_right = 468.0
+offset_bottom = 387.0
 scale = Vector2(1.5, 0.6)
-texture = ExtResource("3_n7kws")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vfmc8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0aahw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xa7m2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_s8g0r")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_quij2")
+icon = ExtResource("3_n7kws")
+flat = true
+clip_text = true
+icon_alignment = 1
+expand_icon = true
 
-[node name="QuestionLabel1" type="RichTextLabel" parent="Questions/QuestionBulle1"]
-offset_left = -184.0
-offset_top = -60.0
-offset_right = 194.0
-offset_bottom = 58.0
+[node name="QuestionLabel2" type="RichTextLabel" parent="Questions"]
+offset_left = 83.0
+offset_top = 364.0
+offset_right = 633.0
+offset_bottom = 434.0
 
-[node name="QuestionBulle2" type="Sprite2D" parent="Questions"]
-position = Vector2(360, 400)
+[node name="QuestionBulle2" type="Button" parent="Questions"]
+offset_left = 38.0
+offset_top = 340.0
+offset_right = 468.0
+offset_bottom = 536.0
 scale = Vector2(1.5, 0.6)
-texture = ExtResource("3_n7kws")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ldod1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mtiv2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wl83u")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y7wqt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n2qkd")
+icon = ExtResource("3_n7kws")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
-[node name="QuestionLabel2" type="RichTextLabel" parent="Questions/QuestionBulle2"]
-offset_left = -184.0
-offset_top = -60.0
-offset_right = 194.0
-offset_bottom = 58.0
+[node name="QuestionLabel3" type="RichTextLabel" parent="Questions"]
+offset_left = 80.0
+offset_top = 517.0
+offset_right = 630.0
+offset_bottom = 587.0
 
-[node name="QuestionBulle3" type="Sprite2D" parent="Questions"]
-position = Vector2(360, 550)
+[node name="QuestionBulle3" type="Button" parent="Questions"]
+offset_left = 35.0
+offset_top = 493.0
+offset_right = 465.0
+offset_bottom = 689.0
 scale = Vector2(1.5, 0.6)
-texture = ExtResource("3_n7kws")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_73lwf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cdqny")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7w5yj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bo4ls")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dj3rd")
+icon = ExtResource("3_n7kws")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
-[node name="QuestionLabel3" type="RichTextLabel" parent="Questions/QuestionBulle3"]
-offset_left = -184.0
-offset_top = -60.0
-offset_right = 194.0
-offset_bottom = 58.0
+[node name="QuestionLabel4" type="RichTextLabel" parent="Questions"]
+offset_left = 81.0
+offset_top = 666.0
+offset_right = 631.0
+offset_bottom = 736.0
 
-[node name="QuestionBulle4" type="Sprite2D" parent="Questions"]
-position = Vector2(360, 700)
+[node name="QuestionBulle4" type="Button" parent="Questions"]
+offset_left = 36.0
+offset_top = 642.0
+offset_right = 466.0
+offset_bottom = 838.0
 scale = Vector2(1.5, 0.6)
-texture = ExtResource("3_n7kws")
-
-[node name="QuestionLabel4" type="RichTextLabel" parent="Questions/QuestionBulle4"]
-offset_left = -184.0
-offset_top = -60.0
-offset_right = 194.0
-offset_bottom = 58.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lgvew")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i4gf7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8e2t3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6yoe6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mf8k4")
+icon = ExtResource("3_n7kws")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="DiseaseLine" type="Node2D" parent="."]
 
@@ -114,6 +245,49 @@ theme_override_fonts/font = ExtResource("2_3x8co")
 theme_override_font_sizes/font_size = 50
 text = "Diagnostique"
 
+[node name="FearLine" type="Node2D" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="FearLine"]
+offset_left = 963.0
+offset_top = 19.0
+offset_right = 1716.0
+offset_bottom = 64.0
+
+[node name="Label" type="Label" parent="FearLine"]
+offset_left = 718.0
+offset_top = 26.0
+offset_right = 954.0
+offset_bottom = 63.0
+theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_font_sizes/font_size = 30
+text = "Barre de stress :"
+
+[node name="Patient" type="Node2D" parent="."]
+
+[node name="Personnage1" type="Sprite2D" parent="Patient"]
+visible = false
+position = Vector2(1282, 419)
+scale = Vector2(5.05224, 4.92341)
+texture = ExtResource("6_wmspq")
+
+[node name="Personnage2" type="Sprite2D" parent="Patient"]
+visible = false
+position = Vector2(1271, 451)
+scale = Vector2(4.05749, 4.23086)
+texture = ExtResource("7_vyr4y")
+
+[node name="Personnage3" type="Sprite2D" parent="Patient"]
+visible = false
+position = Vector2(1269, 437.375)
+scale = Vector2(4.08434, 3.73617)
+texture = ExtResource("8_5idq3")
+
+[node name="Personnage4" type="Sprite2D" parent="Patient"]
+visible = false
+position = Vector2(1284, 460)
+scale = Vector2(5.07143, 5.09437)
+texture = ExtResource("8_1nvtc")
+
 [node name="Answer" type="Node2D" parent="."]
 
 [node name="AnswerBulle" type="Sprite2D" parent="Answer"]
@@ -137,31 +311,6 @@ theme_override_font_sizes/normal_font_size = 30
 text = "Good morning doctor,
 I have ...
 "
-
-[node name="Patient" type="Node2D" parent="."]
-
-[node name="Personnage1" type="Sprite2D" parent="Patient"]
-visible = false
-position = Vector2(1282, 419)
-scale = Vector2(5.05224, 4.92341)
-texture = ExtResource("6_wmspq")
-
-[node name="Personnage2" type="Sprite2D" parent="Patient"]
-visible = false
-position = Vector2(1271, 451)
-scale = Vector2(4.05749, 4.23086)
-texture = ExtResource("7_vyr4y")
-
-[node name="Personnage3" type="Sprite2D" parent="Patient"]
-visible = false
-position = Vector2(1269, 437.375)
-scale = Vector2(4.08434, 3.73617)
-texture = ExtResource("8_5idq3")
-
-[node name="Personnage4" type="Sprite2D" parent="Patient"]
-position = Vector2(1284, 460)
-scale = Vector2(5.07143, 5.09437)
-texture = ExtResource("8_1nvtc")
 
 [node name="DATABASE" type="Node" parent="."]
 script = ExtResource("11_6arfc")
