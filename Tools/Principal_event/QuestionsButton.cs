@@ -24,7 +24,8 @@ public partial class QuestionsButton : Node2D
 	}
 	private void QuestionPressed(Button button)
 	{
-		GD.Print("Button pressed");
+		//GD.Print("Button pressed");
+		string text = button.Text;
 	}
 	
 }
