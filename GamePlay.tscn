@@ -1,6 +1,7 @@
-[gd_scene load_steps=40 format=3 uid="uid://dl7uyvawwemrq"]
+[gd_scene load_steps=50 format=3 uid="uid://dl7uyvawwemrq"]
 
 [ext_resource type="Texture2D" uid="uid://bakr78hu3nx6i" path="res://background.png" id="1_0vihu"]
+[ext_resource type="Script" path="res://GamePlay.cs" id="1_681vm"]
 [ext_resource type="FontFile" uid="uid://8avf506sxwr5" path="res://Sunday Mango.ttf" id="2_3x8co"]
 [ext_resource type="Script" path="res://Tools/Principal_event/CloseButton.cs" id="3_kiuaq"]
 [ext_resource type="Texture2D" uid="uid://bwt1lcgykw6i5" path="res://Question.png" id="3_n7kws"]
@@ -9,11 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://6e4np2qw2g5x" path="res://Answer.png" id="5_nu23g"]
 [ext_resource type="Script" path="res://Tools/Processed/Timer_controller.cs" id="5_uobe7"]
 [ext_resource type="Script" path="res://Tools/Principal_event/QuestionsButton.cs" id="6_7ug4b"]
-[ext_resource type="Texture2D" uid="uid://tyi0qxhuwwp2" path="res://patient/personnage1.png" id="6_wmspq"]
-[ext_resource type="Texture2D" uid="uid://dd5ap6ui8o8xs" path="res://patient/personnage2.png" id="7_vyr4y"]
-[ext_resource type="Texture2D" uid="uid://b60npndwqktj8" path="res://patient/personnage4.png" id="8_1nvtc"]
-[ext_resource type="Texture2D" uid="uid://bd7x6n60c4e4r" path="res://patient/personnage3.png" id="8_5idq3"]
+[ext_resource type="Script" path="res://Tools/Principal_event/ButtonDiag.cs" id="9_6c36s"]
+[ext_resource type="Script" path="res://Tools/Gestion/Personnage.cs" id="10_nevtv"]
 [ext_resource type="Script" path="res://Tools/Database/DATABASE.cs" id="11_6arfc"]
+[ext_resource type="Script" path="res://Tools/Principal_event/StartButton.cs" id="13_a1gea"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r5x0r"]
 
@@ -65,7 +65,28 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mf8k4"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_awrwe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0e7b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8kb8b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b8ere"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x0x7v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rb8f1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_usewe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_efv56"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sx702"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r4t5w"]
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_681vm")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(1142.5, 649)
@@ -75,12 +96,12 @@ texture = ExtResource("1_0vihu")
 [node name="ColorRect1" type="ColorRect" parent="."]
 offset_right = 709.0
 offset_bottom = 1296.0
-color = Color(0.0862304, 0.281986, 0.285897, 1)
+color = Color(0.0862745, 0.282353, 0.286275, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 offset_right = 2288.0
 offset_bottom = 80.0
-color = Color(0.0862304, 0.281986, 0.285897, 1)
+color = Color(0.0862745, 0.282353, 0.286275, 1)
 
 [node name="CloseButton" type="Button" parent="."]
 offset_left = 1850.0
@@ -111,7 +132,7 @@ theme_override_font_sizes/font_size = 50
 
 [node name="Timer" type="Timer" parent="TimeLine"]
 editor_description = "Meta"
-wait_time = 5.0
+wait_time = 0.5
 script = ExtResource("5_uobe7")
 
 [node name="Time" type="Label" parent="TimeLine/Timer"]
@@ -230,10 +251,19 @@ offset_top = 883.0
 offset_right = 691.0
 offset_bottom = 928.0
 
-[node name="ButtonDiag" type="Sprite2D" parent="DiseaseLine"]
-position = Vector2(360, 1002)
-scale = Vector2(1, 0.6)
-texture = ExtResource("4_ii7xg")
+[node name="Button" type="Button" parent="DiseaseLine"]
+offset_left = 79.0
+offset_top = 942.0
+offset_right = 650.0
+offset_bottom = 1079.0
+scale = Vector2(1, 0.8)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_awrwe")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_m0e7b")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8kb8b")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_b8ere")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x0x7v")
+icon = ExtResource("4_ii7xg")
+script = ExtResource("9_6c36s")
 
 [node name="TextButtonDiag" type="Label" parent="DiseaseLine"]
 offset_left = 207.0
@@ -264,29 +294,16 @@ text = "Barre de stress :"
 
 [node name="Patient" type="Node2D" parent="."]
 
-[node name="Personnage1" type="Sprite2D" parent="Patient"]
-visible = false
-position = Vector2(1282, 419)
-scale = Vector2(5.05224, 4.92341)
-texture = ExtResource("6_wmspq")
+[node name="MiddleTop" type="Marker2D" parent="Patient" groups=["Personnage"]]
+position = Vector2(1270, 120)
 
-[node name="Personnage2" type="Sprite2D" parent="Patient"]
-visible = false
-position = Vector2(1271, 451)
-scale = Vector2(4.05749, 4.23086)
-texture = ExtResource("7_vyr4y")
+[node name="Personnage" type="Sprite2D" parent="Patient" groups=["Personnage"]]
+position = Vector2(1270, 480)
+scale = Vector2(4.11, 4.11)
+script = ExtResource("10_nevtv")
 
-[node name="Personnage3" type="Sprite2D" parent="Patient"]
-visible = false
-position = Vector2(1269, 437.375)
-scale = Vector2(4.08434, 3.73617)
-texture = ExtResource("8_5idq3")
-
-[node name="Personnage4" type="Sprite2D" parent="Patient"]
-visible = false
-position = Vector2(1284, 460)
-scale = Vector2(5.07143, 5.09437)
-texture = ExtResource("8_1nvtc")
+[node name="MiddleBottom" type="Marker2D" parent="Patient" groups=["Personnage"]]
+position = Vector2(1270, 840)
 
 [node name="Answer" type="Node2D" parent="."]
 
@@ -295,7 +312,7 @@ position = Vector2(1300, 960)
 scale = Vector2(4, 2)
 texture = ExtResource("5_nu23g")
 
-[node name="AnswerLabel" type="RichTextLabel" parent="Answer"]
+[node name="AnswerLabel" type="RichTextLabel" parent="Answer" groups=["Personnage"]]
 anchors_preset = -1
 anchor_left = 0.099
 anchor_top = 0.195
@@ -311,6 +328,159 @@ theme_override_font_sizes/normal_font_size = 30
 text = "Good morning doctor,
 I have ...
 "
+
+[node name="StartRestart" type="Node2D" parent="."]
+script = ExtResource("13_a1gea")
+
+[node name="Mask" type="ColorRect" parent="StartRestart"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(1, 1, 1, 0.752941)
+
+[node name="Border" type="ColorRect" parent="StartRestart"]
+offset_left = 490.0
+offset_top = 370.0
+offset_right = 1310.0
+offset_bottom = 590.0
+color = Color(0.0862745, 0.282353, 0.286275, 1)
+
+[node name="Body" type="ColorRect" parent="StartRestart"]
+offset_left = 500.0
+offset_top = 380.0
+offset_right = 1300.0
+offset_bottom = 580.0
+
+[node name="StartInfo" type="Label" parent="StartRestart"]
+offset_left = 520.0
+offset_top = 390.0
+offset_right = 1290.0
+offset_bottom = 440.0
+theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
+theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_font_sizes/font_size = 40
+text = "Voulez-vous commencer une partie ?"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="StartRestart"]
+offset_left = 550.0
+offset_top = 480.0
+offset_right = 1113.0
+offset_bottom = 609.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rb8f1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_usewe")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_efv56")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sx702")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r4t5w")
+icon = ExtResource("4_ii7xg")
+flat = true
+
+[node name="TextInfo" type="Label" parent="StartRestart/StartButton"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 46.0
+offset_right = 498.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
+theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_font_sizes/font_size = 40
+text = "Démarrer la partie"
+horizontal_alignment = 1
+
+[node name="CloseButton2" type="Button" parent="StartRestart"]
+offset_left = 980.0
+offset_top = 480.0
+offset_right = 1543.0
+offset_bottom = 609.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rb8f1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_usewe")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_efv56")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sx702")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r4t5w")
+icon = ExtResource("4_ii7xg")
+flat = true
+
+[node name="TextInfo" type="Label" parent="StartRestart/CloseButton2"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 46.0
+offset_right = 472.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
+theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_font_sizes/font_size = 40
+text = "Quitter le jeu"
+horizontal_alignment = 1
+
+[node name="DiagDialog" type="Node2D" parent="."]
+visible = false
+
+[node name="Mask" type="ColorRect" parent="DiagDialog"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(1, 1, 1, 0.752941)
+
+[node name="Border" type="ColorRect" parent="DiagDialog"]
+offset_left = 490.0
+offset_top = 370.0
+offset_right = 1310.0
+offset_bottom = 590.0
+color = Color(0.0862745, 0.282353, 0.286275, 1)
+
+[node name="Body" type="ColorRect" parent="DiagDialog"]
+offset_left = 500.0
+offset_top = 380.0
+offset_right = 1300.0
+offset_bottom = 580.0
+
+[node name="DiagInfo" type="Label" parent="DiagDialog"]
+offset_left = 520.0
+offset_top = 390.0
+offset_right = 1290.0
+offset_bottom = 440.0
+theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
+theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_font_sizes/font_size = 35
+text = "Le patient a une grippe ou une pneumonie ?"
+horizontal_alignment = 1
+
+[node name="LateInfo" type="Label" parent="DiagDialog"]
+offset_left = 533.0
+offset_top = 490.0
+offset_right = 1199.0
+offset_bottom = 538.0
+theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
+theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_font_sizes/font_size = 35
+text = "Retard : 15 minutes"
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="DiagDialog"]
+offset_left = 980.0
+offset_top = 480.0
+offset_right = 1543.0
+offset_bottom = 609.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rb8f1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_usewe")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_efv56")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sx702")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r4t5w")
+icon = ExtResource("4_ii7xg")
+flat = true
+
+[node name="TextInfo" type="Label" parent="DiagDialog/ContinueButton"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 46.0
+offset_right = 472.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
+theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_font_sizes/font_size = 40
+text = "Continer la journée"
+horizontal_alignment = 1
 
 [node name="DATABASE" type="Node" parent="."]
 script = ExtResource("11_6arfc")

@@ -7,21 +7,17 @@ public partial class Timer_controller : Timer
 	private Label timer_show;
 	private int hour = 8;
 	private int minute = 0;
-	
+	public static Timer_controller currentInstance;
+
+	public Timer_controller()
+	{
+		currentInstance = this;
+	}
 	public override void _Ready()
 	{
 		timer_show = this.GetChildOrNull<Label>(0);
 		this.Timeout += () => printTimer();
-		this.Start();
-		printStrartTimer();
 	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-		
-	}
-
 	private void printStrartTimer()
 	{
 		timer_show.Text = hour.ToString().PadLeft(2, '0') + ":" + minute.ToString().PadLeft(2, '0');
