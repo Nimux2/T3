@@ -6,10 +6,13 @@ using Godot.Collections;
 public partial class StartButton : Node2D
 {
 	// Called when the node enters the scene tree for the first time.
+	private const string defaultTextStart = "Voulez-vous commencer une partie ?";
+	private const string defaultTextRestart = "Voulez-vous recommencer une partie ?";
+
+	private Label textStartOrRestart;
 	public override void _Ready()
 	{
-		Array<Node> nodes = this.GetChildren();
-		foreach (var node in nodes)
+		foreach (var node in this.GetChildren())
 		{
 			if (node.Name == "StartButton")
 			{
@@ -20,15 +23,18 @@ public partial class StartButton : Node2D
 			{
 				((Button)node).Pressed += () => GetTree().Quit();
 			}
+			else if (node.Name == "StartInfo")
+			{
+				textStartOrRestart = (Label)node;
+				textStartOrRestart.Text = defaultTextStart;
+			}
 		}
 	}
 	private void StartPressed()
 	{
 		GD.Print("Start session");
 		this.Visible = false;
-		Timer_controller.currentInstance.Start();
 		GamePlay.currentInstance.CodeTest();
-		//appel 
 	}
 
 	private void ButtonFlashing(Button button)
@@ -37,19 +43,40 @@ public partial class StartButton : Node2D
 		{
 			while (true)
 			{
-				((Button)o).Visible = !((Button)o).Visible;
-				if (((Button)o).Visible)
+				((Button)o).ShowBehindParent = !((Button)o).ShowBehindParent;
+				if (((Button)o).ShowBehindParent)
 				{
-					Task.Delay(1000).Wait();
+					Task.Delay(250).Wait();
 				}
 				else
 				{
-					Task.Delay(500).Wait();
+					Task.Delay(1000).Wait();
 				}
 			}
 		};
 		Task task = new Task(action, button);
 		task.Start();
 	}
-	
+
+	public void changeToStartOrRestart(ModeAffichage mode)
+	{
+		switch (mode)
+		{
+			case ModeAffichage.START:
+				textStartOrRestart.Text = defaultTextStart;
+				break;
+			case ModeAffichage.RESTART:
+				textStartOrRestart.Text = defaultTextRestart;
+				break;
+			default:
+				textStartOrRestart.Text = defaultTextStart;
+				break;
+		}
+	}
+
+	public enum ModeAffichage
+	{
+		START,
+		RESTART,
+	}
 }

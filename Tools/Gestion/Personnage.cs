@@ -5,40 +5,44 @@ using Godot.Collections;
 
 public partial class Personnage : Sprite2D
 {
-    // Called when the node enters the scene tree for the first time.
     private RichTextLabel answer;
     private Array<Node> allNodes;
     private string name = "Anonyme";
+    private CustomSignals signal;
     public override void _Ready()
     {
+        signal = GetNode<CustomSignals>("/root/CustomSignal");
+        signal.PersonnageChangePersonnage += (name, imageName) => ChangePersonnage(name, imageName);
+        signal.PersonnageSpeech += texte => Speech(texte);
+        signal.PersonnageSpeechChar += texte => SpeechChar(texte);
         allNodes = GetTree().GetNodesInGroup("Personnage");
         answer = allNodes[3] as RichTextLabel;
-        this.speech("Hello Doctor, I am [name] !");
-        autoPlacement();
+        this.Speech("Hello Doctor, I am [name] !");
+        AutoPlacement();
     }
-    public void changePersonnage(string name , string image_name)
+    private void ChangePersonnage(string name , string imageName)
     {
-        this.name = formatName(name);
-        this.changePersonnageCaractere(image_name);
+        this.name = FormatName(name);
+        this.ChangePersonnageCaractere(imageName);
     }
-    public void changePersonnageCaractere(string image_name)
+    private void ChangePersonnageCaractere(string imageName)
     {
-        this.changeTexture(image_name);
-        this.autoPlacement();
+        this.ChangeTexture(imageName);
+        this.AutoPlacement();
     }
-    public void speech(string texte)
+    private void Speech(string texte)
     {
         string temp = texte.Replace("[name]", this.name);
         answer.Text = temp;
     }
-    private void changeTexture(string image_name)
+    private void ChangeTexture(string imageName)
     {
-        string path =  "./patient/" + image_name + ".png";
+        string path =  "./patient/" + imageName + ".png";
         Texture2D texture = GD.Load<Texture2D>(path);
         this.Texture = texture;
         answer.Text = String.Empty;
     }
-    private void autoPlacement()
+    private void AutoPlacement()
     {
         Marker2D markerTop = allNodes[0] as Marker2D;
         Marker2D markerBottom = allNodes[2] as Marker2D;
@@ -50,7 +54,7 @@ public partial class Personnage : Sprite2D
         this.Scale = new Vector2(scaleCalcul, scaleCalcul);
     }
 
-    private string formatName(string name)
+    private string FormatName(string name)
     {
         if (!char.IsUpper((name.ToCharArray())[0]))
         {
@@ -61,11 +65,11 @@ public partial class Personnage : Sprite2D
             return name;
         }
     }
-
-    public void speechChar(string texte)
+    //ligne de code sous commentaire => code pour du TTS (text to speak)
+    private void SpeechChar(string texte)
     {
         answer.Text = string.Empty;
-        Action<object> action = delegate(object o)
+        Action<object> actionDisplay = delegate(object o)
         {
             char[] temp = ((string)o).ToCharArray();
             foreach (var _char in temp)
@@ -74,11 +78,22 @@ public partial class Personnage : Sprite2D
                 Task.Delay(80).Wait();
             }
         };
-        Task task = new Task(action, texte.Replace("[name]", this.name));
-        task.Start();
-    }
-    public static Personnage From(Sprite2D sprite2D)
-    {
-        return sprite2D as Personnage;
+        
+        /*
+        Action<object> actionSpeak = delegate(object o)
+        {
+            GD.Print("Start speak");
+            string temp = ((string)o);
+            string[] voices = DisplayServer.TtsGetVoicesForLanguage("fr");
+            string voiceId = voices[0];
+            DisplayServer.TtsSpeak(temp , voiceId);
+            GD.Print("End speak");
+        };
+        */
+        
+        Task task1 = new Task(actionDisplay, texte.Replace("[name]", this.name));
+        //Task task2 = new Task(actionSpeak, texte.Replace("[name]", this.name));
+        task1.Start();
+        //task2.Start();
     }
 }
