@@ -7,8 +7,8 @@ using Mono.Data.Sqlite;
 public partial class DATABASE : Node
 {
     private static SqliteConnection connection;
-    //public static string conn = $"Data Source={System.IO.Directory.GetCurrentDirectory()}/Tools/Database/DBT3.db;Version=3;";
-    private static string conn = $"Data Source=/home/trott/Documents/Cours/t3/T3_Projet/Tools/Database/DBT3.db;Version=3;";
+    private static string conn = $"Data Source={System.IO.Directory.GetCurrentDirectory()}/Tools/Database/DBT3.db;Version=3;";
+    //private static string conn = $"Data Source=/home/trott/Documents/Cours/t3/T3_Projet/Tools/Database/DBT3.db;Version=3;";
 
     public static string Connection_String
     {

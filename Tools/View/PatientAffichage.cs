@@ -29,15 +29,16 @@ public partial class PatientAffichage : Node2D
         Vector2 originPositionCalcul = new Vector2();
         originPositionCalcul.X = this.marqueurBas.GlobalPosition.X;
         originPositionCalcul.Y = (this.marqueurBas.GlobalPosition.Y + this.marqueurHaut.GlobalPosition.Y) / 2;
-        this.GlobalPosition = originPositionCalcul;
+        this.personnage.GlobalPosition = originPositionCalcul;
         float scaleCalcul = (this.marqueurBas.GlobalPosition.Y - this.marqueurHaut.GlobalPosition.Y) / this.personnage.Texture.GetHeight();
-        this.Scale = new Vector2(scaleCalcul, scaleCalcul);
+        this.personnage.Scale = new Vector2(scaleCalcul, scaleCalcul);
     }
     public void ChangerCaracterePatient(string nomImage)
     {
         if (nomImage != null)
         {
-            string path = "./patient/" + nomImage + ".png";
+            string path = $"{System.IO.Directory.GetCurrentDirectory()}/PatientImages/{nomImage}.png";
+            GD.Print(path);
             Texture2D texture = GD.Load<Texture2D>(path);
             this.personnage.Texture = texture;
             AutoPlacement();
@@ -47,7 +48,6 @@ public partial class PatientAffichage : Node2D
     {
         parolePersonnage.Text = parole.Replace("[name]", nom);
     }
-    
     public void FaireParlerPatientCharParChar(string parole , string nom = null)
     {
         parolePersonnage.Text = string.Empty;
@@ -74,5 +74,4 @@ public partial class PatientAffichage : Node2D
             barreStress.Value = stress;
         }
     }
-    
 }

@@ -13,18 +13,19 @@ public class Patient
 {
     private int ID;
     private string nom;
-    public string Nom { get; }
+    public string Nom { get => nom; }
     public int Stress { get; set; }
     public int Diag { get; set; }
+    private int imageID;
     
     private ImagesPatient images;
-    
     public Patient(int ID)
     {
         this.ID = ID;
-        ChargerImagesPatient(ChargerInformationPatient());
+        ChargerInformationPatient();
+        ChargerImagesPatient();
     }
-    private int ChargerInformationPatient()
+    private void ChargerInformationPatient()
     {
         if (ID >= 1)
         {
@@ -41,31 +42,26 @@ public class Patient
 
                 SqliteDataReader data = command.ExecuteReader();
 
-                int imageID = 0;
-
                 while (data.Read())
                 {
                     this.nom = FormatNom(data.GetString(1));
                     this.Stress = data.GetInt32(2);
-                    imageID = data.GetInt32(4);
+                    this.imageID = data.GetInt32(4);
                 }
-
-                return imageID;
             }
             catch (SqliteException err)
             {
                 GD.Print("Patient 1 : ERROR DB Patients = " + err.Message);
-                return -1;
             }
         }
         else
         {
-            return -1;
+            GD.Print("Passe here");
         }
     }
-    private void ChargerImagesPatient(int ID)
+    private void ChargerImagesPatient()
     {
-        if (ID >= 1)
+        if (imageID >= 1)
         {
             try
             {
@@ -73,7 +69,7 @@ public class Patient
                 {
                     Connection = DATABASE.GetConnection(),
                     CommandType = CommandType.Text,
-                    CommandText = "SELECT * FROM Image_Patient WHERE id = @ID;",
+                    CommandText = "SELECT * FROM ImagesPatient WHERE id = @ID;",
                 };
                 command.Parameters.Add("@ID", DbType.Int32);
                 command.Parameters["@ID"].Value = ID;
@@ -82,8 +78,19 @@ public class Patient
 
                 while (data.Read())
                 {
-                    this.images = new ImagesPatient(data.GetString(1), data.GetString(2), data.GetString(3),
-                        data.GetString(4), data.GetString(5));
+                    this.images = new ImagesPatient();
+                    for (int i = 1; i < 6; i++)
+                    {
+                        if (!data.IsDBNull(i))
+                        {
+                            this.images.AjouterImage(data.GetValue(i).ToString() , i);
+                            GD.Print("Image = " + data.GetString(i));
+                        }
+                        else
+                        {
+                            this.images.AjouterImage("Default", i);
+                        }
+                    }
                 }
             }
             catch (SqliteException err)
@@ -105,14 +112,7 @@ public class Patient
     }
     public string DonnerNomImageCaractere(ImagesPatient.Types type)
     {
-        if (type != images.ActualType)
-        {
-            return images.GetImageForEnum(type);
-        }
-        else
-        {
-            return null;
-        }
+        return images.GetImageForEnum(type);
     }
     
     public static int RandomIdPatient()
@@ -124,7 +124,7 @@ public class Patient
             {
                 Connection = DATABASE.GetConnection(),
                 CommandType = CommandType.Text,
-                CommandText = "SELECT max(*) FROM Patients;",
+                CommandText = "SELECT max(id) FROM Patients;",
             };
             int max = int.Parse(command.ExecuteScalar().ToString());
             return GD.RandRange(1, max);

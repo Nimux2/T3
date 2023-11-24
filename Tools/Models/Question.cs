@@ -24,6 +24,9 @@ public class Question
     {
         get => effetDiag;
     }
+
+    public Question() { }
+
     public Question(int ID)
     {
         this.ID = ID;

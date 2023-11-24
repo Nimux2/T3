@@ -5,31 +5,48 @@ namespace T3Projet.Tools.Gestion;
 
 public class ImagesPatient
 {
-    public ImagesPatient(string imageDefault, string imageTriste, string imageContent , string imagePeur , string imageColere)
-    {
-        this.imageDefault = imageDefault;
-        this.imageTriste = imageTriste;
-        this.imageContent = imageContent;
-        this.imagePeur = imagePeur;
-        this.imageColere = imageColere;
-    }
-
     private string imageDefault = null;
     private string imageTriste = null;
     private string imageContent = null;
     private string imagePeur = null;
     private string imageColere = null;
 
-    private Types actuelType = Types.DEFAULT;
+    private Types actuelType;
     public Types ActualType
     {
         get => actuelType;
     }
-    
+
+    public ImagesPatient() { }
+    public ImagesPatient(string imageDefault)
+    { 
+        this.imageDefault = imageDefault;
+    }
+    public void AjouterImage(string image , int index)
+    {
+        switch (index)
+        {
+            case 1:
+                this.imageDefault = image;
+                break;
+            case 2:
+                this.imageTriste = image;
+                break;
+            case 3:
+                this.imageContent = image;
+                break;
+            case 4:
+                this.imagePeur = image;
+                break;
+            case 5:
+                this.imageColere = image;
+                break;
+        }
+    }
     public string GetImageForEnum(Types type)
     {
         actuelType = type;
-        if (type == Types.DEFAULT)
+        if (type == Types.DEFAULT && (imageDefault != null || imageDefault!= string.Empty))
         {
             return imageDefault;
         }
@@ -51,8 +68,15 @@ public class ImagesPatient
         }
         else
         {
-            actuelType = Types.DEFAULT;
-            return imageDefault;
+            if (imageDefault != null)
+            {
+                actuelType = Types.DEFAULT;
+                return imageDefault;
+            }
+            else
+            {
+                return "";
+            }
         }
     }
     

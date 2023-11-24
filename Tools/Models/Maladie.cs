@@ -82,8 +82,6 @@ public class Maladie
                 CommandText = "SELECT max(id) FROM Maladies;",
             };
             int max = int.Parse(command.ExecuteScalar().ToString());
-            GD.Print("Max = " + max);
-            GD.Print("Execute Commande");
             return GD.RandRange(1, max);
         }
         catch (SqliteException err)
@@ -96,10 +94,18 @@ public class Maladie
     public List<Question> QuestionsSuivante()
     {
         GD.Randomize();
-        int index = GD.RandRange(0, symptomes.Count - 1);
-        currentSymptome = symptomes[index];
-        symptomes.RemoveAt(index);
-        return currentSymptome.DonnerQuestions();
+        try
+        {
+            int index = GD.RandRange(0, symptomes.Count - 1);
+            currentSymptome = symptomes[index];
+            symptomes.RemoveAt(index);
+            return currentSymptome.DonnerQuestions();
+        }
+        catch (Exception err)
+        {
+            GD.Print("ERROR : " + err.Message);
+            return null;
+        }
     }
 
     public Réponse RéponseQuestion(int stress)

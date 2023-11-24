@@ -4,8 +4,11 @@ namespace T3Projet.Tools.Models;
 
 public partial class BoutonQuestion : Button
 {
+    [Signal]
+    public delegate void BoutonQuestionPressedEventHandler(int diag, int stress);
+    
     private Label questionText;
-    private Question question;
+    private Question question = new Question();
     public Question Question
     {
         get => question;
@@ -18,8 +21,7 @@ public partial class BoutonQuestion : Button
     public override void _Ready()
     {
         questionText = GetChild<Label>(0);
-        Pressed += () => GamePlay.instance.OnBoutonQuestionPressed(this.question.EffetDiag , this.Question.EffetStress);
+        Pressed += () => EmitSignal(SignalName.BoutonQuestionPressed, this.question.EffetDiag,
+            this.question.EffetStress);
     }
-    
-    
 }

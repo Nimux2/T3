@@ -64,4 +64,14 @@ public partial class TimerController : Timer
 	{
 		return (((heure - HEURE_DEPART) * 60 ) + minute - MINUTE_DEPART) - (nbConsultation * DUREE_CONSULTATION);
 	}
+	public static int CalculNbConsultation()
+	{
+		return (((HEURE_FIN - HEURE_DEPART) * 60) + minute - MINUTE_DEPART) / DUREE_CONSULTATION;
+	}
+
+	public static bool TempsEstPasser()
+	{
+		return (heure >= HEURE_FIN && minute >= MINUTE_FIN);
+	}
+	
 }
