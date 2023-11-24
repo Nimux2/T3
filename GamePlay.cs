@@ -74,12 +74,12 @@ public partial class GamePlay : Node2D
 		else
 		{
 			patientAffichage.ChangerCaracterePatient(nomImage);
-			patientAffichage.FaireParlerPatient("Désolé, je me présente. Je suis l'infirmier ZimmerDoc et j'ai le malheur de vous dire que notre médecin généraliste n'est pas présent aujourd'hui (Congé). Veiller, revenir plus-tard ? \u1F637");
+			patientAffichage.FaireParlerPatientCharParChar("Désolé, je me présente. Je suis l'infirmier ZimmerDoc et j'ai le malheur de vous dire que notre médecin généraliste n'est pas présent aujourd'hui (Congé). Veiller, revenir plus-tard ? \u1F637");
 		}
 		int idMaladie = Maladie.RandomIdMaladie();
 		maladie = new Maladie(1);
 		questionsAffichage.ChangerEtatMasque(true);
-		patientAffichage.FaireParlerPatient("Bonjour, je suis [name]." , patient.Nom);
+		patientAffichage.FaireParlerPatientCharParChar("Bonjour, je suis [name]." , patient.Nom);
 		AjouterQuestion();
 		questionsAffichage.ChangerEtatMasque(false);
 	}
@@ -137,11 +137,9 @@ public partial class GamePlay : Node2D
 		}
 		else
 		{
-			//patientAffichage.FaireParlerPatientCharParChar(réponse.RéponseText);
-			patientAffichage.FaireParlerPatient(réponse.RéponseText);
+			patientAffichage.FaireParlerPatientCharParChar(réponse.RéponseText);
 			AjouterQuestion();
 		}
-		questionsAffichage.ChangerEtatMasque(false);
 	}
 	private void ContinuePartie()
 	{
@@ -183,5 +181,8 @@ public partial class GamePlay : Node2D
 	{
 		AppliquerLaReponse(diag , stress);
 	}
-	
+	public void OnTimerCharParCharFin()
+	{
+		questionsAffichage.ChangerEtatMasque(false);
+	}
 }

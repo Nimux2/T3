@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Godot;
+using T3Projet.Tools.Models;
 
 namespace T3Projet.Tools.View;
 
@@ -11,7 +12,7 @@ public partial class PatientAffichage : Node2D
     private Marker2D marqueurHaut;
     private Sprite2D personnage;
     private Marker2D marqueurBas;
-    private RichTextLabel parolePersonnage;
+    private RichTextLabelTimer parolePersonnage;
 
     private ProgressBar barreDiagnostic;
     private ProgressBar barreStress;
@@ -21,7 +22,7 @@ public partial class PatientAffichage : Node2D
         marqueurHaut = GetChild<Marker2D>(0);
         personnage = GetChild<Sprite2D>(1);
         marqueurBas = GetChild<Marker2D>(2);
-        parolePersonnage = GetChild<RichTextLabel>(4);
+        parolePersonnage = GetChild<RichTextLabelTimer>(4);
         instance = this;
     }
     private void AutoPlacement()
@@ -46,11 +47,11 @@ public partial class PatientAffichage : Node2D
     }
     public void FaireParlerPatient(string parole , string nom = null)
     {
-        parolePersonnage.Text = parole.Replace("[name]", nom);
+        parolePersonnage.EcrireSimple(parole.Replace("[name]", nom));
     }
     public void FaireParlerPatientCharParChar(string parole , string nom = null)
     {
-        parolePersonnage.Text = string.Empty;
+        parolePersonnage.EcrireCharParChar(parole.Replace("[name]", nom));
     }
     public void AddInstanceBarreDiagnostic(ProgressBar barreDiag) //nécessaire pas possible de recup depuis ici
     {

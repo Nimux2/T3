@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dl7uyvawwemrq"]
+[gd_scene load_steps=43 format=3 uid="uid://dl7uyvawwemrq"]
 
 [ext_resource type="Texture2D" uid="uid://bakr78hu3nx6i" path="res://background.png" id="1_0vihu"]
 [ext_resource type="Script" path="res://GamePlay.cs" id="1_681vm"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://Tools/View/PatientAffichage.cs" id="9_kytai"]
 [ext_resource type="Script" path="res://Tools/View/DiagnosticAffichage.cs" id="11_gxna7"]
 [ext_resource type="Script" path="res://Tools/View/DebutAffichage.cs" id="11_n1o16"]
+[ext_resource type="Script" path="res://Tools/Models/RichTextLabelTimer.cs" id="13_tyc4y"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r5x0r"]
 
@@ -504,16 +505,19 @@ position = Vector2(1193, 960)
 scale = Vector2(3.29373, 2)
 texture = ExtResource("5_nu23g")
 
-[node name="ParoleText" type="RichTextLabel" parent="Patient"]
+[node name="Timer" type="Timer" parent="Patient"]
+script = ExtResource("13_tyc4y")
+
+[node name="ParoleText" type="RichTextLabel" parent="Patient/Timer"]
 anchors_preset = -1
 anchor_left = 0.099
 anchor_top = 0.195
 anchor_right = 0.099
 anchor_bottom = 0.195
-offset_left = 812.0
-offset_top = 887.0
-offset_right = 1610.0
-offset_bottom = 1041.0
+offset_left = 622.92
+offset_top = 675.4
+offset_right = 1420.92
+offset_bottom = 829.4
 theme_override_colors/default_color = Color(0.0862304, 0.281986, 0.285897, 1)
 theme_override_fonts/normal_font = ExtResource("2_3x8co")
 theme_override_font_sizes/normal_font_size = 30
@@ -685,6 +689,7 @@ horizontal_alignment = 1
 [connection signal="BoutonQuestionPressed" from="Questions/BoutonQuestion2" to="." method="OnBoutonQuestionBoutonQuestionPressed"]
 [connection signal="BoutonQuestionPressed" from="Questions/BoutonQuestion3" to="." method="OnBoutonQuestionBoutonQuestionPressed"]
 [connection signal="BoutonQuestionPressed" from="Questions/BoutonQuestion4" to="." method="OnBoutonQuestionBoutonQuestionPressed"]
+[connection signal="CharParCharFin" from="Patient/Timer" to="." method="OnTimerCharParCharFin"]
 [connection signal="pressed" from="AffichageDebutPartie/BoutonDepart" to="." method="OnBoutonDebutPressed"]
 [connection signal="pressed" from="AffichageDebutPartie/BoutonDepart" to="TempsTimer/Timer" method="OnBoutonDebutPressed"]
 [connection signal="pressed" from="AffichageDebutPartie/BoutonDepart" to="AffichageDebutPartie" method="OnBoutonDebutPressed"]
