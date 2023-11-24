@@ -6,43 +6,52 @@ using Mono.Data.Sqlite;
 
 public partial class DATABASE : Node
 {
-	//private var
-	private SqliteConnection _connection;
-	private SqliteCommand _command;
-	public override void _Ready()
-	{
-		string path = $"Data Source={System.IO.Directory.GetCurrentDirectory()}/Tools/Database/database_t3.db;Version=3;";
-		try
-		{
-			_connection = new SqliteConnection(path);
-			_connection.Open();
-			_command = new SqliteCommand()
-			{
-				Connection = _connection,
-				CommandType = CommandType.Text,
-				CommandText = "SELECT name FROM sqlite_master WHERE type = ?"
-			};
-			_command.Parameters.Add("id", DbType.String);
-			_command.Parameters[0].Value = "table";
-			GD.Print("Execute commande");
-			SqliteDataReader tables_name = _command.ExecuteReader();
-			while (tables_name.Read())
-			{
-				GD.Print($"table name : {tables_name["name"]}");
-			}
-		}
-		catch (SqliteException err)
-		{
-			GD.Print(err.Message);
-		}
-		finally
-		{
-			_connection.Close();
-		}
-	}
+    private static SqliteConnection connection;
+    //public static string conn = $"Data Source={System.IO.Directory.GetCurrentDirectory()}/Tools/Database/DBT3.db;Version=3;";
+    private static string conn = $"Data Source=/home/trott/Documents/Cours/t3/T3_Projet/Tools/Database/DBT3.db;Version=3;";
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+    public static string Connection_String
+    {
+        get => conn;
+        set
+        {
+            CloseConnection();
+            conn = value;
+            OpenConnection();
+        }
+    }
+    private static void OpenConnection()
+    {
+        try
+        {
+            connection = new SqliteConnection(conn);
+            connection.Open();
+        }
+        catch (SqliteException err)
+        {
+            GD.Print(err.Message);
+        }
+    }
+    public static SqliteConnection GetConnection()
+    {
+        if (connection == null)
+        {
+            OpenConnection();
+        }
+        return connection;
+    }
+    public static void CloseConnection()
+    {
+        if (connection != null)
+        {
+            try
+            {
+                connection.Close();
+            }
+            catch (SqliteException err)
+            {
+                GD.Print(err.Message);
+            }
+        }
+    }
 }

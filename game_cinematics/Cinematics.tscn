@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5du3613rhqs"]
+[gd_scene load_steps=11 format=3 uid="uid://blf0xq8derbw"]
 
 [ext_resource type="VideoStream" path="res://game_cinematics/cinematic.ogv" id="1_juxrv"]
 [ext_resource type="Texture2D" uid="uid://by7cuymjkv2l6" path="res://Button.png" id="2_cwfkp"]

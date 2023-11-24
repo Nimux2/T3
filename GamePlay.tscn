@@ -1,20 +1,18 @@
-[gd_scene load_steps=43 format=3 uid="uid://dl7uyvawwemrq"]
+[gd_scene load_steps=41 format=3 uid="uid://dl7uyvawwemrq"]
 
 [ext_resource type="Texture2D" uid="uid://bakr78hu3nx6i" path="res://background.png" id="1_0vihu"]
 [ext_resource type="Script" path="res://GamePlay.cs" id="1_681vm"]
 [ext_resource type="FontFile" uid="uid://8avf506sxwr5" path="res://Sunday Mango.ttf" id="2_3x8co"]
-[ext_resource type="Script" path="res://Tools/Principal_event/CloseButton.cs" id="3_kiuaq"]
 [ext_resource type="Texture2D" uid="uid://bwt1lcgykw6i5" path="res://Question.png" id="3_n7kws"]
 [ext_resource type="Texture2D" uid="uid://by7cuymjkv2l6" path="res://Button.png" id="4_ii7xg"]
 [ext_resource type="Texture2D" uid="uid://btf6jeg6532hh" path="res://close.png" id="4_jeoe8"]
 [ext_resource type="Texture2D" uid="uid://6e4np2qw2g5x" path="res://Answer.png" id="5_nu23g"]
-[ext_resource type="Script" path="res://Tools/Principal_event/QuestionsButton.cs" id="6_7ug4b"]
+[ext_resource type="Script" path="res://Tools/View/QuestionsAffichage.cs" id="6_17nse"]
 [ext_resource type="Script" path="res://Tools/Processed/TimerController.cs" id="6_c63ue"]
-[ext_resource type="Script" path="res://Tools/Gestion/Personnage.cs" id="10_nevtv"]
-[ext_resource type="Script" path="res://Tools/Principal_event/DiagButton.cs" id="10_to6e2"]
-[ext_resource type="Script" path="res://Tools/Database/DATABASE.cs" id="11_6arfc"]
-[ext_resource type="Script" path="res://Tools/Principal_event/StartButton.cs" id="13_a1gea"]
-[ext_resource type="Script" path="res://Tools/Gestion/Diagnostic.cs" id="14_t770i"]
+[ext_resource type="Script" path="res://Tools/Models/BoutonQuestion.cs" id="8_mgi13"]
+[ext_resource type="Script" path="res://Tools/View/PatientAffichage.cs" id="9_kytai"]
+[ext_resource type="Script" path="res://Tools/View/DiagnosticAffichage.cs" id="11_gxna7"]
+[ext_resource type="Script" path="res://Tools/View/DebutAffichage.cs" id="11_n1o16"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r5x0r"]
 
@@ -25,6 +23,16 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_da8dc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jikvf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_awrwe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0e7b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8kb8b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b8ere"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x0x7v"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xa7m2"]
 
@@ -50,16 +58,6 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mf8k4"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_awrwe"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0e7b"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8kb8b"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b8ere"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x0x7v"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rb8f1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_usewe"]
@@ -73,13 +71,13 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_681vm")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="ArrierePlan" type="Sprite2D" parent="."]
 position = Vector2(1142.5, 649)
 scale = Vector2(2.22754, 1.26367)
 texture = ExtResource("1_0vihu")
 
 [node name="ColorRect1" type="ColorRect" parent="."]
-offset_right = 709.0
+offset_right = 710.0
 offset_bottom = 1296.0
 color = Color(0.0862745, 0.282353, 0.286275, 1)
 
@@ -88,7 +86,7 @@ offset_right = 2288.0
 offset_bottom = 80.0
 color = Color(0.0862745, 0.282353, 0.286275, 1)
 
-[node name="CloseButton" type="Button" parent="."]
+[node name="BoutonFermer" type="Button" parent="."]
 offset_left = 1850.0
 offset_top = 5.0
 offset_right = 2083.0
@@ -103,11 +101,10 @@ icon = ExtResource("4_jeoe8")
 flat = true
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("3_kiuaq")
 
-[node name="TimeLine" type="Node2D" parent="."]
+[node name="TempsTimer" type="Node2D" parent="."]
 
-[node name="Day(not use)" type="Label" parent="TimeLine"]
+[node name="Day(not use)" type="Label" parent="TempsTimer"]
 visible = false
 offset_left = 150.0
 offset_top = 20.0
@@ -116,143 +113,30 @@ offset_bottom = 79.0
 theme_override_fonts/font = ExtResource("2_3x8co")
 theme_override_font_sizes/font_size = 50
 
-[node name="Timer" type="Timer" parent="TimeLine"]
+[node name="Timer" type="Timer" parent="TempsTimer"]
 editor_description = "Meta"
 wait_time = 1.2
 script = ExtResource("6_c63ue")
 
-[node name="Time" type="Label" parent="TimeLine/Timer"]
-offset_left = 289.0
-offset_top = 22.0
-offset_right = 412.0
-offset_bottom = 81.0
+[node name="Temps" type="Label" parent="TempsTimer/Timer"]
+offset_left = 325.0
+offset_top = 10.0
+offset_right = 448.0
+offset_bottom = 70.0
 theme_override_fonts/font = ExtResource("2_3x8co")
 theme_override_font_sizes/font_size = 50
 text = "08:00"
+vertical_alignment = 1
 
-[node name="Questions" type="Node2D" parent="."]
-script = ExtResource("6_7ug4b")
+[node name="DiagnosticData" type="Node2D" parent="."]
 
-[node name="QuestionButton1" type="Button" parent="Questions"]
-offset_left = 38.0
-offset_top = 191.0
-offset_right = 468.0
-offset_bottom = 387.0
-scale = Vector2(1.5, 0.6)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_3x8co")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_xa7m2")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_s8g0r")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_quij2")
-icon = ExtResource("3_n7kws")
-flat = true
-clip_text = true
-icon_alignment = 1
-expand_icon = true
-
-[node name="QuestionLabel1" type="RichTextLabel" parent="Questions/QuestionButton1"]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 35.0
-offset_right = 400.0
-offset_bottom = 165.0
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("2_3x8co")
-theme_override_font_sizes/normal_font_size = 30
-bbcode_enabled = true
-text = "La question est telle que plusieur mario mange de la banane mais c'est vrai"
-
-[node name="QuestionButton2" type="Button" parent="Questions"]
-offset_left = 38.0
-offset_top = 340.0
-offset_right = 468.0
-offset_bottom = 536.0
-scale = Vector2(1.5, 0.6)
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_wl83u")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_y7wqt")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_n2qkd")
-icon = ExtResource("3_n7kws")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
-[node name="QuestionLabel2" type="RichTextLabel" parent="Questions/QuestionButton2"]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 35.0
-offset_right = 400.0
-offset_bottom = 165.0
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("2_3x8co")
-theme_override_font_sizes/normal_font_size = 30
-text = "
-"
-
-[node name="QuestionButton3" type="Button" parent="Questions"]
-offset_left = 35.0
-offset_top = 493.0
-offset_right = 465.0
-offset_bottom = 689.0
-scale = Vector2(1.5, 0.6)
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_7w5yj")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_bo4ls")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dj3rd")
-icon = ExtResource("3_n7kws")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
-[node name="QuestionLabel3" type="RichTextLabel" parent="Questions/QuestionButton3"]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 35.0
-offset_right = 400.0
-offset_bottom = 165.0
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("2_3x8co")
-theme_override_font_sizes/normal_font_size = 30
-
-[node name="QuestionButton4" type="Button" parent="Questions"]
-offset_left = 36.0
-offset_top = 642.0
-offset_right = 466.0
-offset_bottom = 838.0
-scale = Vector2(1.5, 0.6)
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_8e2t3")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_6yoe6")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_mf8k4")
-icon = ExtResource("3_n7kws")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
-[node name="QuestionLabel4" type="RichTextLabel" parent="Questions/QuestionButton4"]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 35.0
-offset_right = 400.0
-offset_bottom = 165.0
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("2_3x8co")
-theme_override_font_sizes/normal_font_size = 30
-
-[node name="Mask" type="ColorRect" parent="Questions"]
-offset_left = 9.0
-offset_top = 171.0
-offset_right = 702.0
-offset_bottom = 835.0
-color = Color(1, 1, 1, 0)
-
-[node name="DiseaseLine" type="Node2D" parent="."]
-
-[node name="ProgressBar" type="ProgressBar" parent="DiseaseLine"]
+[node name="BarreDiagnostic" type="ProgressBar" parent="DiagnosticData"]
 offset_left = 21.0
 offset_top = 883.0
 offset_right = 691.0
 offset_bottom = 928.0
 
-[node name="DiagButton" type="Button" parent="DiseaseLine"]
+[node name="BoutonDiagnostic" type="Button" parent="DiagnosticData"]
 offset_left = 79.0
 offset_top = 942.0
 offset_right = 650.0
@@ -264,9 +148,8 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_8kb8b")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_b8ere")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_x0x7v")
 icon = ExtResource("4_ii7xg")
-script = ExtResource("10_to6e2")
 
-[node name="TextButtonDiag" type="Label" parent="DiseaseLine/DiagButton"]
+[node name="Label" type="Label" parent="DiagnosticData/BoutonDiagnostic"]
 layout_mode = 0
 offset_left = 106.0
 offset_top = 47.5
@@ -277,15 +160,15 @@ theme_override_fonts/font = ExtResource("2_3x8co")
 theme_override_font_sizes/font_size = 50
 text = "Diagnostiquer"
 
-[node name="FearLine" type="Node2D" parent="."]
+[node name="StressData" type="Node2D" parent="."]
 
-[node name="ProgressBar" type="ProgressBar" parent="FearLine"]
+[node name="BarreStress" type="ProgressBar" parent="StressData"]
 offset_left = 963.0
 offset_top = 19.0
 offset_right = 1716.0
 offset_bottom = 64.0
 
-[node name="Label" type="Label" parent="FearLine"]
+[node name="Label" type="Label" parent="StressData"]
 offset_left = 718.0
 offset_top = 26.0
 offset_right = 954.0
@@ -294,27 +177,168 @@ theme_override_fonts/font = ExtResource("2_3x8co")
 theme_override_font_sizes/font_size = 30
 text = "Barre de stress :"
 
-[node name="Patient" type="Node2D" parent="."]
+[node name="Questions" type="Node2D" parent="."]
+script = ExtResource("6_17nse")
 
-[node name="MiddleTop" type="Marker2D" parent="Patient" groups=["Personnage"]]
+[node name="BoutonQuestion1" type="Button" parent="Questions"]
+offset_left = 38.0
+offset_top = 100.0
+offset_right = 468.0
+offset_bottom = 300.0
+scale = Vector2(1.5, 0.9)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xa7m2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_s8g0r")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_quij2")
+icon = ExtResource("3_n7kws")
+flat = true
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("8_mgi13")
+
+[node name="TextQuestion1" type="Label" parent="Questions/BoutonQuestion1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.047
+anchor_bottom = 0.115
+offset_left = 30.0
+offset_top = 35.0
+offset_right = 379.79
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_font_sizes/font_size = 20
+text = "Test si text peu erferferge nnnnnnnnn
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BoutonQuestion2" type="Button" parent="Questions"]
+offset_left = 38.0
+offset_top = 280.0
+offset_right = 468.0
+offset_bottom = 480.0
+scale = Vector2(1.5, 0.9)
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wl83u")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y7wqt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n2qkd")
+icon = ExtResource("3_n7kws")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("8_mgi13")
+
+[node name="TextQuestion2" type="Label" parent="Questions/BoutonQuestion2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.047
+anchor_bottom = 0.115
+offset_left = 30.0
+offset_top = 35.0
+offset_right = 379.79
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_font_sizes/font_size = 20
+text = "Test si text peu erferferge nnnnnnnnn
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BoutonQuestion3" type="Button" parent="Questions"]
+offset_left = 35.0
+offset_top = 460.0
+offset_right = 465.0
+offset_bottom = 660.0
+scale = Vector2(1.5, 0.9)
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7w5yj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bo4ls")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dj3rd")
+icon = ExtResource("3_n7kws")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("8_mgi13")
+
+[node name="TextQuestion3" type="Label" parent="Questions/BoutonQuestion3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.047
+anchor_bottom = 0.115
+offset_left = 30.0
+offset_top = 35.0
+offset_right = 379.79
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_font_sizes/font_size = 20
+text = "Test si text peu erferferge nnnnnnnnn
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BoutonQuestion4" type="Button" parent="Questions"]
+offset_left = 36.0
+offset_top = 640.0
+offset_right = 466.0
+offset_bottom = 840.0
+scale = Vector2(1.5, 0.9)
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8e2t3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6yoe6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mf8k4")
+icon = ExtResource("3_n7kws")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("8_mgi13")
+
+[node name="TextQuestion4" type="Label" parent="Questions/BoutonQuestion4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.047
+anchor_bottom = 0.115
+offset_left = 30.0
+offset_top = 35.0
+offset_right = 379.79
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_font_sizes/font_size = 20
+text = "Test si text peu erferferge nnnnnnnnn
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Masque" type="ColorRect" parent="Questions"]
+visible = false
+offset_left = 9.0
+offset_top = 103.0
+offset_right = 702.0
+offset_bottom = 843.0
+color = Color(1, 1, 1, 0)
+
+[node name="Patient" type="Node2D" parent="."]
+script = ExtResource("9_kytai")
+
+[node name="MarqueurHaut" type="Marker2D" parent="Patient"]
 position = Vector2(1270, 120)
 
-[node name="Personnage" type="Sprite2D" parent="Patient" groups=["Personnage"]]
+[node name="Personnage" type="Sprite2D" parent="Patient"]
 position = Vector2(1270, 480)
 scale = Vector2(4.11, 4.11)
-script = ExtResource("10_nevtv")
 
-[node name="MiddleBottom" type="Marker2D" parent="Patient" groups=["Personnage"]]
+[node name="MarqueurBas" type="Marker2D" parent="Patient"]
 position = Vector2(1270, 840)
 
-[node name="Answer" type="Node2D" parent="."]
-
-[node name="AnswerBulle" type="Sprite2D" parent="Answer"]
+[node name="ParoleBulle" type="Sprite2D" parent="Patient"]
 position = Vector2(1300, 960)
 scale = Vector2(4, 2)
 texture = ExtResource("5_nu23g")
 
-[node name="AnswerLabel" type="RichTextLabel" parent="Answer" groups=["Personnage"]]
+[node name="ParoleText" type="RichTextLabel" parent="Patient"]
 anchors_preset = -1
 anchor_left = 0.099
 anchor_top = 0.195
@@ -331,29 +355,29 @@ text = "Good morning doctor,
 I have ...
 "
 
-[node name="StartRestart" type="Node2D" parent="."]
+[node name="AffichageDebutPartie" type="Node2D" parent="."]
 visible = false
-script = ExtResource("13_a1gea")
+script = ExtResource("11_n1o16")
 
-[node name="Mask" type="ColorRect" parent="StartRestart"]
+[node name="Mask" type="ColorRect" parent="AffichageDebutPartie"]
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(1, 1, 1, 0.752941)
 
-[node name="Border" type="ColorRect" parent="StartRestart"]
+[node name="Border" type="ColorRect" parent="AffichageDebutPartie"]
 offset_left = 490.0
 offset_top = 370.0
 offset_right = 1310.0
 offset_bottom = 590.0
 color = Color(0.0862745, 0.282353, 0.286275, 1)
 
-[node name="Body" type="ColorRect" parent="StartRestart"]
+[node name="Body" type="ColorRect" parent="AffichageDebutPartie"]
 offset_left = 500.0
 offset_top = 380.0
 offset_right = 1300.0
 offset_bottom = 580.0
 
-[node name="StartInfo" type="Label" parent="StartRestart"]
+[node name="InfoDepart" type="Label" parent="AffichageDebutPartie"]
 offset_left = 520.0
 offset_top = 390.0
 offset_right = 1290.0
@@ -364,7 +388,7 @@ theme_override_font_sizes/font_size = 40
 text = "Voulez-vous commencer une partie ?"
 horizontal_alignment = 1
 
-[node name="StartButton" type="Button" parent="StartRestart"]
+[node name="BoutonDepart" type="Button" parent="AffichageDebutPartie"]
 offset_left = 550.0
 offset_top = 480.0
 offset_right = 1113.0
@@ -378,7 +402,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_r4t5w")
 icon = ExtResource("4_ii7xg")
 flat = true
 
-[node name="TextInfo" type="Label" parent="StartRestart/StartButton"]
+[node name="Label" type="Label" parent="AffichageDebutPartie/BoutonDepart"]
 layout_mode = 0
 offset_left = 70.0
 offset_top = 46.0
@@ -390,7 +414,7 @@ theme_override_font_sizes/font_size = 40
 text = "Démarrer la partie"
 horizontal_alignment = 1
 
-[node name="CloseButton2" type="Button" parent="StartRestart"]
+[node name="BoutonFermer2" type="Button" parent="AffichageDebutPartie"]
 offset_left = 980.0
 offset_top = 480.0
 offset_right = 1543.0
@@ -404,7 +428,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_r4t5w")
 icon = ExtResource("4_ii7xg")
 flat = true
 
-[node name="TextInfo" type="Label" parent="StartRestart/CloseButton2"]
+[node name="Label" type="Label" parent="AffichageDebutPartie/BoutonFermer2"]
 layout_mode = 0
 offset_left = 90.0
 offset_top = 46.0
@@ -416,29 +440,29 @@ theme_override_font_sizes/font_size = 40
 text = "Quitter le jeu"
 horizontal_alignment = 1
 
-[node name="DiagDialog" type="Node2D" parent="."]
+[node name="AffichageDiagnostic" type="Node2D" parent="."]
 visible = false
-script = ExtResource("14_t770i")
+script = ExtResource("11_gxna7")
 
-[node name="Mask" type="ColorRect" parent="DiagDialog"]
+[node name="Mask" type="ColorRect" parent="AffichageDiagnostic"]
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(1, 1, 1, 0.752941)
 
-[node name="Border" type="ColorRect" parent="DiagDialog"]
+[node name="Border" type="ColorRect" parent="AffichageDiagnostic"]
 offset_left = 490.0
 offset_top = 370.0
 offset_right = 1310.0
 offset_bottom = 590.0
 color = Color(0.0862745, 0.282353, 0.286275, 1)
 
-[node name="Body" type="ColorRect" parent="DiagDialog"]
+[node name="Body" type="ColorRect" parent="AffichageDiagnostic"]
 offset_left = 500.0
 offset_top = 380.0
 offset_right = 1300.0
 offset_bottom = 580.0
 
-[node name="DiagInfo" type="Label" parent="DiagDialog"]
+[node name="InfoDiagnostic" type="Label" parent="AffichageDiagnostic"]
 offset_left = 520.0
 offset_top = 390.0
 offset_right = 1290.0
@@ -450,7 +474,7 @@ text = "Le patient a une grippe ou une pneumonie ?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LateInfo" type="Label" parent="DiagDialog"]
+[node name="InfoRetard" type="Label" parent="AffichageDiagnostic"]
 offset_left = 580.0
 offset_top = 432.0
 offset_right = 1246.0
@@ -462,11 +486,11 @@ text = "Vous avez 15 minutes de retard."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ContinueButton" type="Button" parent="DiagDialog"]
-offset_left = 980.0
-offset_top = 480.0
-offset_right = 1543.0
-offset_bottom = 609.0
+[node name="BoutonContinuer" type="Button" parent="AffichageDiagnostic"]
+offset_left = 761.0
+offset_top = 488.0
+offset_right = 1324.0
+offset_bottom = 617.0
 scale = Vector2(0.5, 0.5)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rb8f1")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_usewe")
@@ -476,7 +500,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_r4t5w")
 icon = ExtResource("4_ii7xg")
 flat = true
 
-[node name="TextInfo" type="Label" parent="DiagDialog/ContinueButton"]
+[node name="Label" type="Label" parent="AffichageDiagnostic/BoutonContinuer"]
 layout_mode = 0
 offset_left = 90.0
 offset_top = 46.0
@@ -488,9 +512,13 @@ theme_override_font_sizes/font_size = 40
 text = "Continer la journée"
 horizontal_alignment = 1
 
-[node name="DATABASE" type="Node" parent="."]
-script = ExtResource("11_6arfc")
-
-[connection signal="pressed" from="DiseaseLine/DiagButton" to="TimeLine/Timer" method="DiagButtonPressed"]
-[connection signal="pressed" from="StartRestart/StartButton" to="TimeLine/Timer" method="StartButtonPressed"]
-[connection signal="pressed" from="DiagDialog/ContinueButton" to="TimeLine/Timer" method="ContinueButtonPressed"]
+[connection signal="pressed" from="BoutonFermer" to="." method="OnBoutonFermerPressed"]
+[connection signal="pressed" from="DiagnosticData/BoutonDiagnostic" to="." method="OnBoutonDiagnosticPressed"]
+[connection signal="pressed" from="DiagnosticData/BoutonDiagnostic" to="TempsTimer/Timer" method="OnBoutonDiagnosticPressed"]
+[connection signal="pressed" from="AffichageDebutPartie/BoutonDepart" to="." method="OnBoutonDebutPressed"]
+[connection signal="pressed" from="AffichageDebutPartie/BoutonDepart" to="TempsTimer/Timer" method="OnBoutonDebutPressed"]
+[connection signal="pressed" from="AffichageDebutPartie/BoutonDepart" to="AffichageDebutPartie" method="OnBoutonDebutPressed"]
+[connection signal="pressed" from="AffichageDebutPartie/BoutonFermer2" to="." method="OnBoutonFermer2Pressed"]
+[connection signal="pressed" from="AffichageDiagnostic/BoutonContinuer" to="." method="OnBoutonContinuerPressed"]
+[connection signal="pressed" from="AffichageDiagnostic/BoutonContinuer" to="TempsTimer/Timer" method="OnBoutonContinuerPressed"]
+[connection signal="pressed" from="AffichageDiagnostic/BoutonContinuer" to="AffichageDiagnostic" method="OnBoutonContinuerPressed"]

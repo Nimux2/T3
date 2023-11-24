@@ -3,46 +3,65 @@ using System;
 
 public partial class TimerController : Timer
 {
-	// Called when the node enters the scene tree for the first time.
-	private Label timerShow;
-	private int hour = 8;
-	private int minute = 0;
+	public const int HEURE_DEPART = 8;
+	public const int MINUTE_DEPART = 0;
+	public const int HEURE_FIN = 12;
+	public const int MINUTE_FIN = 0;
+	public const int DUREE_CONSULTATION = 30; //en minute
+	
+	private Label timerLabel;
+	private static int heure = 8;
+	public static int Heure {
+		get => Heure;
+		
+	}
+	private static int minute = 0;
+	public static int Minute
+	{
+		get => Minute; 
+	}
 	
 	public override void _Ready()
 	{
-		timerShow = this.GetChildOrNull<Label>(0);
-		this.Timeout += () => PrintTimer();
+		this.timerLabel = this.GetChildOrNull<Label>(0);
+		this.Timeout += () => ActualiserTimer();
 	}
-	private void PrintStrartTimer()
+	private void ResetTimer() 
 	{
-		timerShow.Text = hour.ToString().PadLeft(2, '0') + ":" + minute.ToString().PadLeft(2, '0');
+		heure = HEURE_DEPART;
+		minute = MINUTE_DEPART;
+		this.timerLabel.Text = heure.ToString().PadLeft(2, '0') + ":" + minute.ToString().PadLeft(2, '0');
 	}
-	
-	private void PrintTimer()
+	private void ActualiserTimer() 
 	{
 		minute++;
 		if (minute >= 60)
 		{
-			hour++;
+			heure++;
 			minute = 0;
 		}
-		if (hour >= 24)
+		if (heure == HEURE_FIN && minute == MINUTE_FIN)
 		{
-			//next day
+			//make event
 		}
-
-		timerShow.Text = hour.ToString().PadLeft(2, '0') + ":" + minute.ToString().PadLeft(2, '0');
+		this.timerLabel.Text = heure.ToString().PadLeft(2, '0') + ":" + minute.ToString().PadLeft(2, '0');
 	}
-	private void StartButtonPressed()
+	public void OnBoutonDebutPressed()
+	{
+		this.ResetTimer();
+		this.Start();
+	}
+	public void OnBoutonContinuerPressed()
 	{
 		this.Start();
 	}
-	private void DiagButtonPressed()
+
+	public void OnBoutonDiagnosticPressed()
 	{
 		this.Stop();
 	}
-	private void ContinueButtonPressed()
+	public static int CalculRetard(int nbConsultation)
 	{
-		this.Start();
+		return (((heure - HEURE_DEPART) * 60 ) + minute - MINUTE_DEPART) - (nbConsultation * DUREE_CONSULTATION);
 	}
 }
