@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd5ap6ui8o8xs"
-path="res://.godot/imported/personnage2.png-6925af7f7a838f467072311e24ed578a.ctex"
+uid="uid://bjam46uoxr7c3"
+path="res://.godot/imported/personnage1_triste.png-344140c5ab21bfab232fc9a727a33962.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://patient/personnage2.png"
-dest_files=["res://.godot/imported/personnage2.png-6925af7f7a838f467072311e24ed578a.ctex"]
+source_file="res://PatientImages/personnage1_triste.png"
+dest_files=["res://.godot/imported/personnage1_triste.png-344140c5ab21bfab232fc9a727a33962.ctex"]
 
 [params]
 
