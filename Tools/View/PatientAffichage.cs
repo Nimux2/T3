@@ -38,8 +38,7 @@ public partial class PatientAffichage : Node2D
     {
         if (nomImage != null)
         {
-            string path = $"{System.IO.Directory.GetCurrentDirectory()}/PatientImages/{nomImage}.png";
-            GD.Print(path);
+            string path = $"res://ImagesPatients/{nomImage}.png";
             Texture2D texture = GD.Load<Texture2D>(path);
             this.personnage.Texture = texture;
             AutoPlacement();

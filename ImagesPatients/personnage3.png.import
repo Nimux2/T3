@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by7cuymjkv2l6"
-path="res://.godot/imported/Button.png-db95f38c36cb47c93767cda66da72387.ctex"
+uid="uid://bd7x6n60c4e4r"
+path="res://.godot/imported/personnage3.png-1f52620ad460b03e5724cd662facfc42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Button.png"
-dest_files=["res://.godot/imported/Button.png-db95f38c36cb47c93767cda66da72387.ctex"]
+source_file="res://ImagesPatients/personnage3.png"
+dest_files=["res://.godot/imported/personnage3.png-1f52620ad460b03e5724cd662facfc42.ctex"]
 
 [params]
 

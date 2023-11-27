@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deebsaluljyc5"
-path="res://.godot/imported/Default.png-3c25a852c77f124b6320b4eac8be380d.ctex"
+uid="uid://bakr78hu3nx6i"
+path="res://.godot/imported/ArrierePlan.png-6794c7e925cef68a0978cfa3a91c5e32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PatientImages/Default.png"
-dest_files=["res://.godot/imported/Default.png-3c25a852c77f124b6320b4eac8be380d.ctex"]
+source_file="res://Ressources/ArrierePlan.png"
+dest_files=["res://.godot/imported/ArrierePlan.png-6794c7e925cef68a0978cfa3a91c5e32.ctex"]
 
 [params]
 

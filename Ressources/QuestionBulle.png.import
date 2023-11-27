@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tyi0qxhuwwp2"
-path="res://.godot/imported/personnage1.png-a0072939b203f3d7827e111ed6464fc0.ctex"
+uid="uid://bwt1lcgykw6i5"
+path="res://.godot/imported/QuestionBulle.png-f59533f88cab15d9f682974dfcb78acb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PatientImages/personnage1.png"
-dest_files=["res://.godot/imported/personnage1.png-a0072939b203f3d7827e111ed6464fc0.ctex"]
+source_file="res://Ressources/QuestionBulle.png"
+dest_files=["res://.godot/imported/QuestionBulle.png-f59533f88cab15d9f682974dfcb78acb.ctex"]
 
 [params]
 

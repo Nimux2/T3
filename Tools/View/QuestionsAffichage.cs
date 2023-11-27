@@ -47,4 +47,13 @@ public partial class QuestionsAffichage : Node2D
                 break;
         }
     }
+
+    public void AfficheQuestionReset()
+    {
+        boutonQuestion1.Question = new Question();
+        boutonQuestion2.Question = new Question();
+        boutonQuestion3.Question = new Question();
+        boutonQuestion4.Question = new Question();
+    }
+    
 }

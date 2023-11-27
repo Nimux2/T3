@@ -79,7 +79,7 @@ public partial class GamePlay : Node2D
 		int idMaladie = Maladie.RandomIdMaladie();
 		maladie = new Maladie(1);
 		questionsAffichage.ChangerEtatMasque(true);
-		patientAffichage.FaireParlerPatientCharParChar("Bonjour, je suis [name]." , patient.Nom);
+		patientAffichage.FaireParlerPatientCharParChar("Bonjour, je suis [name] et je suis malade. GoodDoc, pouvez-vous m'aider ?" , patient.Nom);
 		AjouterQuestion();
 		questionsAffichage.ChangerEtatMasque(false);
 	}
@@ -94,6 +94,7 @@ public partial class GamePlay : Node2D
 	}
 	private void FaireLeDiagnostic()
 	{
+		questionsAffichage.AfficheQuestionReset();
 		partie.RetardAvance = TimerController.CalculRetard(partie.NbConsultation);
 		GD.Randomize();
 		int result = GD.RandRange(0, 100);
