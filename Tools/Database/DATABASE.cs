@@ -32,6 +32,21 @@ public class DATABASE
             return "DBT3.db";
         }
     }
+
+    private static string PathFromConfig()
+    {
+        ConfigFile config = new ConfigFile();
+        config.Load("res://Config/gameconfig.cfg");
+        if (config.HasSection("Database") && config.HasSectionKey("Database" , "path"))
+        {
+            return config.GetValue("Database", "path").As<string>();
+        }
+        else
+        {
+            return null;
+        }
+    }
+    
     private static void OpenConnection()
     {
         GD.Print("Connection string : " + conn);
@@ -39,18 +54,22 @@ public class DATABASE
         {
             connection = new SqliteConnection(conn);
             connection.Open();
-            SqliteCommand command = new SqliteCommand()
-            {
-                Connection = DATABASE.GetConnection(),
-                CommandType = CommandType.Text,
-                CommandText = "SELECT max(id) FROM Maladies;",
-            };
-            GD.Print("result : " + command.ExecuteScalar());
-            
         }
         catch (SqliteException err)
         {
-            conn = $"Data Source={ProjectSettings.GlobalizePath("res://")}{NameFromConfig()};";
+            string temp = PathFromConfig();
+            if (temp != null)
+            {
+                if (temp.LastIndexOf('/') != temp.Length - 1)
+                {
+                    temp += '/';
+                }
+                conn = $"Data Source={temp}{NameFromConfig()};";
+            }
+            else
+            {
+                conn = $"Data Source={ProjectSettings.GlobalizePath("res://")}{NameFromConfig()};";
+            }
             GD.Print(err.Message);
             OpenConnection();
         }
