@@ -4,8 +4,6 @@ using System.Data;
 using Godot;
 using Mono.Data.Sqlite;
 
-//using Mono.Data.Sqlite;
-
 namespace T3Projet.Tools.Models;
 
 public class Maladie
@@ -36,7 +34,7 @@ public class Maladie
                 CommandType = CommandType.Text,
                 CommandText = "SELECT nom FROM Maladies WHERE id = @ID;",
             };
-            command.Parameters.Add("@ID", DbType.Int32);
+            command.Parameters.Add("@ID",DbType.Int32);
             command.Parameters[0].Value = this.ID;
             this.nom = command.ExecuteScalar().ToString();
         }

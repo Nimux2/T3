@@ -8,7 +8,7 @@ using Mono.Data.Sqlite;
 public class DATABASE
 {
     private static SqliteConnection connection;
-    private static string conn = $"Data Source={ProjectSettings.GlobalizePath($"res://Tools/Database/{NameFromConfig()}")};Version=3;";
+    private static string conn = $"Data Source={ProjectSettings.GlobalizePath($"res://Tools/Database/{NameFromConfig()}")};";
     public static string Connection_String
     {
         get => conn;
@@ -39,10 +39,18 @@ public class DATABASE
         {
             connection = new SqliteConnection(conn);
             connection.Open();
+            SqliteCommand command = new SqliteCommand()
+            {
+                Connection = DATABASE.GetConnection(),
+                CommandType = CommandType.Text,
+                CommandText = "SELECT max(id) FROM Maladies;",
+            };
+            GD.Print("result : " + command.ExecuteScalar());
+            
         }
         catch (SqliteException err)
         {
-            conn = $"Data Source=./{NameFromConfig()};Version=3;";
+            conn = $"Data Source={ProjectSettings.GlobalizePath("res://")}{NameFromConfig()};";
             GD.Print(err.Message);
             OpenConnection();
         }

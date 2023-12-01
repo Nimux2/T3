@@ -77,7 +77,7 @@ public partial class GamePlay : Node2D
 			patientAffichage.FaireParlerPatientCharParChar("Désolé, je me présente. Je suis l'infirmier ZimmerDoc et j'ai le malheur de vous dire que notre médecin généraliste n'est pas présent aujourd'hui (Congé). Veiller, revenir plus-tard ? \u1F637");
 		}
 		int idMaladie = Maladie.RandomIdMaladie();
-		maladie = new Maladie(1);
+		maladie = new Maladie(idMaladie);
 		questionsAffichage.ChangerEtatMasque(true);
 		patientAffichage.FaireParlerPatientCharParChar("Bonjour, je suis [name] et je suis malade. GoodDoc, pouvez-vous m'aider ?" , patient.Nom);
 		AjouterQuestion();
