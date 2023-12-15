@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Godot.Collections;
 using T3Projet.Tools.Gestion;
@@ -21,7 +22,6 @@ public partial class GamePlay : Node2D
 	private DebutAffichage debutAffichage;
 	public override void _Ready()
 	{
-		GD.Print("Start");
 		while (partieDataAffichage == null)
 		{
 			partieDataAffichage = PartieDataAffichage.instance;
@@ -44,7 +44,6 @@ public partial class GamePlay : Node2D
 		}
 		patientAffichage.AddInstanceBarreDiagnostic(GetNode<ProgressBar>("DiagnosticData/BarreDiagnostic"));
 		patientAffichage.AddInstanceBarreStress(GetNode<ProgressBar>("StressData/BarreStress"));
-		GD.Print("End");
 		debutAffichage.AfficheDebutDebut();
 	}
 	private void CloseApp()
@@ -55,7 +54,6 @@ public partial class GamePlay : Node2D
 	private void JouerPartie()
 	{
 		partie = new Partie();
-		GD.Print("Debut de consultation");
 		this.JouerConsultation();
 	}
 	private void JouerConsultation()
@@ -77,19 +75,26 @@ public partial class GamePlay : Node2D
 			patientAffichage.FaireParlerPatientCharParChar("Désolé, je me présente. Je suis l'infirmier ZimmerDoc et j'ai le malheur de vous dire que notre médecin généraliste n'est pas présent aujourd'hui (Congé). Veiller, revenir plus-tard ? \u1F637");
 		}
 		int idMaladie = Maladie.RandomIdMaladie();
+		GD.Print("Id maladie = " + idMaladie);
 		maladie = new Maladie(idMaladie);
 		questionsAffichage.ChangerEtatMasque(true);
 		patientAffichage.FaireParlerPatientCharParChar("Bonjour, je suis [name] et je suis malade. GoodDoc, pouvez-vous m'aider ?" , patient.Nom);
-		AjouterQuestion();
-		questionsAffichage.ChangerEtatMasque(false);
 	}
 	private void AjouterQuestion()
 	{
-		int i = 0;
-		foreach (Question question in maladie.QuestionsSuivante())
+		List<Question> questions = maladie.QuestionsSuivante();
+		if (questions != null)
 		{
-			questionsAffichage.AfficheQuestionA(question , i);
-			i++;
+			int i = 0;
+			foreach (Question question in questions)
+			{
+				questionsAffichage.AfficheQuestionA(question, i);
+				i++;
+			}
+		}
+		else
+		{
+			questionsAffichage.ChangerEtatMasque(true);
 		}
 	}
 	private void FaireLeDiagnostic()
@@ -139,7 +144,6 @@ public partial class GamePlay : Node2D
 		else
 		{
 			patientAffichage.FaireParlerPatientCharParChar(réponse.RéponseText);
-			AjouterQuestion();
 		}
 	}
 	private void ContinuePartie()
@@ -185,5 +189,6 @@ public partial class GamePlay : Node2D
 	public void OnTimerCharParCharFin()
 	{
 		questionsAffichage.ChangerEtatMasque(false);
+		AjouterQuestion();
 	}
 }

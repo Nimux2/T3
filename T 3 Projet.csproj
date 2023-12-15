@@ -7,4 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Mono.Data.Sqlite" Version="1.0.61" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
+  </ItemGroup>
 </Project>

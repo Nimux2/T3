@@ -93,6 +93,10 @@ public class Maladie
 
     public List<Question> QuestionsSuivante()
     {
+        if (symptomes.Count == 0)
+        {
+            return null;
+        }
         GD.Randomize();
         try
         {
