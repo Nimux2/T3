@@ -1,5 +1,6 @@
 CREATE TABLE Questions (
                            id integer PRIMARY KEY AUTOINCREMENT,
+                           ordre integer,
                            texte text,
                            stress_effect integer,
                            diagno_effect integer
@@ -152,3 +153,6 @@ INSERT INTO Traits(nom,stress_effect,diagno_effect) VALUES
 	('Gentil',30,45),
 	('Jovial',25,30),
 	('Intelligent',60,90);
+
+INSERT INTO Questions(ordre,texte,stress_effect,diagno_effect) VALUES
+  (1,'Comment vous sentez-vous aujourd''hui ?' )
