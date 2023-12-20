@@ -8,14 +8,15 @@ namespace T3Projet.Tools.Models;
 
 public class Maladie
 {
+    // Liste des attributes de la maladie
     private int ID;
     private string nom;
     public string Nom
     {
         get => nom;
     }
-    private List<Symtome> symptomes = new List<Symtome>();
-    private Symtome currentSymptome;
+    private List<Symptome> symptomes = new List<Symptome>();
+    private Symptome currentSymptome;
 
     public Maladie(int ID)
     {
@@ -24,6 +25,10 @@ public class Maladie
         ChargerSymptomes();
     }
     
+    /// <summary>
+    /// Méthode qui charge le nom de la maladie dans la base de donnée.
+    /// </summary>
+    /// <returns></returns>
     private void ChargerNomMaladie()
     {
         try
@@ -43,7 +48,11 @@ public class Maladie
             GD.Print("Maladie 1 : ERREUR DB = " + err.Message);
         }
     }
-
+    
+    /// <summary>
+    /// Méthode qui charge les symptome associé à la maladie dans la base de donnée.
+    /// </summary>
+    /// <returns></returns>
     private void ChargerSymptomes()
     {
         try
@@ -61,7 +70,7 @@ public class Maladie
 
             while (data.Read())
             {
-                symptomes.Add(new Symtome(data.GetInt32(0)));
+                symptomes.Add(new Symptome(data.GetInt32(0)));
             }
         }
         catch (SqliteException err)
@@ -69,7 +78,11 @@ public class Maladie
             GD.Print("Maladie 2 : ERREUR DB = " + err.Message);
         }
     }
-
+    
+    /// <summary>
+    /// Méthode qui génére un id par rapport au nombre de maladie dans la base de donnée.
+    /// </summary>
+    /// <returns></returns>
     public static int RandomIdMaladie()
     {
         GD.Randomize();
@@ -90,7 +103,11 @@ public class Maladie
             return -1;
         }
     }
-
+    
+    /// <summary>
+    /// Méthode qui retourne la liste de question suivante de façon aléatoire.
+    /// </summary>
+    /// <returns>Retourne la liste de question suivante si plus de question retourne null</returns>
     public List<Question> QuestionsSuivante()
     {
         if (symptomes.Count == 0)
@@ -111,7 +128,11 @@ public class Maladie
             return null;
         }
     }
-
+    /// <summary>
+    /// Méthode qui retourne la réponse en fonction du niveau de stress "stress" pour le symptome courant -> question.
+    /// </summary>
+    /// <param name="stress"></param>
+    /// <returns></returns>
     public Réponse RéponseQuestion(int stress)
     {
         return currentSymptome.DonnerRéponse(stress);

@@ -6,7 +6,7 @@ namespace T3Projet.Tools.Models;
 
 public class Question
 {
-
+    // Liste des attributes de la question
     private int ID;
     private int ordre;
     private string question;
@@ -24,6 +24,12 @@ public class Question
     {
         get => effetDiag;
     }
+    
+    private int effetTemps;
+    public int EffetTemps
+    {
+        get => effetTemps;
+    }
 
     public Question() { }
 
@@ -32,6 +38,11 @@ public class Question
         this.ID = ID;
         ChargerQuestion();
     }
+    
+    /// <summary>
+    /// Méthode qui charge les informations de la question dans la base de donnée.
+    /// </summary>
+    /// <returns></returns>
     private void ChargerQuestion()
     {
         try
@@ -53,6 +64,7 @@ public class Question
                 this.question = data.GetString(2);
                 this.effetStress = data.GetInt32(3);
                 this.effetDiag = data.GetInt32(4);
+                this.effetTemps = data.GetInt32(5);
             }
         }
         catch (SqliteException err)

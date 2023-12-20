@@ -9,17 +9,24 @@ using T3Projet.Tools.View;
 
 public partial class GamePlay : Node2D
 {
-	public const int prixConsultation = 25;
-
+	// Attribute pour la partie.
 	private Partie partie;
+	
+	// Liste des attributes pour la consultation.
 	private Patient patient;
 	private Maladie maladie;
 
+	// Liste des attributes pour l'affichage.
 	private PartieDataAffichage partieDataAffichage;
 	private PatientAffichage patientAffichage;
 	private DiagnosticAffichage diagnosticAffichage;
 	private QuestionsAffichage questionsAffichage;
 	private DebutAffichage debutAffichage;
+	
+	/// <summary>
+	/// Méthode qui initialise le jeu avec la recherche des views cree par Godot.
+	/// </summary>
+	/// <returns></returns>
 	public override void _Ready()
 	{
 		while (partieDataAffichage == null)
@@ -46,6 +53,11 @@ public partial class GamePlay : Node2D
 		patientAffichage.AddInstanceBarreStress(GetNode<ProgressBar>("StressData/BarreStress"));
 		debutAffichage.AfficheDebutDebut();
 	}
+	
+	/// <summary>
+	/// Méthode de fermeture de l'application.
+	/// </summary>
+	/// <returns></returns>
 	private void CloseApp()
 	{
 		DATABASE.CloseConnection();
@@ -56,14 +68,22 @@ public partial class GamePlay : Node2D
 		partie = new Partie();
 		this.JouerConsultation();
 	}
+	
+	/// <summary>
+	/// Méthode qui initialise le début de consultation.
+	/// </summary>
+	/// <returns></returns>
 	private void JouerConsultation()
 	{
-		partie.ChangerInfoPartie(partieDataAffichage);
 		partie.NbConsultation++;
+		partie.ChangerInfoPartie(partieDataAffichage);
 		int idPatient = Patient.RandomIdPatient();
 		patient = new Patient(idPatient);
-		int retardEffect = (partie.RetardAvance > 0) ? partie.RetardAvance * 5 : partie.RetardAvance * 2;
-		patientAffichage.ChangerValeurBarreStress(patient.Stress + retardEffect);
+		if (partie.RetardAvance < 0 || partie.RetardAvance > 0)
+		{
+			patient.Stress +=  partie.RetardAvance * 2;
+		}
+		patientAffichage.ChangerValeurBarreStress(patient.Stress);
 		patientAffichage.ChangerValeurBarreDiagnostic(0);
 		string nomImage = patient.DonnerNomImageCaractere(ImagesPatient.Types.DEFAULT);
 		if (nomImage != "Default")
@@ -81,6 +101,11 @@ public partial class GamePlay : Node2D
 		questionsAffichage.ChangerEtatMasque(true);
 		patientAffichage.FaireParlerPatientCharParChar("Bonjour, je suis [name] et je suis malade. GoodDoc, pouvez-vous m'aider ?" , patient.Nom);
 	}
+	
+	/// <summary>
+	/// Méthode qui applique la question au bouton des questions.
+	/// </summary>
+	/// <returns></returns>
 	private void AjouterQuestion()
 	{
 		List<Question> questions = maladie.QuestionsSuivante();
@@ -89,7 +114,7 @@ public partial class GamePlay : Node2D
 			int i = 0;
 			foreach (Question question in questions)
 			{
-				questionsAffichage.AfficheQuestionA(question, i);
+				questionsAffichage.AfficheQuestion(question, i);
 				i++;
 			}
 		}
@@ -98,10 +123,15 @@ public partial class GamePlay : Node2D
 			questionsAffichage.ChangerEtatMasque(true);
 		}
 	}
+	
+	/// <summary>
+	/// Méthode qui applique les données pour le diagnostic.
+	/// </summary>
+	/// <returns></returns>
 	private void FaireLeDiagnostic()
 	{
 		questionsAffichage.AfficheQuestionReset();
-		partie.RetardAvance = TimerController.CalculRetard(partie.NbConsultation);
+		partie.CalculRetardAvance();
 		GD.Randomize();
 		int result = GD.RandRange(0, 100);
 		if (partie.RetardAvance <= 0 && result <= patient.Diag)
@@ -123,12 +153,25 @@ public partial class GamePlay : Node2D
 			partie.DiagFaux++;
 		}
 	}
-
-	private void AppliquerLaReponse(int diag, int stress)
+	
+	/// <summary>
+	/// Méthode qui applique les effets de la question sur les éléments.
+	/// </summary>
+	/// <param name="diag">effet sur le diag</param>
+	/// <param name="stress">effet sur le stress</param>
+	/// <param name="temps">effet sur le temps</param>
+	/// <returns></returns>
+	private void AppliquerLaReponse(int diag, int stress, int temps)
 	{
 		questionsAffichage.ChangerEtatMasque(true);
-		patient.Diag += (diag / 10);
-		patient.Stress += (stress / 10);
+		patient.Diag += diag;
+		patient.Stress += stress;
+		if (patient.Stress < 0)
+		{
+			patient.Stress = 0;
+		}
+		partie.Temps += temps;
+		partie.ChangerTemps(partieDataAffichage);
 		GD.Print("Diag : " + patient.Diag + ", Stress : " + patient.Stress);
 		patientAffichage.ChangerValeurBarreDiagnostic(patient.Diag);
 		patientAffichage.ChangerValeurBarreStress(patient.Stress);
@@ -147,14 +190,19 @@ public partial class GamePlay : Node2D
 			patientAffichage.FaireParlerPatientCharParChar(réponse.RéponseText);
 		}
 	}
+	
+	/// <summary>
+	/// Méthode pour savoir si il peut continuer la partie.
+	/// </summary>
+	/// <returns></returns>
 	private void ContinuePartie()
 	{
-		partie.Argent += prixConsultation;
-		if (TimerController.TempsEstPasser())
+		partie.Argent += Partie.PRIX_CONSULTATION;
+		if (partie.TempsEstPassee())
 		{
 			debutAffichage.AfficheDebutRecommence();
 		}
-		else if (partie.NbConsultation == TimerController.CalculNbConsultation())
+		else if (partie.APlusDePatient())
 		{
 			debutAffichage.AfficheDebutRecommence();
 		}
@@ -163,6 +211,10 @@ public partial class GamePlay : Node2D
 			this.JouerConsultation();
 		}
 	}
+	
+	/*
+	 * Liste des signaux généré par Godot. ("Controlleur")
+	 */
 	public void OnBoutonFermerPressed()
 	{
 		CloseApp();
@@ -183,9 +235,9 @@ public partial class GamePlay : Node2D
 	{
 		FaireLeDiagnostic();
 	}
-	public void OnBoutonQuestionBoutonQuestionPressed(int diag, int stress)
+	public void OnBoutonQuestionBoutonQuestionPressed(int diag, int stress , int temps)
 	{
-		AppliquerLaReponse(diag , stress);
+		AppliquerLaReponse(diag , stress, temps);
 	}
 	public void OnTimerCharParCharFin()
 	{

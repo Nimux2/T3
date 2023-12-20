@@ -6,14 +6,14 @@ using Mono.Data.Sqlite;
 
 namespace T3Projet.Tools.Models;
 
-public partial class Symtome : Node
+public partial class Symptome : Node
 {
     private int ID;
     private string nom;
     private List<Question> questions = new List<Question>();
     private List<Réponse> réponses = new List<Réponse>();
 
-    public Symtome(int ID)
+    public Symptome(int ID)
     {
         this.ID = ID;
         ChargerNomSymptome();

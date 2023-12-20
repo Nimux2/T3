@@ -7,16 +7,21 @@ namespace T3Projet.Tools.View;
 
 public partial class PatientAffichage : Node2D
 {
-    public static PatientAffichage instance;
-    
+    // Liste des attributes des éléments graphique.
     private Marker2D marqueurHaut;
     private Sprite2D personnage;
     private Marker2D marqueurBas;
     private RichTextLabelTimer parolePersonnage;
-
     private ProgressBar barreDiagnostic;
     private ProgressBar barreStress;
     
+    // Singleton pour l'initialisation du jeu
+    public static PatientAffichage instance;
+    
+    /// <summary>
+    /// Méthode qui charge les éléments pour le texte et initialise le singleton.
+    /// </summary>
+    /// <returns></returns>
     public override void _Ready()
     {
         marqueurHaut = GetChild<Marker2D>(0);
@@ -25,6 +30,11 @@ public partial class PatientAffichage : Node2D
         parolePersonnage = GetChild<RichTextLabelTimer>(4);
         instance = this;
     }
+    
+    /// <summary>
+    /// Méthode qui permet de placer automatiquement le patient.
+    /// </summary>
+    /// <returns></returns>
     private void AutoPlacement()
     {
         Vector2 originPositionCalcul = new Vector2();
@@ -34,6 +44,12 @@ public partial class PatientAffichage : Node2D
         float scaleCalcul = (this.marqueurBas.GlobalPosition.Y - this.marqueurHaut.GlobalPosition.Y) / this.personnage.Texture.GetHeight();
         this.personnage.Scale = new Vector2(scaleCalcul, scaleCalcul);
     }
+    
+    /// <summary>
+    /// Méthode qui change l'image du patient (autoplacement).
+    /// </summary>
+    /// <param name="nomImage"></param>
+    /// <returns></returns>
     public void ChangerCaracterePatient(string nomImage)
     {
         if (nomImage != null)
@@ -44,18 +60,44 @@ public partial class PatientAffichage : Node2D
             AutoPlacement();
         }
     }
+    
+    /// <summary>
+    /// Méthode qui fait parler le patient de façon simple.
+    /// </summary>
+    /// <param name="parole"></param>
+    /// <param name="nom"></param>
+    /// <returns></returns>
     public void FaireParlerPatient(string parole , string nom = null)
     {
         parolePersonnage.EcrireSimple(parole.Replace("[name]", nom));
     }
+    
+    /// <summary>
+    /// Méthode qui fait parler le patient de façon complexe charactere par charactere.
+    /// </summary>
+    /// <param name="parole"></param>
+    /// <param name="nom"></param>
+    /// <returns></returns>
     public void FaireParlerPatientCharParChar(string parole , string nom = null)
     {
         parolePersonnage.EcrireCharParChar(parole.Replace("[name]", nom));
     }
+    
+    /// <summary>
+    /// Méthode qui ajoute la barre de diagnostic.
+    /// </summary>
+    /// <param name="barreDiag"></param>
+    /// <returns></returns>
     public void AddInstanceBarreDiagnostic(ProgressBar barreDiag) //nécessaire pas possible de recup depuis ici
     {
         this.barreDiagnostic = barreDiag;
     }
+    
+    /// <summary>
+    /// Méthode qui change l'affichage de l'avancer du diagnostic.
+    /// </summary>
+    /// <param name="diag"></param>
+    /// <returns></returns>
     public void ChangerValeurBarreDiagnostic(int diag)
     {
         if (diag <= 100)
@@ -63,10 +105,22 @@ public partial class PatientAffichage : Node2D
             barreDiagnostic.Value = diag;
         }
     }
+    
+    /// <summary>
+    /// Méthode qui ajoute la barre de stress.
+    /// </summary>
+    /// <param name="barreDiag"></param>
+    /// <returns></returns>
     public void AddInstanceBarreStress(ProgressBar barreStress) //nécessaire pas possible de recup depuis ici
     {
         this.barreStress = barreStress;
     }
+    
+    /// <summary>
+    /// Méthode qui change l'affichage du stress du patient.
+    /// </summary>
+    /// <param name="stress"></param>
+    /// <returns></returns>
     public void ChangerValeurBarreStress(int stress)
     {
         if (stress <= 100)

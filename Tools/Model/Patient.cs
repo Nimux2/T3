@@ -11,6 +11,7 @@ namespace T3Projet.Tools.Models;
 
 public class Patient
 {
+    // Liste des attributes du patient.
     private int ID;
     private string nom;
     public string Nom { get => nom; }
@@ -25,6 +26,11 @@ public class Patient
         ChargerInformationPatient();
         ChargerImagesPatient();
     }
+    
+    /// <summary>
+    /// Méthode qui charge les informations du patient dans la base de donnée.
+    /// </summary>
+    /// <returns></returns>
     private void ChargerInformationPatient()
     {
         if (ID >= 1)
@@ -59,6 +65,11 @@ public class Patient
             GD.Print("Passe here");
         }
     }
+    
+    /// <summary>
+    /// Méthode qui charge la liste des nom images pour le patient dans la base de donnée.
+    /// </summary>
+    /// <returns></returns>
     private void ChargerImagesPatient()
     {
         if (imageID >= 1)
@@ -83,7 +94,7 @@ public class Patient
                     {
                         if (!data.IsDBNull(i))
                         {
-                            this.images.AjouterImage(data.GetValue(i).ToString() , i);
+                            this.images.AjouterImage(data.GetValue(i).ToString() , i); // Correspond au value de l'enum ImagesPatient.Types
                             GD.Print("Image = " + data.GetString(i));
                         }
                         else
@@ -99,6 +110,12 @@ public class Patient
             }
         }
     }
+    
+    /// <summary>
+    /// Méthode qui permet de formater le nom.
+    /// </summary>
+    /// <param name="nom"></param>
+    /// <returns></returns>
     private string FormatNom(string nom)
     {
         if (!char.IsUpper((nom.ToCharArray())[0]))
@@ -110,11 +127,21 @@ public class Patient
             return nom;
         }
     }
+    
+    /// <summary>
+    /// Méthode qui retourne le nom de l'image en fonction de l'enum "type".
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns></returns>
     public string DonnerNomImageCaractere(ImagesPatient.Types type)
     {
         return images.GetImageForEnum(type);
     }
     
+    /// <summary>
+    /// Méthode qui génére un id par rapport au nombre de patient dans la base de donnée.
+    /// </summary>
+    /// <returns></returns>
     public static int RandomIdPatient()
     {
         GD.Randomize();

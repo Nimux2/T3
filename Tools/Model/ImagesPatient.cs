@@ -5,6 +5,7 @@ namespace T3Projet.Tools.Gestion;
 
 public class ImagesPatient
 {
+    // Liste d'attibute contenant le path de l'image.
     private string imageDefault = null;
     private string imageTriste = null;
     private string imageContent = null;
@@ -22,6 +23,13 @@ public class ImagesPatient
     { 
         this.imageDefault = imageDefault;
     }
+    
+    /// <summary>
+    /// Méthode pour ajouter le path de l'image à l'index "index" -> enum value .
+    /// </summary>
+    /// <param name="image"></param>
+    /// <param name="index"></param>
+    /// <returns></returns>
     public void AjouterImage(string image , int index)
     {
         switch (index)
@@ -43,6 +51,11 @@ public class ImagesPatient
                 break;
         }
     }
+    /// <summary>
+    /// Méthode qui retourne le path de l'image en fonction de l'enum "type".
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns>Retourne le path de l'image associer à l'énum "type" si il n'existe pas retourne default</returns>
     public string GetImageForEnum(Types type)
     {
         actuelType = type;
@@ -80,13 +93,14 @@ public class ImagesPatient
         }
     }
     
+    // Listes d'enum pour choisir l'image du patient.
     public enum Types
     {
-        DEFAULT,
-        TRISTE,
-        CONTENT,
-        PEUR,
-        COLERE,
+        DEFAULT = 1,
+        TRISTE = 2,
+        CONTENT = 3,
+        PEUR = 4,
+        COLERE = 4,
     }
     
 }

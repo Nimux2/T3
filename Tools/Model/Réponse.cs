@@ -6,6 +6,7 @@ namespace T3Projet.Tools.Models;
 
 public class Réponse
 {
+    // Liste des attributes de la réponse.
     private int ID;
     private string réponse;
     public string RéponseText 
@@ -23,6 +24,11 @@ public class Réponse
         this.ID = ID;
         ChargerRéponse();
     }
+    
+    /// <summary>
+    /// Méthode qui charge les informations de la réponse dans la base de donnée.
+    /// </summary>
+    /// <returns></returns>
     private void ChargerRéponse()
     {
         try

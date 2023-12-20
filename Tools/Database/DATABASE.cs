@@ -11,6 +11,7 @@ using FileAccess = System.IO.FileAccess;
 
 public class DATABASE
 {
+    // Liste des attributes de connection.
     private static SqliteConnection connection;
     private static string conn = $"Data Source={ProjectSettings.GlobalizePath($"res://Tools/Database/{NameFromConfig()}")};";
     public static string ConnectionString
@@ -23,6 +24,11 @@ public class DATABASE
             OpenConnection();
         }
     }
+    
+    /// <summary>
+    /// Méthode qui retourne le nom du fichier de config pour la base de donnée.
+    /// </summary>
+    /// <returns>Retourne par défault "DBT3.db" sinon override le nom</returns>
     private static string NameFromConfig()
     {
         ConfigFile config = new ConfigFile();
@@ -36,7 +42,11 @@ public class DATABASE
             return "DBT3.db";
         }
     }
-
+    
+    /// <summary>
+    /// Méthode qui retourne le path du fichier de config pour la base de donnée.
+    /// </summary>
+    /// <returns>Retourne par défault le path racine du projet sinon override le path</returns>
     private static string PathFromConfig()
     {
         ConfigFile config = new ConfigFile();
@@ -50,7 +60,11 @@ public class DATABASE
             return null;
         }
     }
-
+    
+    /// <summary>
+    /// Méthode qui retourne la combinaison path et nom de la base de donnée.
+    /// </summary>
+    /// <returns>Retourne le path composer du nom de la base de donnée</returns>
     private static string CreatePath()
     {
         string temp = PathFromConfig();
@@ -68,6 +82,10 @@ public class DATABASE
         }
     }
     
+    /// <summary>
+    /// Méthode qui ouvre la connection à la base de donnée ou/et télécharge la base de donnée.
+    /// </summary>
+    /// <returns></returns>
     private static void OpenConnection()
     {
         GD.Print("Connection string : " + conn);
@@ -100,6 +118,11 @@ public class DATABASE
             GD.Print(err.Message);
         }
     }
+    
+    /// <summary>
+    /// Méthode qui retourne la connection à la base de donnée.
+    /// </summary>
+    /// <returns></returns>
     public static SqliteConnection GetConnection()
     {
         if (connection == null || connection.State != ConnectionState.Open)
@@ -108,6 +131,11 @@ public class DATABASE
         }
         return connection;
     }
+    
+    /// <summary>
+    /// Méthode qui ferme la connection à la base de donnée.
+    /// </summary>
+    /// <returns></returns>
     public static void CloseConnection()
     {
         if (connection != null && connection.State == ConnectionState.Open)
