@@ -60,7 +60,6 @@ public partial class RichTextLabelTimer : Timer
     /// <returns></returns>
     public void EcrireCharParChar(string text)
     {
-        GD.Print("Speed : " + CharSpeed);
         richTextLabelabel.Text = string.Empty;
         index = 0;
         this.text = text;

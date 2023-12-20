@@ -94,8 +94,7 @@ public class Patient
                     {
                         if (!data.IsDBNull(i))
                         {
-                            this.images.AjouterImage(data.GetValue(i).ToString() , i); // Correspond au value de l'enum ImagesPatient.Types
-                            GD.Print("Image = " + data.GetString(i));
+                            this.images.AjouterImage(data.GetValue(i).ToString() , i); // Index correspond au value de l'enum ImagesPatient.Types
                         }
                         else
                         {

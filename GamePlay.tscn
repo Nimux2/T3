@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://dl7uyvawwemrq"]
+[gd_scene load_steps=66 format=3 uid="uid://dl7uyvawwemrq"]
 
 [ext_resource type="Script" path="res://GamePlay.cs" id="1_681vm"]
 [ext_resource type="Texture2D" uid="uid://bakr78hu3nx6i" path="res://Ressources/ArrierePlan.png" id="2_vpp12"]
@@ -95,6 +95,8 @@
 
 [sub_resource type="SystemFont" id="SystemFont_neu4j"]
 
+[sub_resource type="SystemFont" id="SystemFont_53h41"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rb8f1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_usewe"]
@@ -104,6 +106,16 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sx702"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r4t5w"]
+
+[sub_resource type="SystemFont" id="SystemFont_dg57w"]
+
+[sub_resource type="SystemFont" id="SystemFont_uymjq"]
+
+[sub_resource type="SystemFont" id="SystemFont_om5ny"]
+
+[sub_resource type="SystemFont" id="SystemFont_v82in"]
+
+[sub_resource type="SystemFont" id="SystemFont_ueyij"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_681vm")
@@ -572,7 +584,7 @@ offset_top = 390.0
 offset_right = 1290.0
 offset_bottom = 440.0
 theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_53h41")
 theme_override_font_sizes/font_size = 40
 text = "Voulez-vous commencer une partie ?"
 horizontal_alignment = 1
@@ -593,12 +605,12 @@ flat = true
 
 [node name="Label" type="Label" parent="AffichageDebutPartie/BoutonDepart"]
 layout_mode = 0
-offset_left = 70.0
-offset_top = 46.0
-offset_right = 498.0
+offset_left = 58.0
+offset_top = 36.0
+offset_right = 486.0
 offset_bottom = 94.0
 theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_dg57w")
 theme_override_font_sizes/font_size = 40
 text = "Démarrer la partie"
 horizontal_alignment = 1
@@ -619,12 +631,12 @@ flat = true
 
 [node name="Label" type="Label" parent="AffichageDebutPartie/BoutonFermer2"]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 46.0
-offset_right = 472.0
+offset_left = 92.0
+offset_top = 36.0
+offset_right = 474.0
 offset_bottom = 94.0
 theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_uymjq")
 theme_override_font_sizes/font_size = 40
 text = "Quitter le jeu"
 horizontal_alignment = 1
@@ -639,25 +651,25 @@ offset_bottom = 1080.0
 color = Color(1, 1, 1, 0.752941)
 
 [node name="Border" type="ColorRect" parent="AffichageDiagnostic"]
-offset_left = 490.0
+offset_left = 380.0
 offset_top = 370.0
-offset_right = 1310.0
+offset_right = 1400.0
 offset_bottom = 590.0
 color = Color(0.0862745, 0.282353, 0.286275, 1)
 
 [node name="Body" type="ColorRect" parent="AffichageDiagnostic"]
-offset_left = 500.0
+offset_left = 390.0
 offset_top = 380.0
-offset_right = 1300.0
+offset_right = 1390.0
 offset_bottom = 580.0
 
 [node name="InfoDiagnostic" type="Label" parent="AffichageDiagnostic"]
-offset_left = 520.0
+offset_left = 401.0
 offset_top = 390.0
-offset_right = 1290.0
+offset_right = 1373.0
 offset_bottom = 440.0
 theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_om5ny")
 theme_override_font_sizes/font_size = 35
 text = "Le patient a une grippe ou une pneumonie ?"
 horizontal_alignment = 1
@@ -669,7 +681,7 @@ offset_top = 432.0
 offset_right = 1246.0
 offset_bottom = 480.0
 theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_v82in")
 theme_override_font_sizes/font_size = 35
 text = "Vous avez 15 minutes de retard."
 horizontal_alignment = 1
@@ -691,12 +703,12 @@ flat = true
 
 [node name="Label" type="Label" parent="AffichageDiagnostic/BoutonContinuer"]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 46.0
-offset_right = 472.0
-offset_bottom = 94.0
+offset_left = 86.0
+offset_top = 38.0
+offset_right = 468.0
+offset_bottom = 96.0
 theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_ueyij")
 theme_override_font_sizes/font_size = 40
 text = "Continer la journée"
 horizontal_alignment = 1

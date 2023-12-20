@@ -46,7 +46,7 @@ public partial class PartieDataAffichage : Node2D
     /// </summary>
     /// <param name="argent"></param>
     /// <returns></returns>
-    public void ChangerArgentMedecin(int argent)
+    public void ChangerArgentMedecin(double argent)
     {
         argentData.Text = argent.ToString() + " euros";
     }

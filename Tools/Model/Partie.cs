@@ -11,17 +11,17 @@ public class Partie
     public int RetardAvance {get; set;}
     public int DiagFaux {get; set;}
     public int StressEleve {get; set;}
-    public int Argent {get; set;}
+    public double Argent {get; set;}
     public int Temps { get; set; }
     
     // Liste des constantes de jeu.
-    public const int PRIX_CONSULTATION = 25;
-    public const int MIN_PATIENT = 8;
-    public const int MAX_PATIENT = 16;
-    public const int HEURE_DEPART = 8;
-    public const int MINUTE_DEPART = 0;
-    public const int HEURE_FIN = 12;
-    public const int MINUTE_FIN = 0;
+    public static double PRIX_CONSULTATION = 25.0;
+    public static int MIN_PATIENT = 8;
+    public static int MAX_PATIENT = 16;
+    public static int HEURE_DEPART = 8;
+    public static int MINUTE_DEPART = 0;
+    public static int HEURE_FIN = 12;
+    public static int MINUTE_FIN = 0;
     
     public Partie()
     {
@@ -43,7 +43,7 @@ public class Partie
     public void ChangerInfoPartie(PartieDataAffichage partieDataAffichage)
     {
         partieDataAffichage.ChangerArgentMedecin(this.Argent);
-        partieDataAffichage.ChangerPatientEnAttente(this.NbPatient - this.NbConsultation);
+        partieDataAffichage.ChangerPatientEnAttente(this.NbPatient - 1 - this.NbConsultation);
         partieDataAffichage.ChangerBonDiagnostic(this.NbConsultation - this.DiagFaux);
         partieDataAffichage.ChangerMauvaisDiagnostic(this.DiagFaux);
         partieDataAffichage.ChangerStressEleve(this.StressEleve);
