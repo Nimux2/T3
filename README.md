@@ -10,7 +10,6 @@
 - Thomas ROTT
 - Saïf ZOUAOUI MAHJOUB
 - Yann GLADY
-élèves en 2ème années de BUT informatique
 > 
 
 ## Présentation :
@@ -21,7 +20,7 @@
 
 ### But du jeu
 
-Le joueur joue le rôle d’un médecin qui reçois un patient en consultation et doit choisir les bonnes rquestions à dire au patient afin que son expérience subjective soit la plus agréable possible, tout en trouvant sa maladie.
+Le joueur joue le rôle d’un médecin qui reçois un patient en consultation et doit choisir les bonnes questions à poser au patient afin que son expérience subjective soit la plus agréable possible, tout en trouvant sa maladie.
 
 ### Détails d’une partie
 
@@ -29,7 +28,7 @@ Le joueur joue le rôle d’un médecin généraliste, la partie débute avec l�
 
 Le joueur doit alors choisir parmi 4 questions afin de dialoguer avec le patient et trouver sa maladie.
 
-Ces questions auront un impact plus ou moins important sur le stress du patient ainsi que la progression du diagnostic.
+Ces questions auront un impact plus ou moins important sur le stress du patient ainsi que sur la progression du diagnostic.
 
 Attention, si le niveau de stress est trop haut, le patient aura plus de mal à répondre aux questions et sera susceptible de mentir. Si le stress dépasse 100%, le patient fera une crise et quittera la salle.
 
