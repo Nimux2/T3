@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deebsaluljyc5"
-path="res://.godot/imported/Default.png-3c25a852c77f124b6320b4eac8be380d.ctex"
+uid="uid://btf6jeg6532hh"
+path="res://.godot/imported/CroixFermer.png-eb310457ef1e95e7d9b110807f77f19f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PatientImages/Default.png"
-dest_files=["res://.godot/imported/Default.png-3c25a852c77f124b6320b4eac8be380d.ctex"]
+source_file="res://Ressources/CroixFermer.png"
+dest_files=["res://.godot/imported/CroixFermer.png-eb310457ef1e95e7d9b110807f77f19f.ctex"]
 
 [params]
 

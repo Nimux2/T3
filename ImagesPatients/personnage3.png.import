@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwt1lcgykw6i5"
-path="res://.godot/imported/Question.png-e064e6c46f7ce1ee107204d81e815ee5.ctex"
+uid="uid://bd7x6n60c4e4r"
+path="res://.godot/imported/personnage3.png-1f52620ad460b03e5724cd662facfc42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Question.png"
-dest_files=["res://.godot/imported/Question.png-e064e6c46f7ce1ee107204d81e815ee5.ctex"]
+source_file="res://ImagesPatients/personnage3.png"
+dest_files=["res://.godot/imported/personnage3.png-1f52620ad460b03e5724cd662facfc42.ctex"]
 
 [params]
 

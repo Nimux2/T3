@@ -1,19 +1,19 @@
 [gd_scene load_steps=43 format=3 uid="uid://dl7uyvawwemrq"]
 
-[ext_resource type="Texture2D" uid="uid://bakr78hu3nx6i" path="res://background.png" id="1_0vihu"]
 [ext_resource type="Script" path="res://GamePlay.cs" id="1_681vm"]
-[ext_resource type="FontFile" uid="uid://8avf506sxwr5" path="res://Sunday Mango.ttf" id="2_3x8co"]
-[ext_resource type="Texture2D" uid="uid://bwt1lcgykw6i5" path="res://Question.png" id="3_n7kws"]
-[ext_resource type="Texture2D" uid="uid://by7cuymjkv2l6" path="res://Button.png" id="4_ii7xg"]
-[ext_resource type="Texture2D" uid="uid://btf6jeg6532hh" path="res://close.png" id="4_jeoe8"]
-[ext_resource type="Texture2D" uid="uid://6e4np2qw2g5x" path="res://Answer.png" id="5_nu23g"]
+[ext_resource type="Texture2D" uid="uid://bakr78hu3nx6i" path="res://Ressources/ArrierePlan.png" id="2_vpp12"]
+[ext_resource type="Texture2D" uid="uid://btf6jeg6532hh" path="res://Ressources/CroixFermer.png" id="3_tjqj4"]
+[ext_resource type="FontFile" uid="uid://8avf506sxwr5" path="res://Ressources/Fonts/Sunday Mango.ttf" id="4_83giy"]
 [ext_resource type="Script" path="res://Tools/View/QuestionsAffichage.cs" id="6_17nse"]
 [ext_resource type="Script" path="res://Tools/Processed/TimerController.cs" id="6_c63ue"]
+[ext_resource type="Texture2D" uid="uid://by7cuymjkv2l6" path="res://Ressources/BoutonCustom.png" id="6_q2ejs"]
 [ext_resource type="Script" path="res://Tools/View/PartieDataAffichage.cs" id="7_gbq8q"]
 [ext_resource type="Script" path="res://Tools/Models/BoutonQuestion.cs" id="8_mgi13"]
 [ext_resource type="Script" path="res://Tools/View/PatientAffichage.cs" id="9_kytai"]
+[ext_resource type="Texture2D" uid="uid://bwt1lcgykw6i5" path="res://Ressources/QuestionBulle.png" id="9_mlleh"]
 [ext_resource type="Script" path="res://Tools/View/DiagnosticAffichage.cs" id="11_gxna7"]
 [ext_resource type="Script" path="res://Tools/View/DebutAffichage.cs" id="11_n1o16"]
+[ext_resource type="Texture2D" uid="uid://6e4np2qw2g5x" path="res://Ressources/ReponseBulle.png" id="12_nke85"]
 [ext_resource type="Script" path="res://Tools/Models/RichTextLabelTimer.cs" id="13_tyc4y"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r5x0r"]
@@ -76,7 +76,7 @@ script = ExtResource("1_681vm")
 [node name="ArrierePlan" type="Sprite2D" parent="."]
 position = Vector2(1142.5, 649)
 scale = Vector2(2.22754, 1.26367)
-texture = ExtResource("1_0vihu")
+texture = ExtResource("2_vpp12")
 
 [node name="ColorRect1" type="ColorRect" parent="."]
 offset_right = 710.0
@@ -99,7 +99,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_qhksw")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_wj03g")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_da8dc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jikvf")
-icon = ExtResource("4_jeoe8")
+icon = ExtResource("3_tjqj4")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -112,7 +112,7 @@ offset_left = 150.0
 offset_top = 20.0
 offset_right = 376.0
 offset_bottom = 79.0
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 50
 
 [node name="Timer" type="Timer" parent="TempsTimer"]
@@ -125,7 +125,7 @@ offset_left = 325.0
 offset_top = 10.0
 offset_right = 448.0
 offset_bottom = 70.0
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 50
 text = "08:00"
 vertical_alignment = 1
@@ -149,7 +149,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_m0e7b")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_8kb8b")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_b8ere")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_x0x7v")
-icon = ExtResource("4_ii7xg")
+icon = ExtResource("6_q2ejs")
 
 [node name="Label" type="Label" parent="DiagnosticData/BoutonDiagnostic"]
 layout_mode = 0
@@ -158,7 +158,7 @@ offset_top = 47.5
 offset_right = 449.0
 offset_bottom = 106.5
 theme_override_colors/font_color = Color(0.0862304, 0.281986, 0.285897, 1)
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 50
 text = "Diagnostiquer"
 
@@ -175,7 +175,7 @@ offset_left = 718.0
 offset_top = 26.0
 offset_right = 954.0
 offset_bottom = 63.0
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 30
 text = "Barre de stress :"
 
@@ -202,7 +202,7 @@ offset_left = 3.0
 offset_top = 4.0
 offset_right = 198.0
 offset_bottom = 44.0
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 20
 text = "Argent"
 horizontal_alignment = 1
@@ -214,7 +214,7 @@ offset_left = 3.0
 offset_top = 48.0
 offset_right = 198.0
 offset_bottom = 88.0
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 15
 text = "200 "
 horizontal_alignment = 1
@@ -233,7 +233,7 @@ offset_left = 3.0
 offset_top = 4.0
 offset_right = 198.0
 offset_bottom = 44.0
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 20
 text = "Patient en attente"
 horizontal_alignment = 1
@@ -245,7 +245,7 @@ offset_left = 3.0
 offset_top = 48.0
 offset_right = 198.0
 offset_bottom = 88.0
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 15
 text = "8 patients"
 horizontal_alignment = 1
@@ -264,7 +264,7 @@ offset_left = 3.0
 offset_top = 4.0
 offset_right = 198.0
 offset_bottom = 44.0
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 20
 text = "Bon dignostic"
 horizontal_alignment = 1
@@ -276,7 +276,7 @@ offset_left = 3.0
 offset_top = 48.0
 offset_right = 198.0
 offset_bottom = 88.0
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 15
 text = "0 diagnostic"
 horizontal_alignment = 1
@@ -295,7 +295,7 @@ offset_left = 3.0
 offset_top = 4.0
 offset_right = 198.0
 offset_bottom = 44.0
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 20
 text = "Mauvais dignostic"
 horizontal_alignment = 1
@@ -307,7 +307,7 @@ offset_left = 3.0
 offset_top = 48.0
 offset_right = 198.0
 offset_bottom = 88.0
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 15
 text = "0"
 horizontal_alignment = 1
@@ -326,7 +326,7 @@ offset_left = 3.0
 offset_top = 4.0
 offset_right = 198.0
 offset_bottom = 44.0
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 20
 text = "Stress eleve"
 horizontal_alignment = 1
@@ -338,7 +338,7 @@ offset_left = 3.0
 offset_top = 48.0
 offset_right = 198.0
 offset_bottom = 88.0
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 15
 text = "0"
 horizontal_alignment = 1
@@ -354,12 +354,12 @@ offset_right = 468.0
 offset_bottom = 300.0
 scale = Vector2(1.5, 0.9)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_xa7m2")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_s8g0r")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_quij2")
-icon = ExtResource("3_n7kws")
+icon = ExtResource("9_mlleh")
 flat = true
 clip_text = true
 icon_alignment = 1
@@ -375,10 +375,8 @@ offset_left = 30.0
 offset_top = 35.0
 offset_right = 379.79
 offset_bottom = 142.0
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 20
-text = "Test si text peu erferferge nnnnnnnnn
-"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -392,7 +390,7 @@ scale = Vector2(1.5, 0.9)
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_wl83u")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_y7wqt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_n2qkd")
-icon = ExtResource("3_n7kws")
+icon = ExtResource("9_mlleh")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -407,10 +405,8 @@ offset_left = 30.0
 offset_top = 35.0
 offset_right = 379.79
 offset_bottom = 142.0
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 20
-text = "Test si text peu erferferge nnnnnnnnn
-"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -424,7 +420,7 @@ scale = Vector2(1.5, 0.9)
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_7w5yj")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_bo4ls")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dj3rd")
-icon = ExtResource("3_n7kws")
+icon = ExtResource("9_mlleh")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -439,10 +435,8 @@ offset_left = 30.0
 offset_top = 35.0
 offset_right = 379.79
 offset_bottom = 142.0
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 20
-text = "Test si text peu erferferge nnnnnnnnn
-"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -456,7 +450,7 @@ scale = Vector2(1.5, 0.9)
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_8e2t3")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_6yoe6")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_mf8k4")
-icon = ExtResource("3_n7kws")
+icon = ExtResource("9_mlleh")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -471,10 +465,8 @@ offset_left = 30.0
 offset_top = 35.0
 offset_right = 379.79
 offset_bottom = 142.0
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 20
-text = "Test si text peu erferferge nnnnnnnnn
-"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -503,7 +495,7 @@ position = Vector2(1230, 840)
 [node name="ParoleBulle" type="Sprite2D" parent="Patient"]
 position = Vector2(1193, 960)
 scale = Vector2(3.29373, 2)
-texture = ExtResource("5_nu23g")
+texture = ExtResource("12_nke85")
 
 [node name="Timer" type="Timer" parent="Patient"]
 script = ExtResource("13_tyc4y")
@@ -519,11 +511,8 @@ offset_top = 675.4
 offset_right = 1420.92
 offset_bottom = 829.4
 theme_override_colors/default_color = Color(0.0862304, 0.281986, 0.285897, 1)
-theme_override_fonts/normal_font = ExtResource("2_3x8co")
+theme_override_fonts/normal_font = ExtResource("4_83giy")
 theme_override_font_sizes/normal_font_size = 30
-text = "Good morning doctor,
-I have ...
-"
 
 [node name="AffichageDebutPartie" type="Node2D" parent="."]
 visible = false
@@ -553,7 +542,7 @@ offset_top = 390.0
 offset_right = 1290.0
 offset_bottom = 440.0
 theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 40
 text = "Voulez-vous commencer une partie ?"
 horizontal_alignment = 1
@@ -569,7 +558,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_usewe")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_efv56")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_sx702")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_r4t5w")
-icon = ExtResource("4_ii7xg")
+icon = ExtResource("6_q2ejs")
 flat = true
 
 [node name="Label" type="Label" parent="AffichageDebutPartie/BoutonDepart"]
@@ -579,7 +568,7 @@ offset_top = 46.0
 offset_right = 498.0
 offset_bottom = 94.0
 theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 40
 text = "Démarrer la partie"
 horizontal_alignment = 1
@@ -595,7 +584,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_usewe")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_efv56")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_sx702")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_r4t5w")
-icon = ExtResource("4_ii7xg")
+icon = ExtResource("6_q2ejs")
 flat = true
 
 [node name="Label" type="Label" parent="AffichageDebutPartie/BoutonFermer2"]
@@ -605,7 +594,7 @@ offset_top = 46.0
 offset_right = 472.0
 offset_bottom = 94.0
 theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 40
 text = "Quitter le jeu"
 horizontal_alignment = 1
@@ -638,7 +627,7 @@ offset_top = 390.0
 offset_right = 1290.0
 offset_bottom = 440.0
 theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 35
 text = "Le patient a une grippe ou une pneumonie ?"
 horizontal_alignment = 1
@@ -650,7 +639,7 @@ offset_top = 432.0
 offset_right = 1246.0
 offset_bottom = 480.0
 theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 35
 text = "Vous avez 15 minutes de retard."
 horizontal_alignment = 1
@@ -667,7 +656,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_usewe")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_efv56")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_sx702")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_r4t5w")
-icon = ExtResource("4_ii7xg")
+icon = ExtResource("6_q2ejs")
 flat = true
 
 [node name="Label" type="Label" parent="AffichageDiagnostic/BoutonContinuer"]
@@ -677,7 +666,7 @@ offset_top = 46.0
 offset_right = 472.0
 offset_bottom = 94.0
 theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
-theme_override_fonts/font = ExtResource("2_3x8co")
+theme_override_fonts/font = ExtResource("4_83giy")
 theme_override_font_sizes/font_size = 40
 text = "Continer la journée"
 horizontal_alignment = 1

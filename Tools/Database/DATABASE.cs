@@ -1,16 +1,19 @@
+using System;
 using Godot;
 
 //https://unintuitive.net/code/working-in-godot-with-sqlite-and-c/
 using System.Data;
+using System.IO;
+using System.Net;
+using System.Net.NetworkInformation;
 using Mono.Data.Sqlite;
+using FileAccess = System.IO.FileAccess;
 
-public partial class DATABASE : Node
+public class DATABASE
 {
     private static SqliteConnection connection;
-    private static string conn = $"Data Source={System.IO.Directory.GetCurrentDirectory()}/Tools/Database/DBT3.db;Version=3;";
-    //private static string conn = $"Data Source=/home/trott/Documents/Cours/t3/T3_Projet/Tools/Database/DBT3.db;Version=3;";
-
-    public static string Connection_String
+    private static string conn = $"Data Source={ProjectSettings.GlobalizePath($"res://Tools/Database/{NameFromConfig()}")};";
+    public static string ConnectionString
     {
         get => conn;
         set
@@ -20,10 +23,75 @@ public partial class DATABASE : Node
             OpenConnection();
         }
     }
+    private static string NameFromConfig()
+    {
+        ConfigFile config = new ConfigFile();
+        config.Load("res://Config/gameconfig.cfg");
+        if (config.HasSection("Database") && config.HasSectionKey("Database" , "name"))
+        {
+            return config.GetValue("Database", "name").As<string>();
+        }
+        else
+        {
+            return "DBT3.db";
+        }
+    }
+
+    private static string PathFromConfig()
+    {
+        ConfigFile config = new ConfigFile();
+        config.Load("res://Config/gameconfig.cfg");
+        if (config.HasSection("Database") && config.HasSectionKey("Database" , "path"))
+        {
+            return config.GetValue("Database", "path").As<string>();
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    private static string CreatePath()
+    {
+        string temp = PathFromConfig();
+        if (temp != null)
+        {
+            if (temp.LastIndexOf('/') != temp.Length - 1)
+            {
+                temp += '/';
+            }
+            return  temp + NameFromConfig();
+        }
+        else
+        {
+            return ProjectSettings.GlobalizePath("res://") + NameFromConfig();
+        }
+    }
+    
     private static void OpenConnection()
     {
+        GD.Print("Connection string : " + conn);
         try
         {
+            if (!File.Exists(ProjectSettings.GlobalizePath($"res://Tools/Database/{NameFromConfig()}")) && File.Exists(CreatePath()))
+            {
+                conn = $"Data Source={CreatePath()};";
+            }
+            if (!File.Exists(ProjectSettings.GlobalizePath($"res://Tools/Database/{NameFromConfig()}")) && !File.Exists(CreatePath()))
+            {
+                try
+                {
+                    WebClient client = new WebClient();
+                    client.DownloadFile("https://seafile.unistra.fr/f/c7688231c5414fc283ac/?dl=1", CreatePath()); //partage seafile de trott
+                    conn = $"Data Source={CreatePath()};";
+                    connection = new SqliteConnection(conn);
+                    connection.Open();
+                }
+                catch (Exception err)
+                {
+                    GD.Print("ERROR WebClient : " + err.Message);
+                }
+            }
             connection = new SqliteConnection(conn);
             connection.Open();
         }
@@ -34,7 +102,7 @@ public partial class DATABASE : Node
     }
     public static SqliteConnection GetConnection()
     {
-        if (connection == null)
+        if (connection == null || connection.State != ConnectionState.Open)
         {
             OpenConnection();
         }
@@ -42,7 +110,7 @@ public partial class DATABASE : Node
     }
     public static void CloseConnection()
     {
-        if (connection != null)
+        if (connection != null && connection.State == ConnectionState.Open)
         {
             try
             {
