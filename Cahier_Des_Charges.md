@@ -111,7 +111,9 @@ Liste, MCD ou diagramme de classe décrivant le jeu, et en particulier les entit
 
 
 ### MCD de la base de données :
-![screen1](img/screen1.png)
+![mcdbdd](img/mcdbdd.png)
+### UML du projet :
+![uml](img/uml.png)
 
 ## Description des fonctionnalités
 ### Actions du joueur
