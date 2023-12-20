@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://8avf506sxwr5"
-path="res://.godot/imported/Sunday Mango.ttf-3bf6a0687a4ce2fa5ea1338b2de74c53.fontdata"
+path="res://.godot/imported/Sunday Mango.ttf-1c0fdc712097f64a69bad134beaa5844.fontdata"
 
 [deps]
 
-source_file="res://Sunday Mango.ttf"
-dest_files=["res://.godot/imported/Sunday Mango.ttf-3bf6a0687a4ce2fa5ea1338b2de74c53.fontdata"]
+source_file="res://Ressources/Fonts/Sunday Mango.ttf"
+dest_files=["res://.godot/imported/Sunday Mango.ttf-1c0fdc712097f64a69bad134beaa5844.fontdata"]
 
 [params]
 

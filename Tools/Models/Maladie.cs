@@ -34,7 +34,7 @@ public class Maladie
                 CommandType = CommandType.Text,
                 CommandText = "SELECT nom FROM Maladies WHERE id = @ID;",
             };
-            command.Parameters.Add("@ID", DbType.Int32);
+            command.Parameters.Add("@ID",DbType.Int32);
             command.Parameters[0].Value = this.ID;
             this.nom = command.ExecuteScalar().ToString();
         }
@@ -93,6 +93,10 @@ public class Maladie
 
     public List<Question> QuestionsSuivante()
     {
+        if (symptomes.Count == 0)
+        {
+            return null;
+        }
         GD.Randomize();
         try
         {
