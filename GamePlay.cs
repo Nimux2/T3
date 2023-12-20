@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Godot.Collections;
 using T3Projet.Tools.Gestion;
-using T3Projet.Tools.Models;
-using T3Projet.Tools.View;
+using T3Projet.Scripts.Models;
+using T3Projet.Scripts.View;
 
 public partial class GamePlay : Node2D
 {
@@ -21,7 +21,7 @@ public partial class GamePlay : Node2D
 	private PatientAffichage patientAffichage;
 	private DiagnosticAffichage diagnosticAffichage;
 	private QuestionsAffichage questionsAffichage;
-	private DebutAffichage debutAffichage;
+	private DébutAffichage débutAffichage;
 	
 	/// <summary>
 	/// Méthode qui initialise le jeu avec la recherche des views cree par Godot.
@@ -46,50 +46,62 @@ public partial class GamePlay : Node2D
 		{
 			diagnosticAffichage = DiagnosticAffichage.instance;
 		}
-		while (debutAffichage == null)
+		while (débutAffichage == null)
 		{
-			debutAffichage = DebutAffichage.instance;
+			débutAffichage = DébutAffichage.instance;
 		}
-		patientAffichage.AddInstanceBarreDiagnostic(GetNode<ProgressBar>("DiagnosticData/BarreDiagnostic"));
-		patientAffichage.AddInstanceBarreStress(GetNode<ProgressBar>("StressData/BarreStress"));
-		debutAffichage.AfficheDebutDebut();
+		patientAffichage.AjouterInstanceBarreDiagnostic(GetNode<ProgressBar>("DiagnosticData/BarreDiagnostic"));
+		patientAffichage.AjouterInstanceBarreStress(GetNode<ProgressBar>("StressData/BarreStress"));
+		débutAffichage.AfficherDébutDébut();
 	}
-	
+
 	/// <summary>
 	/// Méthode qui charge les variables static dans les parties.
 	/// </summary>
 	/// <returns></returns>
 	public void ChangerVariableStaticDePartie()
 	{
-		ConfigFile config = new ConfigFile();
-		config.Load("res://Config/gameconfig.cfg");
-		if (config.HasSection("Game") && config.HasSectionKey("Game" , "price_appointment"))
-		{
-			Partie.PRIX_CONSULTATION = config.GetValue("Game" , "price_appointment").As<double>();
+		try {
+			ConfigFile config = new ConfigFile();
+			config.Load("res://Config/gameconfig.cfg");
+			if (config.HasSection("Game") && config.HasSectionKey("Game", "price_appointment"))
+			{
+				Partie.PRIX_CONSULTATION = config.GetValue("Game", "price_appointment").As<double>();
+			}
+
+			if (config.HasSection("Game") && config.HasSectionKey("Game", "min_patient"))
+			{
+				Partie.MIN_PATIENT = config.GetValue("Game", "min_patient").As<int>();
+			}
+
+			if (config.HasSection("Game") && config.HasSectionKey("Game", "max_patient"))
+			{
+				Partie.MAX_PATIENT = config.GetValue("Game", "max_patient").As<int>();
+			}
+
+			if (config.HasSection("Game") && config.HasSectionKey("Game", "hour_start"))
+			{
+				Partie.HEURE_DEPART = config.GetValue("Game", "hour_start").As<int>();
+			}
+
+			if (config.HasSection("Game") && config.HasSectionKey("Game", "minute_start"))
+			{
+				Partie.MINUTE_DEPART = config.GetValue("Game", "minute_start").As<int>();
+			}
+
+			if (config.HasSection("Game") && config.HasSectionKey("Game", "hour_end"))
+			{
+				Partie.HEURE_FIN = config.GetValue("Game", "hour_end").As<int>();
+			}
+
+			if (config.HasSection("Game") && config.HasSectionKey("Game", "minute_end"))
+			{
+				Partie.MINUTE_FIN = config.GetValue("Game", "minute_end").As<int>();
+			}
 		}
-		if (config.HasSection("Game") && config.HasSectionKey("Game" , "min_patient"))
+		catch (Exception err)
 		{
-			Partie.MIN_PATIENT = config.GetValue("Game" , "min_patient").As<int>();
-		}
-		if (config.HasSection("Game") && config.HasSectionKey("Game" , "max_patient"))
-		{
-			Partie.MAX_PATIENT = config.GetValue("Game" , "max_patient").As<int>();
-		}
-		if (config.HasSection("Game") && config.HasSectionKey("Game" , "hour_start"))
-		{
-			Partie.HEURE_DEPART = config.GetValue("Game" , "hour_start").As<int>();
-		}
-		if (config.HasSection("Game") && config.HasSectionKey("Game" , "minute_start"))
-		{
-			Partie.MINUTE_DEPART = config.GetValue("Game" , "minute_start").As<int>();
-		}
-		if (config.HasSection("Game") && config.HasSectionKey("Game" , "hour_end"))
-		{
-			Partie.HEURE_FIN = config.GetValue("Game" , "hour_end").As<int>();
-		}
-		if (config.HasSection("Game") && config.HasSectionKey("Game" , "minute_end"))
-		{
-			Partie.MINUTE_FIN = config.GetValue("Game" , "minute_end").As<int>();
+			GD.Print("ERROR : Config = " + err.Message);
 		}
 	}
 	
@@ -97,9 +109,9 @@ public partial class GamePlay : Node2D
 	/// Méthode de fermeture de l'application.
 	/// </summary>
 	/// <returns></returns>
-	private void CloseApp()
+	private void FermerApplication()
 	{
-		DATABASE.CloseConnection();
+		Database.FermerConnection();
 		GetTree().Quit();
 	}
 	private void JouerPartie()
@@ -116,7 +128,7 @@ public partial class GamePlay : Node2D
 	{
 		partie.ChangerInfoPartie(partieDataAffichage);
 		partie.NbConsultation++;
-		int idPatient = Patient.RandomIdPatient();
+		int idPatient = Patient.GenererRandomIdPatient();
 		patient = new Patient(idPatient);
 		if (partie.RetardAvance < 0 || partie.RetardAvance > 0)
 		{
@@ -134,7 +146,7 @@ public partial class GamePlay : Node2D
 			patientAffichage.ChangerCaracterePatient(nomImage);
 			patientAffichage.FaireParlerPatientCharParChar("Désolé, je me présente. Je suis l'infirmier ZimmerDoc et j'ai le malheur de vous dire que notre médecin généraliste n'est pas présent aujourd'hui (Congé). Veiller, revenir plus-tard ? \u1F637");
 		}
-		int idMaladie = Maladie.RandomIdMaladie();
+		int idMaladie = Maladie.GenererRandomIdMaladie();
 		maladie = new Maladie(idMaladie);
 		questionsAffichage.ChangerEtatMasque(true);
 		patientAffichage.FaireParlerPatientCharParChar("Bonjour, je suis [name] et je suis malade. GoodDoc, pouvez-vous m'aider ?" , patient.Nom);
@@ -146,13 +158,13 @@ public partial class GamePlay : Node2D
 	/// <returns></returns>
 	private void AjouterQuestion()
 	{
-		List<Question> questions = maladie.QuestionsSuivante();
+		List<Question> questions = maladie.DonnerQuestionsSuivante();
 		if (questions != null)
 		{
 			int i = 0;
 			foreach (Question question in questions)
 			{
-				questionsAffichage.AfficheQuestion(question, i);
+				questionsAffichage.AfficherQuestion(question, i);
 				i++;
 			}
 		}
@@ -166,28 +178,28 @@ public partial class GamePlay : Node2D
 	/// Méthode qui applique les données pour le diagnostic.
 	/// </summary>
 	/// <returns></returns>
-	private void FaireLeDiagnostic()
+	private void FaireDiagnostic()
 	{
-		questionsAffichage.AfficheQuestionReset();
+		questionsAffichage.AfficherQuestionReset();
 		partie.CalculRetardAvance();
 		GD.Randomize();
 		int result = GD.RandRange(0, 100);
 		if (partie.RetardAvance <= 0 && result <= patient.Diag)
 		{
-			diagnosticAffichage.AfficheDiagnosticVraiAvance(maladie.Nom, partie.RetardAvance * (-1));
+			diagnosticAffichage.AfficherDiagnosticVraiAvance(maladie.Nom, partie.RetardAvance * (-1));
 		}
 		else if (partie.RetardAvance <= 0 && result > patient.Diag)
 		{
-			diagnosticAffichage.AfficheDiagnosticFauxAvance(maladie.Nom, partie.RetardAvance * (-1));
+			diagnosticAffichage.AfficherDiagnosticFauxAvance(maladie.Nom, partie.RetardAvance * (-1));
 			partie.DiagFaux++;
 		}
 		else if (partie.RetardAvance > 0 && result <= patient.Diag)
 		{
-			diagnosticAffichage.AfficheDiagnosticVraiRetard(maladie.Nom, partie.RetardAvance);
+			diagnosticAffichage.AfficherDiagnosticVraiRetard(maladie.Nom, partie.RetardAvance);
 		}
 		else
 		{
-			diagnosticAffichage.AfficheDiagnosticFauxRetard(maladie.Nom, partie.RetardAvance);
+			diagnosticAffichage.AfficherDiagnosticFauxRetard(maladie.Nom, partie.RetardAvance);
 			partie.DiagFaux++;
 		}
 	}
@@ -199,7 +211,7 @@ public partial class GamePlay : Node2D
 	/// <param name="stress">effet sur le stress</param>
 	/// <param name="temps">effet sur le temps</param>
 	/// <returns></returns>
-	private void AppliquerLaReponse(int diag, int stress, int temps)
+	private void AppliquerRéponse(int diag, int stress, int temps)
 	{
 		questionsAffichage.ChangerEtatMasque(true);
 		patient.Diag += diag;
@@ -212,16 +224,19 @@ public partial class GamePlay : Node2D
 		partie.ChangerTemps(partieDataAffichage);
 		patientAffichage.ChangerValeurBarreDiagnostic(patient.Diag);
 		patientAffichage.ChangerValeurBarreStress(patient.Stress);
-		Réponse réponse = maladie.RéponseQuestion(patient.Stress);
+		Réponse réponse = maladie.DonnerRéponseAQuestion(patient.Stress);
 		if (réponse == null)
 		{
-			FaireLeDiagnostic();
+			FaireDiagnostic();
+		}
+		else if (patient.Stress >= 100)
+		{
+			partie.StressEleve++;
+			FaireDiagnostic();
 		}
 		else if (patient.Diag >= 100)
 		{
-			partie.StressEleve++;
-			GD.Print("here");
-			FaireLeDiagnostic();
+			FaireDiagnostic();
 		}
 		else
 		{
@@ -233,16 +248,16 @@ public partial class GamePlay : Node2D
 	/// Méthode pour savoir si il peut continuer la partie.
 	/// </summary>
 	/// <returns></returns>
-	private void ContinuePartie()
+	private void ContinuerPartie()
 	{
 		partie.Argent += Partie.PRIX_CONSULTATION;
 		if (partie.TempsEstPassee())
 		{
-			debutAffichage.AfficheDebutRecommence();
+			débutAffichage.AfficherDébutRecommence();
 		}
 		else if (partie.APlusDePatient())
 		{
-			debutAffichage.AfficheDebutRecommence();
+			débutAffichage.AfficherDébutRecommence();
 		}
 		else
 		{
@@ -255,27 +270,27 @@ public partial class GamePlay : Node2D
 	 */
 	public void OnBoutonFermerPressed()
 	{
-		CloseApp();
+		FermerApplication();
 	}
 	public void OnBoutonFermer2Pressed()
 	{
-		CloseApp();
+		FermerApplication();
 	}
 	public void OnBoutonContinuerPressed()
 	{
-		ContinuePartie();
+		ContinuerPartie();
 	}
-	public void OnBoutonDebutPressed()
+	public void OnBoutonDébutPressed()
 	{
 		this.JouerPartie();
 	}
 	public void OnBoutonDiagnosticPressed()
 	{
-		FaireLeDiagnostic();
+		FaireDiagnostic();
 	}
 	public void OnBoutonQuestionBoutonQuestionPressed(int diag, int stress , int temps)
 	{
-		AppliquerLaReponse(diag , stress, temps);
+		AppliquerRéponse(diag , stress, temps);
 	}
 	public void OnTimerCharParCharFin()
 	{

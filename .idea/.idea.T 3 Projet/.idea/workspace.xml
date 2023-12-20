@@ -9,12 +9,38 @@
       <change beforePath="$PROJECT_DIR$/Config/gameconfig.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/Config/gameconfig.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GamePlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GamePlay.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GamePlay.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/GamePlay.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Database/DATABASE.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/Database/DATABASE.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Model/Partie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/Model/Partie.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Model/Patient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/Model/Patient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Model/RichTextLabelTimer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/Model/RichTextLabelTimer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/View/PartieDataAffichage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/View/PartieDataAffichage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export_presets.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/export_presets.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImagesPatients/Default.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImagesPatients/Default.png.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage1.png.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage1_triste.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage1_triste.png.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage2.png.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage3.png.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage4.png.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage5.png.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/Database/DATABASE.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/Database/DBT3.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/Database/DBT3.db.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/Database/DBT3_V2.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/Model/BoutonQuestion.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/Model/ImagesPatient.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/Model/Maladie.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/Model/Partie.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/Model/Patient.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/Model/Question.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/Model/RichTextLabelTimer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/Model/Réponse.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/Model/Symptome.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/View/DebutAffichage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/View/DiagnosticAffichage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/View/PartieDataAffichage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/View/PatientAffichage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/View/QuestionsAffichage.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +52,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b6639ad70dbc4387bd53f8312ef65b6f70b0/06/e682d92c/WebClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file:///tmp/JetBrainsPerUserTemp-1000-1/SourceGeneratedDocuments/33D858F939508171D4248ACA/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/GamePlay_ScriptMethods.generated.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file:///tmp/JetBrainsPerUserTemp-1000-1/SourceGeneratedDocuments/33D858F939508171D4248ACA/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/T3Projet.Scripts.View.DebutAffichage_ScriptMethods.generated.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -38,28 +66,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;V3&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/trott/Documents/Cours/t3/T3_Projet/database_t3.db&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.Markdown&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "V3",
+    "last_opened_file_path": "/home/trott/Documents/Cours/t3/T3_Projet/database_t3.db",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.C++",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/home/trott/.config/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
-      &quot;/home/trott/.config/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
-      &quot;/home/trott/.local/share/Symbols/src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "/home/trott/.config/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
+      "/home/trott/.config/JetBrains/Rider2023.3/resharper-host/SourcesCache",
+      "/home/trott/.local/share/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -73,6 +101,9 @@
       <workItem from="1703076950999" duration="6569000" />
       <workItem from="1703085606662" duration="824000" />
       <workItem from="1703086938257" duration="2621000" />
+      <workItem from="1703091198893" duration="4509000" />
+      <workItem from="1703095729075" duration="382000" />
+      <workItem from="1703096169866" duration="1309000" />
     </task>
     <servers />
   </component>

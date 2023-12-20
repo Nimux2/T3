@@ -4,16 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://bakr78hu3nx6i" path="res://Ressources/ArrierePlan.png" id="2_vpp12"]
 [ext_resource type="Texture2D" uid="uid://btf6jeg6532hh" path="res://Ressources/CroixFermer.png" id="3_tjqj4"]
 [ext_resource type="FontFile" uid="uid://8avf506sxwr5" path="res://Ressources/Fonts/Sunday Mango.ttf" id="4_83giy"]
-[ext_resource type="Script" path="res://Tools/View/QuestionsAffichage.cs" id="6_17nse"]
+[ext_resource type="Script" path="res://Scripts/View/PartieDataAffichage.cs" id="5_6aax4"]
 [ext_resource type="Texture2D" uid="uid://by7cuymjkv2l6" path="res://Ressources/BoutonCustom.png" id="6_q2ejs"]
-[ext_resource type="Script" path="res://Tools/View/PartieDataAffichage.cs" id="7_gbq8q"]
-[ext_resource type="Script" path="res://Tools/Model/BoutonQuestion.cs" id="8_mgi13"]
-[ext_resource type="Script" path="res://Tools/View/PatientAffichage.cs" id="9_kytai"]
+[ext_resource type="Script" path="res://Scripts/View/QuestionsAffichage.cs" id="7_jdrhp"]
 [ext_resource type="Texture2D" uid="uid://bwt1lcgykw6i5" path="res://Ressources/QuestionBulle.png" id="9_mlleh"]
-[ext_resource type="Script" path="res://Tools/View/DiagnosticAffichage.cs" id="11_gxna7"]
-[ext_resource type="Script" path="res://Tools/View/DebutAffichage.cs" id="11_n1o16"]
+[ext_resource type="Script" path="res://Scripts/Model/BoutonQuestion.cs" id="9_xdtrf"]
+[ext_resource type="Script" path="res://Scripts/View/PatientAffichage.cs" id="10_4u0qp"]
 [ext_resource type="Texture2D" uid="uid://6e4np2qw2g5x" path="res://Ressources/ReponseBulle.png" id="12_nke85"]
-[ext_resource type="Script" path="res://Tools/Model/RichTextLabelTimer.cs" id="13_tyc4y"]
+[ext_resource type="Script" path="res://Scripts/Model/RichTextLabelTimer.cs" id="12_ue71x"]
+[ext_resource type="Script" path="res://Scripts/View/DébutAffichage.cs" id="13_0nn8q"]
+[ext_resource type="Script" path="res://Scripts/View/DiagnosticAffichage.cs" id="14_3ait4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r5x0r"]
 
@@ -201,7 +201,7 @@ theme_override_font_sizes/font_size = 30
 text = "Barre de stress :"
 
 [node name="PartieData" type="Node2D" parent="."]
-script = ExtResource("7_gbq8q")
+script = ExtResource("5_6aax4")
 
 [node name="Temps" type="Node2D" parent="PartieData"]
 
@@ -387,7 +387,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Questions" type="Node2D" parent="."]
-script = ExtResource("6_17nse")
+script = ExtResource("7_jdrhp")
 
 [node name="BoutonQuestion1" type="Button" parent="Questions"]
 offset_left = 38.0
@@ -406,7 +406,7 @@ flat = true
 clip_text = true
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("8_mgi13")
+script = ExtResource("9_xdtrf")
 
 [node name="TextQuestion1" type="Label" parent="Questions/BoutonQuestion1"]
 layout_mode = 1
@@ -436,7 +436,7 @@ icon = ExtResource("9_mlleh")
 flat = true
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("8_mgi13")
+script = ExtResource("9_xdtrf")
 
 [node name="TextQuestion2" type="Label" parent="Questions/BoutonQuestion2"]
 layout_mode = 1
@@ -466,7 +466,7 @@ icon = ExtResource("9_mlleh")
 flat = true
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("8_mgi13")
+script = ExtResource("9_xdtrf")
 
 [node name="TextQuestion3" type="Label" parent="Questions/BoutonQuestion3"]
 layout_mode = 1
@@ -496,7 +496,7 @@ icon = ExtResource("9_mlleh")
 flat = true
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("8_mgi13")
+script = ExtResource("9_xdtrf")
 
 [node name="TextQuestion4" type="Label" parent="Questions/BoutonQuestion4"]
 layout_mode = 1
@@ -522,7 +522,7 @@ offset_bottom = 843.0
 color = Color(1, 1, 1, 0)
 
 [node name="Patient" type="Node2D" parent="."]
-script = ExtResource("9_kytai")
+script = ExtResource("10_4u0qp")
 
 [node name="MarqueurHaut" type="Marker2D" parent="Patient"]
 position = Vector2(1230, 120)
@@ -540,7 +540,7 @@ scale = Vector2(3.29373, 2)
 texture = ExtResource("12_nke85")
 
 [node name="Timer" type="Timer" parent="Patient"]
-script = ExtResource("13_tyc4y")
+script = ExtResource("12_ue71x")
 
 [node name="ParoleText" type="RichTextLabel" parent="Patient/Timer"]
 anchors_preset = -1
@@ -556,29 +556,29 @@ theme_override_colors/default_color = Color(0.0862304, 0.281986, 0.285897, 1)
 theme_override_fonts/normal_font = SubResource("SystemFont_neu4j")
 theme_override_font_sizes/normal_font_size = 30
 
-[node name="AffichageDebutPartie" type="Node2D" parent="."]
+[node name="AffichageDébutPartie" type="Node2D" parent="."]
 visible = false
-script = ExtResource("11_n1o16")
+script = ExtResource("13_0nn8q")
 
-[node name="Mask" type="ColorRect" parent="AffichageDebutPartie"]
+[node name="Mask" type="ColorRect" parent="AffichageDébutPartie"]
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(1, 1, 1, 0.752941)
 
-[node name="Border" type="ColorRect" parent="AffichageDebutPartie"]
+[node name="Border" type="ColorRect" parent="AffichageDébutPartie"]
 offset_left = 490.0
 offset_top = 370.0
 offset_right = 1310.0
 offset_bottom = 590.0
 color = Color(0.0862745, 0.282353, 0.286275, 1)
 
-[node name="Body" type="ColorRect" parent="AffichageDebutPartie"]
+[node name="Body" type="ColorRect" parent="AffichageDébutPartie"]
 offset_left = 500.0
 offset_top = 380.0
 offset_right = 1300.0
 offset_bottom = 580.0
 
-[node name="InfoDepart" type="Label" parent="AffichageDebutPartie"]
+[node name="InfoDébut" type="Label" parent="AffichageDébutPartie"]
 offset_left = 520.0
 offset_top = 390.0
 offset_right = 1290.0
@@ -589,7 +589,7 @@ theme_override_font_sizes/font_size = 40
 text = "Voulez-vous commencer une partie ?"
 horizontal_alignment = 1
 
-[node name="BoutonDepart" type="Button" parent="AffichageDebutPartie"]
+[node name="BoutonDébut" type="Button" parent="AffichageDébutPartie"]
 offset_left = 550.0
 offset_top = 480.0
 offset_right = 1113.0
@@ -603,7 +603,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_r4t5w")
 icon = ExtResource("6_q2ejs")
 flat = true
 
-[node name="Label" type="Label" parent="AffichageDebutPartie/BoutonDepart"]
+[node name="Label" type="Label" parent="AffichageDébutPartie/BoutonDébut"]
 layout_mode = 0
 offset_left = 58.0
 offset_top = 36.0
@@ -615,7 +615,7 @@ theme_override_font_sizes/font_size = 40
 text = "Démarrer la partie"
 horizontal_alignment = 1
 
-[node name="BoutonFermer2" type="Button" parent="AffichageDebutPartie"]
+[node name="BoutonFermer2" type="Button" parent="AffichageDébutPartie"]
 offset_left = 980.0
 offset_top = 480.0
 offset_right = 1543.0
@@ -629,7 +629,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_r4t5w")
 icon = ExtResource("6_q2ejs")
 flat = true
 
-[node name="Label" type="Label" parent="AffichageDebutPartie/BoutonFermer2"]
+[node name="Label" type="Label" parent="AffichageDébutPartie/BoutonFermer2"]
 layout_mode = 0
 offset_left = 92.0
 offset_top = 36.0
@@ -643,7 +643,7 @@ horizontal_alignment = 1
 
 [node name="AffichageDiagnostic" type="Node2D" parent="."]
 visible = false
-script = ExtResource("11_gxna7")
+script = ExtResource("14_3ait4")
 
 [node name="Mask" type="ColorRect" parent="AffichageDiagnostic"]
 offset_right = 1920.0
@@ -720,8 +720,8 @@ horizontal_alignment = 1
 [connection signal="BoutonQuestionPressed" from="Questions/BoutonQuestion3" to="." method="OnBoutonQuestionBoutonQuestionPressed"]
 [connection signal="BoutonQuestionPressed" from="Questions/BoutonQuestion4" to="." method="OnBoutonQuestionBoutonQuestionPressed"]
 [connection signal="CharParCharFin" from="Patient/Timer" to="." method="OnTimerCharParCharFin"]
-[connection signal="pressed" from="AffichageDebutPartie/BoutonDepart" to="." method="OnBoutonDebutPressed"]
-[connection signal="pressed" from="AffichageDebutPartie/BoutonDepart" to="AffichageDebutPartie" method="OnBoutonDebutPressed"]
-[connection signal="pressed" from="AffichageDebutPartie/BoutonFermer2" to="." method="OnBoutonFermer2Pressed"]
+[connection signal="pressed" from="AffichageDébutPartie/BoutonDébut" to="." method="OnBoutonDébutPressed"]
+[connection signal="pressed" from="AffichageDébutPartie/BoutonDébut" to="AffichageDébutPartie" method="OnBoutonDébutPressed"]
+[connection signal="pressed" from="AffichageDébutPartie/BoutonFermer2" to="." method="OnBoutonFermer2Pressed"]
 [connection signal="pressed" from="AffichageDiagnostic/BoutonContinuer" to="." method="OnBoutonContinuerPressed"]
 [connection signal="pressed" from="AffichageDiagnostic/BoutonContinuer" to="AffichageDiagnostic" method="OnBoutonContinuerPressed"]
