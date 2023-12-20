@@ -62,7 +62,8 @@ public partial class GamePlay : Node2D
 		partie.NbConsultation++;
 		int idPatient = Patient.RandomIdPatient();
 		patient = new Patient(idPatient);
-		patientAffichage.ChangerValeurBarreStress(patient.Stress);
+		int retardEffect = (partie.RetardAvance > 0) ? partie.RetardAvance * 5 : partie.RetardAvance * 2;
+		patientAffichage.ChangerValeurBarreStress(patient.Stress + retardEffect);
 		patientAffichage.ChangerValeurBarreDiagnostic(0);
 		string nomImage = patient.DonnerNomImageCaractere(ImagesPatient.Types.DEFAULT);
 		if (nomImage != "Default")

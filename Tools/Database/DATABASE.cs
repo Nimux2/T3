@@ -13,7 +13,7 @@ public class DATABASE
 {
     private static SqliteConnection connection;
     private static string conn = $"Data Source={ProjectSettings.GlobalizePath($"res://Tools/Database/{NameFromConfig()}")};";
-    public static string Connection_String
+    public static string ConnectionString
     {
         get => conn;
         set
