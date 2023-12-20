@@ -11,7 +11,6 @@ public class Partie
     public int RetardAvance {get; set;}
     public int DiagFaux {get; set;}
     public int StressEleve {get; set;}
-    public int StressEleve {get; set;}
     public double Argent {get; set;}
     public int Temps { get; set; }
     

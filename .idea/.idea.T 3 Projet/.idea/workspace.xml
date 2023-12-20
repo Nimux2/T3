@@ -5,42 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="912178bc-7f11-4137-a32c-5a0ad2f92651" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cahier_Des_Charges.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/screen1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/screen2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/screen3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/screen4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/screen5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/uml.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uml.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/gameconfig.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/Config/gameconfig.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GamePlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GamePlay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GamePlay.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/GamePlay.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImagesPatients/Default.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImagesPatients/Default.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage1.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage1_triste.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage1_triste.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage2.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage3.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage4.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImagesPatients/personnage5.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Database/DATABASE.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Database/DBT3.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Database/DBT3.db.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Database/DBT3_V2.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Model/BoutonQuestion.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Model/ImagesPatient.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Model/Maladie.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Model/Partie.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Model/Patient.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Model/Question.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Model/RichTextLabelTimer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Model/Réponse.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Model/Symptome.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/View/DebutAffichage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/View/DiagnosticAffichage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/View/PartieDataAffichage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/View/PatientAffichage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/View/QuestionsAffichage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Database/DBT3.db" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Database/DBT3.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Database/maDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Database/maDB.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Model/Partie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Model/Partie.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +50,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "V3",
+    "git-widget-placeholder": "Merging V3",
     "last_opened_file_path": "/home/trott/Documents/Cours/t3/T3_Projet/database_t3.db",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -103,7 +82,7 @@
       <workItem from="1703086938257" duration="2621000" />
       <workItem from="1703091198893" duration="4509000" />
       <workItem from="1703095729075" duration="382000" />
-      <workItem from="1703096169866" duration="1309000" />
+      <workItem from="1703096169866" duration="2353000" />
     </task>
     <servers />
   </component>
