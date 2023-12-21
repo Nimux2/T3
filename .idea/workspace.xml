@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90f150ed-1f94-4d67-badf-b7bce434c30d" name="Changes" comment="Ajout de l'UML dans le CDC">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="90f150ed-1f94-4d67-badf-b7bce434c30d" name="Changes" comment="Temp">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Database/Database.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Database/Database.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Model/ImagesPatient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Model/ImagesPatient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Model/Maladie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Model/Maladie.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Model/Partie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Model/Partie.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Model/Patient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Model/Patient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Model/Question.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Model/Question.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Model/RichTextLabelTimer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Model/RichTextLabelTimer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Model/Réponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Model/Réponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diagramme/uml.puml" beforeDir="false" afterPath="$PROJECT_DIR$/diagramme/uml.puml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +113,7 @@
       <workItem from="1702988120040" duration="143000" />
       <workItem from="1703063886328" duration="3599000" />
       <workItem from="1703071206067" duration="6234000" />
+      <workItem from="1703150217169" duration="3779000" />
     </task>
     <task id="LOCAL-00001" summary="Background 2">
       <created>1695987582280</created>
@@ -171,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703076711422</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Temp">
+      <created>1703150520613</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1703150520613</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +210,7 @@
     <MESSAGE value="Corrections ReadMe 2" />
     <MESSAGE value="Ajout cahier des charges" />
     <MESSAGE value="Ajout de l'UML dans le CDC" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de l'UML dans le CDC" />
+    <MESSAGE value="Temp" />
+    <option name="LAST_COMMIT_MESSAGE" value="Temp" />
   </component>
 </project>
