@@ -172,6 +172,7 @@ public partial class GamePlay : Node2D
 		else
 		{
 			questionsAffichage.ChangerEtatMasque(true);
+			FaireDiagnostic();
 		}
 	}
 	
