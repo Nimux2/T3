@@ -11,7 +11,7 @@ using FileAccess = System.IO.FileAccess;
 
 public class Database
 {
-    // Liste des attributes de connection.
+    // Liste des attributs de connection.
     private static SqliteConnection connection;
     private static string conn = $"Data Source={ProjectSettings.GlobalizePath($"res://Scripts/Database/{ChargerNomDepuisConfig()}")};";
     public static string ConnectionString

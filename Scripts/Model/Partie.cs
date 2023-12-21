@@ -5,7 +5,7 @@ namespace T3Projet.Scripts.Models;
 
 public class Partie
 {
-    // Liste des attributes de la partie.
+    // Liste des attributs de la partie.
     public int NbConsultation {get; set;}
     public int NbPatient { get; set; }
     public int RetardAvance {get; set;}
@@ -14,7 +14,7 @@ public class Partie
     public double Argent {get; set;}
     public int Temps { get; set; }
     
-    // Liste des constantes de jeu. (pas vrai constante car elles peut étre modifier par le fichier de config)
+    // Liste des constantes de jeu. (Pas des vrai constante car elles peuvent être modifié par le fichier de config)
     public static double PRIX_CONSULTATION = 25.0;
     public static int MIN_PATIENT = 8;
     public static int MAX_PATIENT = 16;
