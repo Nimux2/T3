@@ -33,6 +33,7 @@ public class Partie
         StressEleve = 0;
         Argent = 0;
         Temps = 0;
+        
     }
     
     /// <summary>

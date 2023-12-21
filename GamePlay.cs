@@ -127,6 +127,7 @@ public partial class GamePlay : Node2D
 	private void JouerConsultation()
 	{
 		partie.ChangerInfoPartie(partieDataAffichage);
+		partie.ChangerTemps(partieDataAffichage);
 		partie.NbConsultation++;
 		int idPatient = Patient.GenererRandomIdPatient();
 		patient = new Patient(idPatient);
@@ -184,7 +185,17 @@ public partial class GamePlay : Node2D
 		partie.CalculRetardAvance();
 		GD.Randomize();
 		int result = GD.RandRange(0, 100);
-		if (partie.RetardAvance <= 0 && result <= patient.Diag)
+		if (partie.RetardAvance <= 0 && patient.Stress >= 100)
+		{
+			diagnosticAffichage.AfficherDiagnosticStressAvance(maladie.Nom, partie.RetardAvance * (-1));
+			partie.DiagFaux++;
+		}
+		else if (partie.RetardAvance > 0 && patient.Stress >= 100)
+		{
+			diagnosticAffichage.AfficherDiagnosticVraiRetard(maladie.Nom, partie.RetardAvance);
+			partie.DiagFaux++;
+		}
+		else if (partie.RetardAvance <= 0 && result <= patient.Diag)
 		{
 			diagnosticAffichage.AfficherDiagnosticVraiAvance(maladie.Nom, partie.RetardAvance * (-1));
 		}
