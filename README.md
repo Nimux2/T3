@@ -105,7 +105,7 @@ Le jeu est compatible puce Intel (M1 a tester) à partir de la version MacOS Hig
 
 ## Documentation
 
-Lien vers la documentation : [Documentation](./doc/html/index.html) (Format Web)
+Lien vers la documentation : [Documentation](https://t3gooddoc.pages.unistra.fr/t3GoodDoc/) (Format Web)
 
 ## License
 
