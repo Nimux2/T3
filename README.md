@@ -12,9 +12,26 @@
 - Yann GLADY
 > 
 
-## Présentation :
+## Table des matières
 
-### Objectif :
+* [Présentation](#présentation)
+    * [Objectif](#objectif)
+    * [But du jeu](#but-du-jeu)
+    * [Détails d'une partie](#détails-dune-partie)
+* [Comment jouer au jeu](#comment-jouer-au-jeu)
+    * [Captures d’écran](#captures-décran)
+* [Cahier des charges](#cahier-des-charges)
+    * [Outils utilisés](#outils-utilisés)
+* [Installation](#installation)
+    * [Linux avec sudo](#linux-avec-sudo)
+    * [Windows](#windows)
+    * [MacOS](#macos)
+* [Documentation](#documentation)
+* [License](#license)
+
+## Présentation
+
+### Objectif
 
 “GoodDoc” est un jeu sérieux permettant au joueur de prendre conscience qu’une consultation avec un médecin généraliste peut avoir un impact sur l’expérience subjective d’un patient et modifier son point de vue / ressentis vis-à-vis de son problème.
 
@@ -36,11 +53,13 @@ Il est important de trouver un équilibre entre des questions gentilles qui calm
 
 La partie se termine lorsque le joueur aura fini la consultation au bout de 4 questions posées ou lorsque le niveau de stress du patient aura atteint son niveau maximum. Le joueur peut également décider de conclure l'examination quand il le souhaite, les chances de diagnostiquer la bonne maladie dépendant du taux de progrès du diagnostic. Un bilan sera alors affiché quant au succès de l'examen.
 
-## Comment jouer au jeu :
+## Comment jouer au jeu
 
 Télécharger la version Mac, Linux, ou Windows en fonction de votre appareil. Ensuite lancez le fichier exécutable.
 
-## Captures d’écran :
+* [Installation](#installation)
+
+## Captures d’écran
 
 ![screen1](img/screen1.png)
 
@@ -52,14 +71,42 @@ Télécharger la version Mac, Linux, ou Windows en fonction de votre appareil. E
 
 ![screen5](img/screen5.png)
 
-## Cahier des charges :
+## Cahier des charges
 
-https://docs.google.com/document/d/1KdIvdUg-Gb4mh5ODGvXxjoQEcYubZFA6AtUeCHMjDzw/edit#
+Lien vers le cahier des charges : [Cahier des charges](https://docs.google.com/document/d/1KdIvdUg-Gb4mh5ODGvXxjoQEcYubZFA6AtUeCHMjDzw/edit#)
 
-### Outils utilisés :
+### Outils utilisés
 
-- Godot/C#
+- Godot 4/C#
 - SQLite
 - IDE Rider
 
-##
+## Installation
+
+Télécharger la dernier version du release pour votre system.
+Unzip l'archive.
+
+* Il faut avoir une connection à Internet pour le premier lancement.
+
+### Linux avec sudo
+
+* Si c'est votre premier lancement, lancer le script 'PackageInstaller.sh'
+* Ensuite lancer le script 'GoodDoc.sh'
+
+### Windows 
+
+* Lancer l'executable 'GoodDoc.exe'
+
+### MacOS
+
+Le jeu est compatible puce Intel (M1 a tester) à partir de la version MacOS High Sierra.
+
+* Lancer l'executable 'GoodDoc.app'
+
+## Documentation
+
+Lien vers la documentation : [Documentation](./doc/html/index.html) (Format Web)
+
+## License
+
+Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
