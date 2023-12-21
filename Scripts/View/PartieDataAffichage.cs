@@ -4,7 +4,7 @@ namespace T3Projet.Scripts.View;
 
 public partial class PartieDataAffichage : Node2D
 {
-    // Liste des attributes des éléments graphique.
+    // Liste des attributs des éléments graphique.
     private Label tempsData;
     private Label argentData;
     private Label patientData;
@@ -42,7 +42,7 @@ public partial class PartieDataAffichage : Node2D
     }
     
     /// <summary>
-    /// Méthode qui change l'argent gagner par le médecin.
+    /// Méthode qui change l'argent gagné par le médecin.
     /// </summary>
     /// <param name="argent"></param>
     /// <returns></returns>
@@ -74,7 +74,7 @@ public partial class PartieDataAffichage : Node2D
     }
     
     /// <summary>
-    /// Méthode qui change le nombre de mauvais diagnostic.
+    /// Méthode qui change le nombre de mauvais diagnostics.
     /// </summary>
     /// <param name="mauvaisDiagnostic"></param>
     /// <returns></returns>
@@ -85,7 +85,7 @@ public partial class PartieDataAffichage : Node2D
     }
     
     /// <summary>
-    /// Méthode qui change le nombre de stress éléve.
+    /// Méthode qui change le nombre de stress élevé.
     /// </summary>
     /// <param name="stressEleve"></param>
     /// <returns></returns>

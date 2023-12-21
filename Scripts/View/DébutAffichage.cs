@@ -4,11 +4,11 @@ namespace T3Projet.Scripts.View;
 
 public partial class DébutAffichage : Node2D
 {
-    // Liste des attributes pour le texte par défault.
+    // Liste des attributs pour le texte par défault.
     private const string DEFAULT_TEXT_DEBUT = "Voulez-vous commencer une partie ?";
     private const string DEFAULT_TEXT_RECOMMENCE = "Voulez-vous recommencer une partie ?";
     
-    // Attribute d'élément graphique.
+    // Attribut d'élément graphique.
     private Label infoDébut;
     
     // Singleton pour l'initialisation du jeu.
