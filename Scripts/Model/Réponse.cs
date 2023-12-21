@@ -6,7 +6,7 @@ namespace T3Projet.Scripts.Models;
 
 public class Réponse
 {
-    // Liste des attributes de la réponse.
+    // Liste des attributs de la réponse.
     private int ID;
     private string réponse;
     public string RéponseText 

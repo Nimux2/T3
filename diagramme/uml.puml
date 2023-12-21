@@ -110,14 +110,18 @@ package Processed
 }
 package Database
 {
-    class DATABASE <<partial>>
+    class Database <<partial>>
     {
         -{static}connection : SqliteConnection
         -{static}conn : String
-        +{static}Connection_String() : String
-        -{static}OpenConnection()
+        -{static}ConnectionString() : String
+        -{static}ChargerNomDepuisConfig() : String
+        -{static}ChargerPathDepuisConfig() : String
+        -{static}CréerPathComplet() : String
+        -{static}ChargerLienTéléchargementDepuisConfig() : String
+        -{static}OuvrirConnection()
         +{static}GetConnection() : SqliteConnection
-        +{static}CloseConnection();
+        +{static}FermerConnection()
 
     }
 }
@@ -125,10 +129,11 @@ package Models
 {
     class RichTextLabelTimer <<partial>>
     {
+        
         - {static}charSpeed : Double
         + CharParCharFinEventHandler()
         + {static}CharSpeed() : Double
-        - richTextLabel : RichTextLabel
+        - richTextLabelabel : RichTextLabel
         - text : String
         - index : Integer
         + _Ready()
@@ -141,9 +146,9 @@ class ImagesPatient {
     - imageDefault : String
     - imageTriste : String
     - imageContent : String
-    - imagePeur : String
+    - imagePeur : Strings
     - imageColere : String
-
+    - actuelType : String
     + ActualType() : Types
     + ImagesPatient()
     + ImagesPatient(imageDefault:String)
@@ -160,12 +165,18 @@ enum Types {
 ImagesPatient --> "actuelType" Types
 class Partie {
     + NbConsultation : Integer
+    + NbPatient : Integer
     + RetardAvance : Integer
     + DiagFaux : Integer
     + StressEleve : Integer
-    + Argent : Integer
+    + Temps : Integer
+    + Argent : Double
     + Partie()
-    + ChangerInfoPartie(partieDataAffichage:PartieDataAffichage) :
+    + ChangerInfoPartie(partieDataAffichage:PartieDataAffichage)
+    + ChangerTemps(partieDataAffichage:PartieDataAffichage)
+    + CalculRetardAvance()
+    + TempsEstPassee() : Boolean
+    + APlusDePatient() : Boolean
 }
 class Maladie {
     - ID : Integer
@@ -174,12 +185,12 @@ class Maladie {
     + Nom() : String
     - ChargerNomMaladie() :
     - ChargerSymptomes() :
-    + {static} RandomIdMaladie() : Integer
-    + QuestionsSuivante() : List<Question>
-    + RéponseQuestion(stress:Integer) : Réponse
+    + {static} GenererRandomIdMaladie() : Integer
+    + DonnerQuestionsSuivante() : List<Question>
+    + DonnerRéponseAQuestion(stress:Integer) : Réponse
 }
-
-Maladie *--> "4\n-currentSymptome" Symtome
+Maladie *--> "1\n-symptômeCurrent" Symptôme
+Maladie *--> "4\n-symptômes" Symptôme
 class Réponse {
     - ID : Integer
     - réponse : String
@@ -189,21 +200,26 @@ class Réponse {
     + Réponse(ID:Integer)
     - ChargerRéponse() :
 }
-class Symtome <<partial>> {
+class Symptôme <<partial>> {
     - ID : Integer
     - nom : String
-    + Symtome(ID:Integer)
+    + Symptôme(ID:Integer)
     - ChargerNomSymptome() :
     - ChargerQuestions() :
     - ChargerRéponses() :
     + DonnerQuestions() : List<Question>
     + DonnerRéponse(stress:Integer) : Réponse
 }
-Symtome *--> "1..*\n-questionSymptome" Question
-Symtome *---> "1..*\n-questionRéponse" Réponse
+Symptôme *--> "1..*\n-questionSymptôme" Question
+Symptôme *---> "1..*\n-questionRéponse" Réponse
 
-class BoutonQuestion <<partial>> {
-    + <<override>> _Ready() :
+class BoutonQuestion <<partial>> extends Button{
+    -questionText : Label
+    -question : Question
+    +Question() : Question
+    + <<override>> _Ready()
+    +BoutonQuestionPressedEventHandler(diag : Integer, stress : Integer, temps : Integer)
+
 }
 
 BoutonQuestion o--> "Utilise" Question
@@ -211,16 +227,16 @@ class Question {
     - ID : Integer
     - ordre : Integer
     - question : String
-    + QuestionText : String
+    + QuestionText() : String
     - effetStress : Integer
-    + EffetStress : Integer
+    + EffetStress() : Integer
     - effetDiag : Integer
-    + EffetDiag : Integer
+    + EffetDiag() : Integer
     - effetTemps : Integer
-    + EffetTemps : Integer
+    + EffetTemps() : Integer
     + Question()
     + Question(ID:Integer)
-    - ChargerQuestion() :
+    - ChargerQuestion()
 }
 class Patient {
     - ID : Integer
@@ -234,7 +250,7 @@ class Patient {
     - ChargerImagesPatient() :
     - FormatNom(nom:String) : String
     + DonnerNomImageCaractere(type:ImagesPatient.Types) : String
-    + {static} RandomIdPatient() : Integer
+    + {static} GenererRandomIdPatient() : Integer
 }
 Patient --> "images" ImagesPatient
 

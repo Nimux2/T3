@@ -6,7 +6,7 @@ namespace T3Projet.Scripts.Models;
 
 public class Question
 {
-    // Liste des attributes de la question
+    // Liste des attributs de la question
     private int ID;
     private int ordre;
     private string question;

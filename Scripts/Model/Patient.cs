@@ -11,7 +11,7 @@ namespace T3Projet.Scripts.Models;
 
 public class Patient
 {
-    // Liste des attributes du patient.
+    // Liste des attributs du patient.
     private int ID;
     private string nom;
     public string Nom { get => nom; }
@@ -63,7 +63,7 @@ public class Patient
     }
     
     /// <summary>
-    /// Méthode qui charge la liste des nom images pour le patient dans la base de donnée.
+    /// Méthode qui charge la liste des nom d'images pour le patient dans la base de donnée.
     /// </summary>
     /// <returns></returns>
     private void ChargerImagesPatient()
@@ -90,7 +90,7 @@ public class Patient
                     {
                         if (!data.IsDBNull(i))
                         {
-                            this.images.AjouterImage(data.GetValue(i).ToString() , i); // Index correspond au value de l'enum ImagesPatient.Types
+                            this.images.AjouterImage(data.GetValue(i).ToString() , i); // Index correspond au valeurs de l'enum ImagesPatient.Types
                         }
                         else
                         {
@@ -134,7 +134,7 @@ public class Patient
     }
     
     /// <summary>
-    /// Méthode qui génére un id par rapport au nombre de patient dans la base de donnée.
+    /// Méthode qui génère un id par rapport au nombre de patient dans la base de donnée.
     /// </summary>
     /// <returns></returns>
     public static int GenererRandomIdPatient()

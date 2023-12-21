@@ -6,15 +6,15 @@ namespace T3Projet.Scripts.Models;
 public partial class RichTextLabelTimer : Timer
 {
     /// <summary>
-    /// Méthode Signal qui permet de transmettre l'afin de l'affichage charactere par charactere.
+    /// Méthode Signal qui permet de transmettre la fin de l'affichage caractère par caractère.
     /// </summary>
     [Signal]
     public delegate void CharParCharFinEventHandler();
     
-    // Attribute d'élément graphique.
+    // Attribut d'élément graphique.
     private RichTextLabel richTextLabelabel;
     
-    // Liste des attributes pour l'affichage charactere par charactere.
+    // Liste des attributs pour l'affichage caractère par caractère.
     private string text;
     private int index;
     private static double charSpeed = 0.06;
@@ -28,7 +28,7 @@ public partial class RichTextLabelTimer : Timer
     }
     
     /// <summary>
-    /// Méthode qui charge l'élément pour le text et charge la vitesse d'écriture pour l'affichage charactere par charactere.
+    /// Méthode qui charge l'élément pour le text et charge la vitesse d'écriture pour l'affichage caractère par caractère.
     /// </summary>
     /// <returns></returns>
     public override void _Ready()
@@ -62,7 +62,7 @@ public partial class RichTextLabelTimer : Timer
     }
     
     /// <summary>
-    /// Méthode pour afficher character par character du text "text".
+    /// Méthode pour afficher caractère par caractère du text "text".
     /// </summary>
     /// <param name="text"></param>
     /// <returns></returns>
@@ -75,7 +75,7 @@ public partial class RichTextLabelTimer : Timer
     }
     
     /// <summary>
-    /// Méthode qui affiche le prochain charactere ou émet le signal de fin d'affichage.
+    /// Méthode qui affiche le prochain caractère ou émet le signal de fin d'affichage.
     /// </summary>
     /// <returns></returns>
     private void AfficherChar()

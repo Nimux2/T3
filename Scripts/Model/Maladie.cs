@@ -8,7 +8,7 @@ namespace T3Projet.Scripts.Models;
 
 public class Maladie
 {
-    // Liste des attributes de la maladie
+    // Liste des attributs de la maladie
     private int ID;
     private string nom;
     public string Nom
@@ -50,7 +50,7 @@ public class Maladie
     }
     
     /// <summary>
-    /// Méthode qui charge les symptome associé à la maladie dans la base de donnée.
+    /// Méthode qui charge les symptômes associé à la maladie dans la base de donnée.
     /// </summary>
     /// <returns></returns>
     private void ChargerSymptomes()
@@ -80,7 +80,7 @@ public class Maladie
     }
     
     /// <summary>
-    /// Méthode qui génére un id par rapport au nombre de maladie dans la base de donnée.
+    /// Méthode qui génère un id par rapport au nombre de maladies dans la base de donnée.
     /// </summary>
     /// <returns></returns>
     public static int GenererRandomIdMaladie()
@@ -105,9 +105,9 @@ public class Maladie
     }
     
     /// <summary>
-    /// Méthode qui retourne la liste de question suivante de façon aléatoire.
+    /// Méthode qui retourne la liste de questions suivante de façon aléatoire.
     /// </summary>
-    /// <returns>Retourne la liste de question suivante si plus de question retourne null</returns>
+    /// <returns>Retourne la liste de questions suivante si plus aucune question retourne null</returns>
     public List<Question> DonnerQuestionsSuivante()
     {
         if (symptomes.Count == 0)
@@ -129,7 +129,7 @@ public class Maladie
         }
     }
     /// <summary>
-    /// Méthode qui retourne la réponse en fonction du niveau de stress "stress" pour le symptome courant -> question.
+    /// Méthode qui retourne la réponse en fonction du niveau de stress "stress" pour le symptôme courant -> question.
     /// </summary>
     /// <param name="stress"></param>
     /// <returns></returns>

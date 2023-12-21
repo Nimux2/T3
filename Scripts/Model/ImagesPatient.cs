@@ -5,7 +5,7 @@ namespace T3Projet.Tools.Gestion;
 
 public class ImagesPatient
 {
-    // Liste d'attibute contenant le path de l'image.
+    // Liste d'attributs contenant le path de l'image.
     private string imageDefault = null;
     private string imageTriste = null;
     private string imageContent = null;
@@ -55,7 +55,7 @@ public class ImagesPatient
     /// Méthode qui retourne le path de l'image en fonction de l'enum "type".
     /// </summary>
     /// <param name="type"></param>
-    /// <returns>Retourne le path de l'image associer à l'énum "type" si il n'existe pas retourne default</returns>
+    /// <returns>Retourne le path de l'image associer à l'enum "type" si il n'existe pas retourne default</returns>
     public string GetImageForEnum(Types type)
     {
         actuelType = type;
