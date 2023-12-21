@@ -4,12 +4,17 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>T3Projet</RootNamespace>
   </PropertyGroup>
+  <Target Name="FixSQLiteInteropFilesOnLinuxAndOSX" BeforeTargets="CopySQLiteInteropFiles">
+    <ItemGroup>
+      <SQLiteInteropFiles Condition="$([MSBuild]::IsOsPlatform(Linux)) OR $([MSBuild]::IsOsPlatform(OSX))" Remove="@(SQLiteInteropFiles)" />
+      <SQLiteInteropFiles Condition="$([MSBuild]::IsOsPlatform(Linux))" Include="$(PkgSystem_Data_SQLite_Core)/runtimes/linux-x64/native/netstandard2.0/SQLite.Interop.*" />
+      <SQLiteInteropFiles Condition="$([MSBuild]::IsOsPlatform(OSX))" Include="$(PkgSystem_Data_SQLite_Core)/runtimes/osx-x64/native/netstandard2.0/SQLite.Interop.*" />
+    </ItemGroup>
+  </Target>
   <ItemGroup>
-    <PackageReference Include="Mono.Data.Sqlite.Portable" Version="1.0.3.5" />
-    <PackageReference Include="System.Data.Common" Version="4.3.0" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
-    <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
-    <PackageReference Include="System.IO.FileSystem.Primitives" Version="4.3.0" />
-    <PackageReference Include="System.Runtime.InteropServices" Version="4.3.0" />
+    <PackageReference Include="Mono.Data.Sqlite" Version="1.0.61" GeneratePathProperty="true" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
   </ItemGroup>
 </Project>

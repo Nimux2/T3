@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="912178bc-7f11-4137-a32c-5a0ad2f92651" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Tools/Database/testv1.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Database/database_t3.db" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/Database/database_t3.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Database/Database.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Database/Database.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/T 3 Projet.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/T 3 Projet.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/mcdbdd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/mcdbdd.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/uml.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/uml.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,31 +20,72 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b6639ad70dbc4387bd53f8312ef65b6f70b0/06/e682d92c/WebClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file:///tmp/JetBrainsPerUserTemp-1000-1/SourceGeneratedDocuments/33D858F939508171D4248ACA/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/GamePlay_ScriptMethods.generated.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file:///tmp/JetBrainsPerUserTemp-1000-1/SourceGeneratedDocuments/33D858F939508171D4248ACA/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/T3Projet.Scripts.View.DebutAffichage_ScriptMethods.generated.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2X258t5phU1bTGg0rVBQfCZOAV6" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Rebasing main",
-    "last_opened_file_path": "/home/trott/Documents/Cours/t3/T3_Projet/database_t3.db",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;V3&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/trott/Documents/Cours/t3/T3_Projet/database_t3.db&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.C++&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/home/trott/.config/JetBrains/Rider2023.2/resharper-host/DecompilerCache",
-      "/home/trott/.config/JetBrains/Rider2023.2/resharper-host/SourcesCache",
-      "/home/trott/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/home/trott/.config/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
+      &quot;/home/trott/.config/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
+      &quot;/home/trott/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
+  <component name="RunManager" selected=".NET Executable.Player">
+    <configuration name="Editor" type="RunExe" factoryName=".NET Executable">
+      <option name="EXE_PATH" value="/snap/godot4-mono/4/Godot_v4.1.1-stable_mono_linux.x86_64" />
+      <option name="PROGRAM_PARAMETERS" value="--path &quot;$PROJECT_DIR$&quot; --editor" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="RUNTIME_TYPE" value="coreclr" />
+      <method v="2">
+        <option name="Build Solution" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Player" type="RunExe" factoryName=".NET Executable">
+      <option name="EXE_PATH" value="/snap/godot4-mono/4/Godot_v4.1.1-stable_mono_linux.x86_64" />
+      <option name="PROGRAM_PARAMETERS" value="--path &quot;$PROJECT_DIR$&quot;" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="RUNTIME_TYPE" value="coreclr" />
+      <method v="2">
+        <option name="Build Solution" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -48,6 +95,18 @@
       <option name="presentableId" value="Default" />
       <updated>1697814178425</updated>
       <workItem from="1697814181361" duration="56000" />
+      <workItem from="1703073849654" duration="3063000" />
+      <workItem from="1703076950999" duration="6569000" />
+      <workItem from="1703085606662" duration="824000" />
+      <workItem from="1703086938257" duration="2621000" />
+      <workItem from="1703091198893" duration="4509000" />
+      <workItem from="1703095729075" duration="382000" />
+      <workItem from="1703096169866" duration="2869000" />
+      <workItem from="1703150082625" duration="1082000" />
+      <workItem from="1703151385520" duration="474000" />
+      <workItem from="1703152123270" duration="1402000" />
+      <workItem from="1703154297402" duration="389000" />
+      <workItem from="1703164809964" duration="1174000" />
     </task>
     <servers />
   </component>
@@ -56,5 +115,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

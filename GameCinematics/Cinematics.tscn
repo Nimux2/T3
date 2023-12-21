@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=3 uid="uid://blf0xq8derbw"]
+
+[ext_resource type="VideoStream" path="res://GameCinematics/cinematic.ogv" id="1_cxiqv"]
+[ext_resource type="Script" path="res://GameCinematics/Video.cs" id="2_xsjmo"]
+[ext_resource type="Texture2D" uid="uid://by7cuymjkv2l6" path="res://Ressources/BoutonCustom.png" id="3_5gxch"]
+[ext_resource type="Script" path="res://GameCinematics/PasseButton.cs" id="4_3yt0g"]
+[ext_resource type="FontFile" uid="uid://8avf506sxwr5" path="res://Ressources/Fonts/Sunday Mango.ttf" id="5_ae75a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvxbo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_76lsx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_86l1x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n2of4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ayhd"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Video" type="VideoStreamPlayer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+stream = ExtResource("1_cxiqv")
+autoplay = true
+script = ExtResource("2_xsjmo")
+
+[node name="PasseButton" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="PasseButton"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 591.0
+offset_bottom = 157.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dvxbo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_76lsx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_86l1x")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_n2of4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5ayhd")
+icon = ExtResource("3_5gxch")
+script = ExtResource("4_3yt0g")
+
+[node name="LabelButton" type="Label" parent="PasseButton"]
+offset_left = 27.0
+offset_top = 32.0
+offset_right = 293.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
+theme_override_fonts/font = ExtResource("5_ae75a")
+theme_override_font_sizes/font_size = 30
+text = "Passer l'intro"
+horizontal_alignment = 1
+vertical_alignment = 1

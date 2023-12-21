@@ -1,0 +1,11 @@
+digraph "/home/trott/Documents/Cours/t3/T3_Projet/Scripts/View"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_4edcbb236dfd51dd81727243a38df6a0 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,dashed,", label="Scripts", fontname="Helvetica", fontsize="10", URL="dir_4edcbb236dfd51dd81727243a38df6a0.html"]
+  dir_8b39e61f38ea09b5b7941bf736ccc842 [shape=box, label="View", style="filled,bold,", fillcolor="#edf0f7", color="grey25", URL="dir_8b39e61f38ea09b5b7941bf736ccc842.html"];
+  }
+}
