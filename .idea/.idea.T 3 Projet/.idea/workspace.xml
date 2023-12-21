@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="912178bc-7f11-4137-a32c-5a0ad2f92651" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GamePlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GamePlay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/Model/Partie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Model/Partie.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/View/DiagnosticAffichage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/View/DiagnosticAffichage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/T 3 Projet.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/T 3 Projet.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Model/Symptome.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Model/Symptome.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +101,7 @@
       <workItem from="1703150082625" duration="1082000" />
       <workItem from="1703151385520" duration="474000" />
       <workItem from="1703152123270" duration="1402000" />
+      <workItem from="1703154297402" duration="389000" />
     </task>
     <servers />
   </component>
