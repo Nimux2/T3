@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="912178bc-7f11-4137-a32c-5a0ad2f92651" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Tools/Database/testv1.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Database/database_t3.db" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/Database/database_t3.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cahier_Des_Charges.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/screen1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/screen2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/screen3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/screen4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/screen5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/uml.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uml.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Database/DBT3.db" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Database/DBT3.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Database/maDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Database/maDB.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Model/Partie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Model/Partie.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,9 +29,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b6639ad70dbc4387bd53f8312ef65b6f70b0/06/e682d92c/WebClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file:///tmp/JetBrainsPerUserTemp-1000-1/SourceGeneratedDocuments/33D858F939508171D4248ACA/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/GamePlay_ScriptMethods.generated.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file:///tmp/JetBrainsPerUserTemp-1000-1/SourceGeneratedDocuments/33D858F939508171D4248ACA/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/T3Projet.Scripts.View.DebutAffichage_ScriptMethods.generated.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2X258t5phU1bTGg0rVBQfCZOAV6" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -27,14 +50,19 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Rebasing main",
+    "git-widget-placeholder": "Merging V3",
     "last_opened_file_path": "/home/trott/Documents/Cours/t3/T3_Projet/database_t3.db",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.C++",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "/home/trott/.config/JetBrains/Rider2023.2/resharper-host/DecompilerCache",
-      "/home/trott/.config/JetBrains/Rider2023.2/resharper-host/SourcesCache",
+      "/home/trott/.config/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
+      "/home/trott/.config/JetBrains/Rider2023.3/resharper-host/SourcesCache",
       "/home/trott/.local/share/Symbols/src"
     ]
   }
@@ -48,6 +76,13 @@
       <option name="presentableId" value="Default" />
       <updated>1697814178425</updated>
       <workItem from="1697814181361" duration="56000" />
+      <workItem from="1703073849654" duration="3063000" />
+      <workItem from="1703076950999" duration="6569000" />
+      <workItem from="1703085606662" duration="824000" />
+      <workItem from="1703086938257" duration="2621000" />
+      <workItem from="1703091198893" duration="4509000" />
+      <workItem from="1703095729075" duration="382000" />
+      <workItem from="1703096169866" duration="2353000" />
     </task>
     <servers />
   </component>
@@ -56,5 +91,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

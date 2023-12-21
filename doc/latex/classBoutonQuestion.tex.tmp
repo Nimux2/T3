@@ -1,0 +1,62 @@
+\hypertarget{classBoutonQuestion}{}\doxysection{Bouton\+Question Class Reference}
+\label{classBoutonQuestion}\index{BoutonQuestion@{BoutonQuestion}}
+
+
+Inheritance diagram for Bouton\+Question\+:
+% FIG 0
+
+
+Collaboration diagram for Bouton\+Question\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+delegate void \mbox{\hyperlink{classBoutonQuestion_a2efaa0b9ea882214ad65d8b8e46889aa}{Bouton\+Question\+Pressed\+Event\+Handler}} (int diag, int stress, int temps)
+\begin{DoxyCompactList}\small\item\em Méthode Signal qui permet de transmettre les effets de la question \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{classBoutonQuestion_aedaec3e54eabceb50a1980eb17433f2f}{\+\_\+\+Ready}} ()
+\begin{DoxyCompactList}\small\item\em Méthode qui charge l\textquotesingle{}élément pour le texte et initialise l\textquotesingle{}émission du signal custom à la pression du bouton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQuestion}{Question}} \mbox{\hyperlink{classBoutonQuestion_a912d9c14745a09181f78498e44d48017}{Question}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBoutonQuestion_aedaec3e54eabceb50a1980eb17433f2f}\label{classBoutonQuestion_aedaec3e54eabceb50a1980eb17433f2f}} 
+\index{BoutonQuestion@{BoutonQuestion}!\_Ready@{\_Ready}}
+\index{\_Ready@{\_Ready}!BoutonQuestion@{BoutonQuestion}}
+\doxysubsubsection{\texorpdfstring{\_Ready()}{\_Ready()}}
+{\footnotesize\ttfamily override void Bouton\+Question.\+\_\+\+Ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Méthode qui charge l\textquotesingle{}élément pour le texte et initialise l\textquotesingle{}émission du signal custom à la pression du bouton. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBoutonQuestion_a2efaa0b9ea882214ad65d8b8e46889aa}\label{classBoutonQuestion_a2efaa0b9ea882214ad65d8b8e46889aa}} 
+\index{BoutonQuestion@{BoutonQuestion}!BoutonQuestionPressedEventHandler@{BoutonQuestionPressedEventHandler}}
+\index{BoutonQuestionPressedEventHandler@{BoutonQuestionPressedEventHandler}!BoutonQuestion@{BoutonQuestion}}
+\doxysubsubsection{\texorpdfstring{BoutonQuestionPressedEventHandler()}{BoutonQuestionPressedEventHandler()}}
+{\footnotesize\ttfamily delegate void Bouton\+Question.\+Bouton\+Question\+Pressed\+Event\+Handler (\begin{DoxyParamCaption}\item[{int}]{diag,  }\item[{int}]{stress,  }\item[{int}]{temps }\end{DoxyParamCaption})}
+
+
+
+Méthode Signal qui permet de transmettre les effets de la question 
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classBoutonQuestion_a912d9c14745a09181f78498e44d48017}\label{classBoutonQuestion_a912d9c14745a09181f78498e44d48017}} 
+\index{BoutonQuestion@{BoutonQuestion}!Question@{Question}}
+\index{Question@{Question}!BoutonQuestion@{BoutonQuestion}}
+\doxysubsubsection{\texorpdfstring{Question}{Question}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQuestion}{Question}} Bouton\+Question.\+Question\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/trott/\+Documents/\+Cours/t3/\+T3\+\_\+\+Projet/\+Scripts/\+Model/\mbox{\hyperlink{BoutonQuestion_8cs}{Bouton\+Question.\+cs}}\end{DoxyCompactItemize}
