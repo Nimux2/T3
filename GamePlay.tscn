@@ -308,7 +308,7 @@ offset_right = 198.0
 offset_bottom = 44.0
 theme_override_fonts/font = SubResource("SystemFont_xy2rb")
 theme_override_font_sizes/font_size = 20
-text = "Bon dignostic"
+text = "Bon diagno"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -339,7 +339,7 @@ offset_right = 198.0
 offset_bottom = 44.0
 theme_override_fonts/font = SubResource("SystemFont_8aokv")
 theme_override_font_sizes/font_size = 20
-text = "Mauvais dignostic"
+text = "Mauvais diagno"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -370,7 +370,7 @@ offset_right = 198.0
 offset_bottom = 44.0
 theme_override_fonts/font = SubResource("SystemFont_yc6ja")
 theme_override_font_sizes/font_size = 20
-text = "Stress eleve"
+text = "Stress élevé"
 horizontal_alignment = 1
 vertical_alignment = 1
 
