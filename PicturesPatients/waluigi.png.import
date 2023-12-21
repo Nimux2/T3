@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5pox8dvjk37u"
-path="res://.godot/imported/waluigi_image.png-fef10e5ea8bcb94f2638a60c8eb4b20d.ctex"
+uid="uid://fj6evsfg2ywm"
+path="res://.godot/imported/waluigi.png-5809c3e51531be4d99274abf1a2ca2d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PicturesPatients/waluigi_image.png"
-dest_files=["res://.godot/imported/waluigi_image.png-fef10e5ea8bcb94f2638a60c8eb4b20d.ctex"]
+source_file="res://PicturesPatients/waluigi.png"
+dest_files=["res://.godot/imported/waluigi.png-5809c3e51531be4d99274abf1a2ca2d8.ctex"]
 
 [params]
 
