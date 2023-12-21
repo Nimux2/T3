@@ -5,24 +5,24 @@ skinparam style strictuml
 skinparam classAttributeIconSize 0
 package View
 {
-    class DebutAffichage <<partial>>
+    class DébutAffichage <<partial>>
     {
         -{static}DEFAULT_TEXT_DEBUT : String
         -{static}DEFAULT_TEXT_RECOMMENCE : String
-        -infoDebut : Label
-        +{static}instance : DebutAffichage
+        -infoDébut : Label
         +_Ready()
-        +AfficheDebutDebut()
-        +AfficheDebutRecommence()
-        +OnBoutonDebutPressed()
+        +AfficheDébutDébut()
+        +AfficheDébutRecommence()
+        +OnBoutonDébutPressed()
     }
-    DebutAffichage o--> "possède" DebutAffichage
+    DébutAffichage o--> "possède" DébutAffichage
     class DiagnosticAffichage <<partial>>
     {
             -{static}DEFAULT_TEXT_DIAG : String
             -{static}DEFAULT_TEXT_PAS_DIAG : String
             -{static}DEFAULT_TEXT_RETARD : String
             -{static}DEFAULT_TEXT_AVANCE : String
+            -{static}DEFAULT_TEXT_DIAG_STRESS : String
             -infoDiagnostic : Label
             -infoRetard : Label
             +_Ready()
@@ -30,17 +30,21 @@ package View
             +AfficheDiagnosticVraiAvance(maladie : String,avance : Integer)
             +AfficheDiagnosticFauxRetard(maladie : String,retard : Integer)
             +AfficheDiagnosticFauxAvance(maladie : String,avance : Integer)
+            +AfficherDiagnosticStressRetard(maladie : String,avance : Integer)
+            +AfficherDiagnosticStressAvance(maladie : String,avance : Integer)
             +OnBoutonContinuerPressed()
     }
     DiagnosticAffichage o--> "possède" DiagnosticAffichage
     class PartieDataAffichage <<partial>>
     {
         -argentData : Label
+        -tempsData : Label
         -patientData : Label
         -bonDiagnosticData : Label
         -mauvaisDiagnosticData : Label
         -stressEleveData : Label
         +_Ready()
+        +ChangerTempsJeu(heure : Integer, minute : Integer)
         +ChangerArgentMedecin(argent : Integer)
         +ChangerPatientEnAttente(nbPatient : Integer)
         +ChangerBonDiagnostic(bonDiagnostic : Integer)
@@ -48,6 +52,7 @@ package View
         +ChangerStressEleve(stressEleve : Integer)
     }
     PartieDataAffichage o--> "possède" PartieDataAffichage
+
     class PatientAffichage <<partial>>
     {
         -marqueurHaut : Marker2D
@@ -60,9 +65,9 @@ package View
         +ChangerCaracterePatient(nomImage : String)
         +FaireParlerPatient(parole : String, nom = null : String)
         +FaireParlerPatientCharParChar(parole : String, nom = null : String)
-        +AddInstanceBarreDiagnostic(barreDiag : ProgressBar)
+        +AjouterInstanceBarreDiagnostic(barreDiag : ProgressBar)
         +ChangerValeurBarreDiagnostic(diag : Integer)
-        +AddInstanceBarreStress(barreStress : ProgressBar)
+        +AjouterInstanceBarreStress(barreStress : ProgressBar)
         +ChangerValeurBarreStress(stress : Integer)
     }
     PatientAffichage o--> "possède" PatientAffichage
@@ -79,7 +84,7 @@ package View
         +ChangerEtatMasque()
         +ChangerEtatMasque(active : Bool)
         +AfficheQuestionA(question : Question, index : Integer)
-
+        +AfficherQuestionReset()
     }
         QuestionsAffichage o--> "possède" QuestionsAffichage
 }

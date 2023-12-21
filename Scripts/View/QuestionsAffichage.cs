@@ -5,7 +5,7 @@ namespace T3Projet.Scripts.View;
 
 public partial class QuestionsAffichage : Node2D
 {
-    // Liste des attributes des éléments graphique.
+    // Liste des attributs des éléments graphique.
     private BoutonQuestion boutonQuestion1;
     private BoutonQuestion boutonQuestion2;
     private BoutonQuestion boutonQuestion3;
@@ -29,7 +29,7 @@ public partial class QuestionsAffichage : Node2D
         instance = this;
     }
     /// <summary>
-    /// Méthode qui change l'état du masque qui bloque/débloque les boutons de question par rapport l'état présédent.
+    /// Méthode qui change l'état du masque qui bloque/débloque les boutons de question par rapport l'état précédent.
     /// </summary>
     /// <returns></returns>
     public void ChangerEtatMasque()
