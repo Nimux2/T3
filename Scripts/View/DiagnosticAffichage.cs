@@ -9,7 +9,7 @@ public partial class DiagnosticAffichage : Node2D
     private const string DEFAULT_TEXT_PAS_DIAG = "Vous n'avez pas trouvé la maladie : [maladie]";
     private const string DEFAULT_TEXT_RETARD = "Vous avez [temps] minutes de retard.";
     private const string DEFAULT_TEXT_AVANCE = "Vous avez [temps] minutes d'avance.";
-    private const string DEFAULT_TEXT_DIAG_STRESS = "Vous n'avez pas trouvé la maladie : [maladie]. Le patient est parti à cause du stress.";
+    private const string DEFAULT_TEXT_DIAG_STRESS = "Vous n'avez pas trouvé la maladie : [maladie].\n Le patient est parti à cause du stress.";
 	
     // Liste des attributes des éléments graphique.
     private Label infoDiagnostic;
@@ -90,7 +90,7 @@ public partial class DiagnosticAffichage : Node2D
     {
         this.Visible = true;
         infoDiagnostic.Text = DEFAULT_TEXT_DIAG_STRESS.Replace("[maladie]", maladie);
-        infoRetard.Text = DEFAULT_TEXT_AVANCE.Replace("[temps]", retard.ToString());
+        infoRetard.Text = DEFAULT_TEXT_RETARD.Replace("[temps]", retard.ToString());
     }
     /// <summary>
     /// Méthode qui affiche un dignostic faux pour cause de stress avec avance.

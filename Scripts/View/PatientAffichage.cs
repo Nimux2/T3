@@ -7,7 +7,7 @@ namespace T3Projet.Scripts.View;
 
 public partial class PatientAffichage : Node2D
 {
-    // Liste des attributes des éléments graphique.
+    // Liste des attributs des éléments graphique.
     private Marker2D marqueurHaut;
     private Sprite2D personnage;
     private Marker2D marqueurBas;
@@ -73,7 +73,7 @@ public partial class PatientAffichage : Node2D
     }
     
     /// <summary>
-    /// Méthode qui fait parler le patient de façon complexe charactere par charactere.
+    /// Méthode qui fait parler le patient de façon complexe caractère par caractère.
     /// </summary>
     /// <param name="parole"></param>
     /// <param name="nom"></param>
