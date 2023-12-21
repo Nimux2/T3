@@ -192,7 +192,7 @@ public partial class GamePlay : Node2D
 		}
 		else if (partie.RetardAvance > 0 && patient.Stress >= 100)
 		{
-			diagnosticAffichage.AfficherDiagnosticVraiRetard(maladie.Nom, partie.RetardAvance);
+			diagnosticAffichage.AfficherDiagnosticStressRetard(maladie.Nom, partie.RetardAvance);
 			partie.DiagFaux++;
 		}
 		else if (partie.RetardAvance <= 0 && result <= patient.Diag)
