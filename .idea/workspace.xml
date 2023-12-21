@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90f150ed-1f94-4d67-badf-b7bce434c30d" name="Changes" comment="Truc">
-      <change afterPath="$PROJECT_DIR$/Tools/Principal_event/DiagButton.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tools/Processed/TimerController.cs" afterDir="false" />
+    <list default="true" id="90f150ed-1f94-4d67-badf-b7bce434c30d" name="Changes" comment="Ajout de l'UML dans le CDC">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GamePlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GamePlay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GamePlay.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/GamePlay.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Gestion/Personnage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/Gestion/Personnage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Principal_event/ButtonDiag.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Principal_event/StartButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tools/Principal_event/StartButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tools/Processed/Timer_controller.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,11 +47,13 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/yglady/Documents/T3&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
@@ -103,6 +99,14 @@
       <workItem from="1698321511236" duration="5000" />
       <workItem from="1698327840030" duration="24000" />
       <workItem from="1698336639173" duration="8000" />
+      <workItem from="1702646678223" duration="738000" />
+      <workItem from="1702647428504" duration="81000" />
+      <workItem from="1702647521662" duration="22000" />
+      <workItem from="1702647571610" duration="2567000" />
+      <workItem from="1702892796984" duration="13000" />
+      <workItem from="1702988120040" duration="143000" />
+      <workItem from="1703063886328" duration="3599000" />
+      <workItem from="1703071206067" duration="6234000" />
     </task>
     <task id="LOCAL-00001" summary="Background 2">
       <created>1695987582280</created>
@@ -118,7 +122,56 @@
       <option name="project" value="LOCAL" />
       <updated>1695987669233</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Uml et ReadMe">
+      <created>1703071263800</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703071263800</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Uml et ReadMe">
+      <created>1703071374903</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703071374903</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Corrections ReadMe">
+      <created>1703071893828</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703071893828</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Corrections ReadMe 2">
+      <created>1703071999685</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703071999685</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Ajout cahier des charges">
+      <created>1703076281349</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703076281349</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Ajout de l'UML dans le CDC">
+      <created>1703076652725</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1703076652725</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Ajout de l'UML dans le CDC">
+      <created>1703076711422</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1703076711422</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +191,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Background 2" />
     <MESSAGE value="Truc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Truc" />
+    <MESSAGE value="Uml et ReadMe" />
+    <MESSAGE value="Corrections ReadMe" />
+    <MESSAGE value="Corrections ReadMe 2" />
+    <MESSAGE value="Ajout cahier des charges" />
+    <MESSAGE value="Ajout de l'UML dans le CDC" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de l'UML dans le CDC" />
   </component>
 </project>
