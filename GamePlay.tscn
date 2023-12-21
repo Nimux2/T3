@@ -1,20 +1,19 @@
-[gd_scene load_steps=43 format=3 uid="uid://dl7uyvawwemrq"]
+[gd_scene load_steps=66 format=3 uid="uid://dl7uyvawwemrq"]
 
 [ext_resource type="Script" path="res://GamePlay.cs" id="1_681vm"]
 [ext_resource type="Texture2D" uid="uid://bakr78hu3nx6i" path="res://Ressources/ArrierePlan.png" id="2_vpp12"]
 [ext_resource type="Texture2D" uid="uid://btf6jeg6532hh" path="res://Ressources/CroixFermer.png" id="3_tjqj4"]
 [ext_resource type="FontFile" uid="uid://8avf506sxwr5" path="res://Ressources/Fonts/Sunday Mango.ttf" id="4_83giy"]
-[ext_resource type="Script" path="res://Tools/View/QuestionsAffichage.cs" id="6_17nse"]
-[ext_resource type="Script" path="res://Tools/Processed/TimerController.cs" id="6_c63ue"]
+[ext_resource type="Script" path="res://Scripts/View/PartieDataAffichage.cs" id="5_6aax4"]
 [ext_resource type="Texture2D" uid="uid://by7cuymjkv2l6" path="res://Ressources/BoutonCustom.png" id="6_q2ejs"]
-[ext_resource type="Script" path="res://Tools/View/PartieDataAffichage.cs" id="7_gbq8q"]
-[ext_resource type="Script" path="res://Tools/Models/BoutonQuestion.cs" id="8_mgi13"]
-[ext_resource type="Script" path="res://Tools/View/PatientAffichage.cs" id="9_kytai"]
+[ext_resource type="Script" path="res://Scripts/View/QuestionsAffichage.cs" id="7_jdrhp"]
 [ext_resource type="Texture2D" uid="uid://bwt1lcgykw6i5" path="res://Ressources/QuestionBulle.png" id="9_mlleh"]
-[ext_resource type="Script" path="res://Tools/View/DiagnosticAffichage.cs" id="11_gxna7"]
-[ext_resource type="Script" path="res://Tools/View/DebutAffichage.cs" id="11_n1o16"]
+[ext_resource type="Script" path="res://Scripts/Model/BoutonQuestion.cs" id="9_xdtrf"]
+[ext_resource type="Script" path="res://Scripts/View/PatientAffichage.cs" id="10_4u0qp"]
 [ext_resource type="Texture2D" uid="uid://6e4np2qw2g5x" path="res://Ressources/ReponseBulle.png" id="12_nke85"]
-[ext_resource type="Script" path="res://Tools/Models/RichTextLabelTimer.cs" id="13_tyc4y"]
+[ext_resource type="Script" path="res://Scripts/Model/RichTextLabelTimer.cs" id="12_ue71x"]
+[ext_resource type="Script" path="res://Scripts/View/DébutAffichage.cs" id="13_0nn8q"]
+[ext_resource type="Script" path="res://Scripts/View/DiagnosticAffichage.cs" id="14_3ait4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r5x0r"]
 
@@ -36,11 +35,39 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x0x7v"]
 
+[sub_resource type="SystemFont" id="SystemFont_a6tcl"]
+
+[sub_resource type="SystemFont" id="SystemFont_op56p"]
+
+[sub_resource type="SystemFont" id="SystemFont_1uw48"]
+
+[sub_resource type="SystemFont" id="SystemFont_kqyek"]
+
+[sub_resource type="SystemFont" id="SystemFont_fnqa6"]
+
+[sub_resource type="SystemFont" id="SystemFont_i0764"]
+
+[sub_resource type="SystemFont" id="SystemFont_rwb3x"]
+
+[sub_resource type="SystemFont" id="SystemFont_xy2rb"]
+
+[sub_resource type="SystemFont" id="SystemFont_wqaci"]
+
+[sub_resource type="SystemFont" id="SystemFont_8aokv"]
+
+[sub_resource type="SystemFont" id="SystemFont_emchh"]
+
+[sub_resource type="SystemFont" id="SystemFont_yc6ja"]
+
+[sub_resource type="SystemFont" id="SystemFont_vi835"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xa7m2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s8g0r"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_quij2"]
+
+[sub_resource type="SystemFont" id="SystemFont_d6a4h"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wl83u"]
 
@@ -48,17 +75,27 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n2qkd"]
 
+[sub_resource type="SystemFont" id="SystemFont_5yhwq"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7w5yj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bo4ls"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dj3rd"]
 
+[sub_resource type="SystemFont" id="SystemFont_6x06y"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8e2t3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6yoe6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mf8k4"]
+
+[sub_resource type="SystemFont" id="SystemFont_v6uj0"]
+
+[sub_resource type="SystemFont" id="SystemFont_neu4j"]
+
+[sub_resource type="SystemFont" id="SystemFont_53h41"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rb8f1"]
 
@@ -69,6 +106,16 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sx702"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r4t5w"]
+
+[sub_resource type="SystemFont" id="SystemFont_dg57w"]
+
+[sub_resource type="SystemFont" id="SystemFont_uymjq"]
+
+[sub_resource type="SystemFont" id="SystemFont_om5ny"]
+
+[sub_resource type="SystemFont" id="SystemFont_v82in"]
+
+[sub_resource type="SystemFont" id="SystemFont_ueyij"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_681vm")
@@ -104,32 +151,6 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="TempsTimer" type="Node2D" parent="."]
-
-[node name="Day(not use)" type="Label" parent="TempsTimer"]
-visible = false
-offset_left = 150.0
-offset_top = 20.0
-offset_right = 376.0
-offset_bottom = 79.0
-theme_override_fonts/font = ExtResource("4_83giy")
-theme_override_font_sizes/font_size = 50
-
-[node name="Timer" type="Timer" parent="TempsTimer"]
-editor_description = "Meta"
-wait_time = 1.2
-script = ExtResource("6_c63ue")
-
-[node name="Temps" type="Label" parent="TempsTimer/Timer"]
-offset_left = 325.0
-offset_top = 10.0
-offset_right = 448.0
-offset_bottom = 70.0
-theme_override_fonts/font = ExtResource("4_83giy")
-theme_override_font_sizes/font_size = 50
-text = "08:00"
-vertical_alignment = 1
-
 [node name="DiagnosticData" type="Node2D" parent="."]
 
 [node name="BarreDiagnostic" type="ProgressBar" parent="DiagnosticData"]
@@ -153,12 +174,12 @@ icon = ExtResource("6_q2ejs")
 
 [node name="Label" type="Label" parent="DiagnosticData/BoutonDiagnostic"]
 layout_mode = 0
-offset_left = 106.0
-offset_top = 47.5
-offset_right = 449.0
-offset_bottom = 106.5
+offset_left = 101.0
+offset_top = 33.75
+offset_right = 444.0
+offset_bottom = 105.75
 theme_override_colors/font_color = Color(0.0862304, 0.281986, 0.285897, 1)
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_a6tcl")
 theme_override_font_sizes/font_size = 50
 text = "Diagnostiquer"
 
@@ -175,12 +196,33 @@ offset_left = 718.0
 offset_top = 26.0
 offset_right = 954.0
 offset_bottom = 63.0
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_op56p")
 theme_override_font_sizes/font_size = 30
 text = "Barre de stress :"
 
 [node name="PartieData" type="Node2D" parent="."]
-script = ExtResource("7_gbq8q")
+script = ExtResource("5_6aax4")
+
+[node name="Temps" type="Node2D" parent="PartieData"]
+
+[node name="JoursData(not use)" type="Label" parent="PartieData/Temps"]
+visible = false
+offset_left = 150.0
+offset_top = 20.0
+offset_right = 376.0
+offset_bottom = 79.0
+theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_font_sizes/font_size = 50
+
+[node name="TempsData" type="Label" parent="PartieData/Temps"]
+offset_left = 325.0
+offset_top = 10.0
+offset_right = 448.0
+offset_bottom = 70.0
+theme_override_fonts/font = SubResource("SystemFont_1uw48")
+theme_override_font_sizes/font_size = 50
+text = "08:00"
+vertical_alignment = 1
 
 [node name="ColorRect1" type="ColorRect" parent="PartieData"]
 offset_left = 1720.0
@@ -202,7 +244,7 @@ offset_left = 3.0
 offset_top = 4.0
 offset_right = 198.0
 offset_bottom = 44.0
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_kqyek")
 theme_override_font_sizes/font_size = 20
 text = "Argent"
 horizontal_alignment = 1
@@ -214,7 +256,7 @@ offset_left = 3.0
 offset_top = 48.0
 offset_right = 198.0
 offset_bottom = 88.0
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_fnqa6")
 theme_override_font_sizes/font_size = 15
 text = "200 "
 horizontal_alignment = 1
@@ -233,7 +275,7 @@ offset_left = 3.0
 offset_top = 4.0
 offset_right = 198.0
 offset_bottom = 44.0
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_i0764")
 theme_override_font_sizes/font_size = 20
 text = "Patient en attente"
 horizontal_alignment = 1
@@ -245,7 +287,7 @@ offset_left = 3.0
 offset_top = 48.0
 offset_right = 198.0
 offset_bottom = 88.0
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_rwb3x")
 theme_override_font_sizes/font_size = 15
 text = "8 patients"
 horizontal_alignment = 1
@@ -264,7 +306,7 @@ offset_left = 3.0
 offset_top = 4.0
 offset_right = 198.0
 offset_bottom = 44.0
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_xy2rb")
 theme_override_font_sizes/font_size = 20
 text = "Bon dignostic"
 horizontal_alignment = 1
@@ -276,7 +318,7 @@ offset_left = 3.0
 offset_top = 48.0
 offset_right = 198.0
 offset_bottom = 88.0
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_wqaci")
 theme_override_font_sizes/font_size = 15
 text = "0 diagnostic"
 horizontal_alignment = 1
@@ -295,7 +337,7 @@ offset_left = 3.0
 offset_top = 4.0
 offset_right = 198.0
 offset_bottom = 44.0
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_8aokv")
 theme_override_font_sizes/font_size = 20
 text = "Mauvais dignostic"
 horizontal_alignment = 1
@@ -307,7 +349,7 @@ offset_left = 3.0
 offset_top = 48.0
 offset_right = 198.0
 offset_bottom = 88.0
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_emchh")
 theme_override_font_sizes/font_size = 15
 text = "0"
 horizontal_alignment = 1
@@ -326,7 +368,7 @@ offset_left = 3.0
 offset_top = 4.0
 offset_right = 198.0
 offset_bottom = 44.0
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_yc6ja")
 theme_override_font_sizes/font_size = 20
 text = "Stress eleve"
 horizontal_alignment = 1
@@ -338,14 +380,14 @@ offset_left = 3.0
 offset_top = 48.0
 offset_right = 198.0
 offset_bottom = 88.0
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_vi835")
 theme_override_font_sizes/font_size = 15
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Questions" type="Node2D" parent="."]
-script = ExtResource("6_17nse")
+script = ExtResource("7_jdrhp")
 
 [node name="BoutonQuestion1" type="Button" parent="Questions"]
 offset_left = 38.0
@@ -364,7 +406,7 @@ flat = true
 clip_text = true
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("8_mgi13")
+script = ExtResource("9_xdtrf")
 
 [node name="TextQuestion1" type="Label" parent="Questions/BoutonQuestion1"]
 layout_mode = 1
@@ -375,8 +417,8 @@ offset_left = 30.0
 offset_top = 35.0
 offset_right = 379.79
 offset_bottom = 142.0
-theme_override_fonts/font = ExtResource("4_83giy")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = SubResource("SystemFont_d6a4h")
+theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -394,7 +436,7 @@ icon = ExtResource("9_mlleh")
 flat = true
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("8_mgi13")
+script = ExtResource("9_xdtrf")
 
 [node name="TextQuestion2" type="Label" parent="Questions/BoutonQuestion2"]
 layout_mode = 1
@@ -405,8 +447,8 @@ offset_left = 30.0
 offset_top = 35.0
 offset_right = 379.79
 offset_bottom = 142.0
-theme_override_fonts/font = ExtResource("4_83giy")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = SubResource("SystemFont_5yhwq")
+theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -424,7 +466,7 @@ icon = ExtResource("9_mlleh")
 flat = true
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("8_mgi13")
+script = ExtResource("9_xdtrf")
 
 [node name="TextQuestion3" type="Label" parent="Questions/BoutonQuestion3"]
 layout_mode = 1
@@ -435,8 +477,8 @@ offset_left = 30.0
 offset_top = 35.0
 offset_right = 379.79
 offset_bottom = 142.0
-theme_override_fonts/font = ExtResource("4_83giy")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = SubResource("SystemFont_6x06y")
+theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -454,7 +496,7 @@ icon = ExtResource("9_mlleh")
 flat = true
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("8_mgi13")
+script = ExtResource("9_xdtrf")
 
 [node name="TextQuestion4" type="Label" parent="Questions/BoutonQuestion4"]
 layout_mode = 1
@@ -465,8 +507,8 @@ offset_left = 30.0
 offset_top = 35.0
 offset_right = 379.79
 offset_bottom = 142.0
-theme_override_fonts/font = ExtResource("4_83giy")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = SubResource("SystemFont_v6uj0")
+theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -480,7 +522,7 @@ offset_bottom = 843.0
 color = Color(1, 1, 1, 0)
 
 [node name="Patient" type="Node2D" parent="."]
-script = ExtResource("9_kytai")
+script = ExtResource("10_4u0qp")
 
 [node name="MarqueurHaut" type="Marker2D" parent="Patient"]
 position = Vector2(1230, 120)
@@ -498,7 +540,7 @@ scale = Vector2(3.29373, 2)
 texture = ExtResource("12_nke85")
 
 [node name="Timer" type="Timer" parent="Patient"]
-script = ExtResource("13_tyc4y")
+script = ExtResource("12_ue71x")
 
 [node name="ParoleText" type="RichTextLabel" parent="Patient/Timer"]
 anchors_preset = -1
@@ -511,43 +553,43 @@ offset_top = 675.4
 offset_right = 1420.92
 offset_bottom = 829.4
 theme_override_colors/default_color = Color(0.0862304, 0.281986, 0.285897, 1)
-theme_override_fonts/normal_font = ExtResource("4_83giy")
+theme_override_fonts/normal_font = SubResource("SystemFont_neu4j")
 theme_override_font_sizes/normal_font_size = 30
 
-[node name="AffichageDebutPartie" type="Node2D" parent="."]
+[node name="AffichageDébutPartie" type="Node2D" parent="."]
 visible = false
-script = ExtResource("11_n1o16")
+script = ExtResource("13_0nn8q")
 
-[node name="Mask" type="ColorRect" parent="AffichageDebutPartie"]
+[node name="Mask" type="ColorRect" parent="AffichageDébutPartie"]
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(1, 1, 1, 0.752941)
 
-[node name="Border" type="ColorRect" parent="AffichageDebutPartie"]
+[node name="Border" type="ColorRect" parent="AffichageDébutPartie"]
 offset_left = 490.0
 offset_top = 370.0
 offset_right = 1310.0
 offset_bottom = 590.0
 color = Color(0.0862745, 0.282353, 0.286275, 1)
 
-[node name="Body" type="ColorRect" parent="AffichageDebutPartie"]
+[node name="Body" type="ColorRect" parent="AffichageDébutPartie"]
 offset_left = 500.0
 offset_top = 380.0
 offset_right = 1300.0
 offset_bottom = 580.0
 
-[node name="InfoDepart" type="Label" parent="AffichageDebutPartie"]
+[node name="InfoDébut" type="Label" parent="AffichageDébutPartie"]
 offset_left = 520.0
 offset_top = 390.0
 offset_right = 1290.0
 offset_bottom = 440.0
 theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_53h41")
 theme_override_font_sizes/font_size = 40
 text = "Voulez-vous commencer une partie ?"
 horizontal_alignment = 1
 
-[node name="BoutonDepart" type="Button" parent="AffichageDebutPartie"]
+[node name="BoutonDébut" type="Button" parent="AffichageDébutPartie"]
 offset_left = 550.0
 offset_top = 480.0
 offset_right = 1113.0
@@ -561,19 +603,19 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_r4t5w")
 icon = ExtResource("6_q2ejs")
 flat = true
 
-[node name="Label" type="Label" parent="AffichageDebutPartie/BoutonDepart"]
+[node name="Label" type="Label" parent="AffichageDébutPartie/BoutonDébut"]
 layout_mode = 0
-offset_left = 70.0
-offset_top = 46.0
-offset_right = 498.0
+offset_left = 58.0
+offset_top = 36.0
+offset_right = 486.0
 offset_bottom = 94.0
 theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_dg57w")
 theme_override_font_sizes/font_size = 40
 text = "Démarrer la partie"
 horizontal_alignment = 1
 
-[node name="BoutonFermer2" type="Button" parent="AffichageDebutPartie"]
+[node name="BoutonFermer2" type="Button" parent="AffichageDébutPartie"]
 offset_left = 980.0
 offset_top = 480.0
 offset_right = 1543.0
@@ -587,21 +629,21 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_r4t5w")
 icon = ExtResource("6_q2ejs")
 flat = true
 
-[node name="Label" type="Label" parent="AffichageDebutPartie/BoutonFermer2"]
+[node name="Label" type="Label" parent="AffichageDébutPartie/BoutonFermer2"]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 46.0
-offset_right = 472.0
+offset_left = 92.0
+offset_top = 36.0
+offset_right = 474.0
 offset_bottom = 94.0
 theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_uymjq")
 theme_override_font_sizes/font_size = 40
 text = "Quitter le jeu"
 horizontal_alignment = 1
 
 [node name="AffichageDiagnostic" type="Node2D" parent="."]
 visible = false
-script = ExtResource("11_gxna7")
+script = ExtResource("14_3ait4")
 
 [node name="Mask" type="ColorRect" parent="AffichageDiagnostic"]
 offset_right = 1920.0
@@ -609,25 +651,25 @@ offset_bottom = 1080.0
 color = Color(1, 1, 1, 0.752941)
 
 [node name="Border" type="ColorRect" parent="AffichageDiagnostic"]
-offset_left = 490.0
+offset_left = 380.0
 offset_top = 370.0
-offset_right = 1310.0
+offset_right = 1400.0
 offset_bottom = 590.0
 color = Color(0.0862745, 0.282353, 0.286275, 1)
 
 [node name="Body" type="ColorRect" parent="AffichageDiagnostic"]
-offset_left = 500.0
+offset_left = 390.0
 offset_top = 380.0
-offset_right = 1300.0
+offset_right = 1390.0
 offset_bottom = 580.0
 
 [node name="InfoDiagnostic" type="Label" parent="AffichageDiagnostic"]
-offset_left = 520.0
+offset_left = 401.0
 offset_top = 390.0
-offset_right = 1290.0
+offset_right = 1373.0
 offset_bottom = 440.0
 theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_om5ny")
 theme_override_font_sizes/font_size = 35
 text = "Le patient a une grippe ou une pneumonie ?"
 horizontal_alignment = 1
@@ -639,7 +681,7 @@ offset_top = 432.0
 offset_right = 1246.0
 offset_bottom = 480.0
 theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_v82in")
 theme_override_font_sizes/font_size = 35
 text = "Vous avez 15 minutes de retard."
 horizontal_alignment = 1
@@ -661,28 +703,25 @@ flat = true
 
 [node name="Label" type="Label" parent="AffichageDiagnostic/BoutonContinuer"]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 46.0
-offset_right = 472.0
-offset_bottom = 94.0
+offset_left = 86.0
+offset_top = 38.0
+offset_right = 468.0
+offset_bottom = 96.0
 theme_override_colors/font_color = Color(0.0862745, 0.282353, 0.286275, 1)
-theme_override_fonts/font = ExtResource("4_83giy")
+theme_override_fonts/font = SubResource("SystemFont_ueyij")
 theme_override_font_sizes/font_size = 40
 text = "Continer la journée"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="BoutonFermer" to="." method="OnBoutonFermerPressed"]
 [connection signal="pressed" from="DiagnosticData/BoutonDiagnostic" to="." method="OnBoutonDiagnosticPressed"]
-[connection signal="pressed" from="DiagnosticData/BoutonDiagnostic" to="TempsTimer/Timer" method="OnBoutonDiagnosticPressed"]
 [connection signal="BoutonQuestionPressed" from="Questions/BoutonQuestion1" to="." method="OnBoutonQuestionBoutonQuestionPressed"]
 [connection signal="BoutonQuestionPressed" from="Questions/BoutonQuestion2" to="." method="OnBoutonQuestionBoutonQuestionPressed"]
 [connection signal="BoutonQuestionPressed" from="Questions/BoutonQuestion3" to="." method="OnBoutonQuestionBoutonQuestionPressed"]
 [connection signal="BoutonQuestionPressed" from="Questions/BoutonQuestion4" to="." method="OnBoutonQuestionBoutonQuestionPressed"]
 [connection signal="CharParCharFin" from="Patient/Timer" to="." method="OnTimerCharParCharFin"]
-[connection signal="pressed" from="AffichageDebutPartie/BoutonDepart" to="." method="OnBoutonDebutPressed"]
-[connection signal="pressed" from="AffichageDebutPartie/BoutonDepart" to="TempsTimer/Timer" method="OnBoutonDebutPressed"]
-[connection signal="pressed" from="AffichageDebutPartie/BoutonDepart" to="AffichageDebutPartie" method="OnBoutonDebutPressed"]
-[connection signal="pressed" from="AffichageDebutPartie/BoutonFermer2" to="." method="OnBoutonFermer2Pressed"]
+[connection signal="pressed" from="AffichageDébutPartie/BoutonDébut" to="." method="OnBoutonDébutPressed"]
+[connection signal="pressed" from="AffichageDébutPartie/BoutonDébut" to="AffichageDébutPartie" method="OnBoutonDébutPressed"]
+[connection signal="pressed" from="AffichageDébutPartie/BoutonFermer2" to="." method="OnBoutonFermer2Pressed"]
 [connection signal="pressed" from="AffichageDiagnostic/BoutonContinuer" to="." method="OnBoutonContinuerPressed"]
-[connection signal="pressed" from="AffichageDiagnostic/BoutonContinuer" to="TempsTimer/Timer" method="OnBoutonContinuerPressed"]
 [connection signal="pressed" from="AffichageDiagnostic/BoutonContinuer" to="AffichageDiagnostic" method="OnBoutonContinuerPressed"]
