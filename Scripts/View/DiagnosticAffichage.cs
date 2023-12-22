@@ -30,7 +30,7 @@ public partial class DiagnosticAffichage : Node2D
     }
     
     /// <summary>
-    /// Méthode qui affiche un dignostic juste avec retard.
+    /// Méthode qui affiche un diagnostic juste avec retard.
     /// </summary>
     /// <param name="maladie"></param>
     /// <param name="retard"></param>
@@ -43,7 +43,7 @@ public partial class DiagnosticAffichage : Node2D
     }
     
     /// <summary>
-    /// Méthode qui affiche un dignostic juste avec avance.
+    /// Méthode qui affiche un diagnostic juste avec avance.
     /// </summary>
     /// <param name="maladie"></param>
     /// <param name="avance"></param>
@@ -56,7 +56,7 @@ public partial class DiagnosticAffichage : Node2D
     }
     
     /// <summary>
-    /// Méthode qui affiche un dignostic faux avec retard.
+    /// Méthode qui affiche un diagnostic faux avec retard.
     /// </summary>
     /// <param name="maladie"></param>
     /// <param name="retard"></param>
@@ -69,7 +69,7 @@ public partial class DiagnosticAffichage : Node2D
     }
     
     /// <summary>
-    /// Méthode qui affiche un dignostic faux avec avance.
+    /// Méthode qui affiche un diagnostic faux avec avance.
     /// </summary>
     /// <param name="maladie"></param>
     /// <param name="avance"></param>
@@ -82,7 +82,7 @@ public partial class DiagnosticAffichage : Node2D
     }
     
     /// <summary>
-    /// Méthode qui affiche un dignostic faux pour cause de stress avec retard.
+    /// Méthode qui affiche un diagnostic faux pour cause de stress avec retard.
     /// </summary>
     /// <param name="maladie"></param>
     /// <param name="retard"></param>
@@ -93,7 +93,7 @@ public partial class DiagnosticAffichage : Node2D
         infoRetard.Text = DEFAULT_TEXT_RETARD.Replace("[temps]", retard.ToString());
     }
     /// <summary>
-    /// Méthode qui affiche un dignostic faux pour cause de stress avec avance.
+    /// Méthode qui affiche un diagnostic faux pour cause de stress avec avance.
     /// </summary>
     /// <param name="maladie"></param>
     /// <param name="avance"></param>
