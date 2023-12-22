@@ -112,7 +112,9 @@ public class Database
         }
         else
         {
-            return "https://seafile.unistra.fr/f/cd9e1e78560a4bab9529/?dl=1";
+            return "https://dl.dropboxusercontent.com/scl/fi/qvjjqjii2dr5n8x24mnam/DBT3.db?rlkey=bfikte2o49n4m0w10581mhisq&dl=0";
+            // https://www.dropbox.com/scl/fi/qvjjqjii2dr5n8x24mnam/DBT3.db?rlkey=bfikte2o49n4m0w10581mhisq&dl=0
+            // TUTO : partage link to download link https://zapier.com/blog/generate-direct-dropbox-link/
         }
     }
     
