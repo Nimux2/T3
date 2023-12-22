@@ -159,14 +159,16 @@ public partial class GamePlay : Node2D
 	/// <returns></returns>
 	private void AjouterQuestion()
 	{
+		GD.Randomize();
 		List<Question> questions = maladie.DonnerQuestionsSuivante();
 		if (questions != null)
 		{
-			int i = 0;
-			foreach (Question question in questions)
+			int count = questions.Count;
+			for(int i = 0 ; i < count ; i++)
 			{
-				questionsAffichage.AfficherQuestion(question, i);
-				i++;
+				int rand = GD.RandRange(0, count - 1 - i);
+				questionsAffichage.AfficherQuestion(questions[rand], i);
+				questions.Remove(questions[rand]);
 			}
 		}
 		else
@@ -225,7 +227,6 @@ public partial class GamePlay : Node2D
 	/// <returns></returns>
 	private void AppliquerRéponse(int diag, int stress, int temps)
 	{
-		GD.Print("Here");
 		questionsAffichage.ChangerEtatMasque(true);
 		patient.Diag += diag;
 		patient.Stress += stress;

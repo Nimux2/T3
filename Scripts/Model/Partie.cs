@@ -17,7 +17,7 @@ public class Partie
     // Liste des constantes de jeu. (Pas des vrai constante car elles peuvent être modifié par le fichier de config)
     public static double PRIX_CONSULTATION = 25.0;
     public static int MIN_PATIENT = 8;
-    public static int MAX_PATIENT = 16;
+    public static int MAX_PATIENT = 12;
     public static int HEURE_DEPART = 8;
     public static int MINUTE_DEPART = 0;
     public static int HEURE_FIN = 12;
