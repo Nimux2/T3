@@ -53,11 +53,7 @@ Il est important de trouver un équilibre entre des questions gentilles qui calm
 
 La partie se termine lorsque le joueur aura fini la consultation au bout de 4 questions posées ou lorsque le niveau de stress du patient aura atteint son niveau maximum. Le joueur peut également décider de conclure l'examination quand il le souhaite, les chances de diagnostiquer la bonne maladie dépendant du taux de progrès du diagnostic. Un bilan sera alors affiché quant au succès de l'examen.
 
-## Comment jouer au jeu
 
-Télécharger la version Mac, Linux, ou Windows en fonction de votre appareil. Ensuite lancez le fichier exécutable.
-
-* [Installation](#installation)
 
 ## Captures d’écran
 
