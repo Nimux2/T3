@@ -13,7 +13,7 @@ Les étapes du projet tuteuré T3 sont les suivantes :
         - Demander au T3 de le faire si besoin, et vérifier que vous pouvez le modifier.
         - Ajouter un lien vers votre duplicata dans le document des groupes.
     1. Jouer au jeu, et proposer des améliorations dans la section ci-dessous.
-    1. Faire remplir la grille d'évaluation T2 et le résultat T2 ci-dessous par les membres du T3.
+    1. Faire remplir la grille d'évaluation T1 et le résultat T1 ci-dessous par les membres du T3.
 1. Assister à la présentation plénière à 14h dans les amphis 1 ou 2.
 1. Remplir la grille d'évaluation T3 ci-dessous, et remplir le résultat T3.
     - Un soin particulier doit être apporté aux justifications.
@@ -26,7 +26,7 @@ Les étapes du projet tuteuré T3 sont les suivantes :
 - Proposition 1
 - Proposition 2
 
-## Grille d'évaluation T2 (à remplir par les membres du groupe T3)
+## Grille d'évaluation T1 (à remplir par les membres du groupe T3)
 
 - Procédure
   - [ ] La procédure a été suivie à la lettre sans le moindre écart.
@@ -41,11 +41,11 @@ Les étapes du projet tuteuré T3 sont les suivantes :
   - [ ] Au moins cinq propositions d'améliorations sont faites.
   - [ ] Moins de cinq propositions d'améliorations sont faites.
 - Implication
-  - [ ] L'implication T2 été vraiment été cruciale dans le processus du T3.
-  - [ ] L'implication T2 a permis d'améliorer le T3.
-  - [ ] Il y a eu un défaut d'implication T2.
+  - [ ] L'implication T1 été vraiment été cruciale dans le processus du T3.
+  - [ ] L'implication T1 a permis d'améliorer le T3.
+  - [ ] Il y a eu un défaut d'implication T1.
 
-## Grille d'évaluation T2 (à remplir par l'enseignant)
+## Grille d'évaluation T1 (à remplir par l'enseignant)
 
 - Objectivation des justifications
     - [ ] Les justifications sont toutes objectivées.
@@ -65,7 +65,7 @@ Les étapes du projet tuteuré T3 sont les suivantes :
     - [ ] Des évaluations sont objectivement fausses.
 
 
-### Résultat T2
+### Résultat T1
 - Total d'item « Excellent » (2 point) : 
 - Total d'item « Satisfaisant » (1 point) : 
 - Total d'item « Insatisfaisant » (0 point) :
