@@ -18,7 +18,6 @@
     * [Objectif](#objectif)
     * [But du jeu](#but-du-jeu)
     * [Détails d'une partie](#détails-dune-partie)
-* [Comment jouer au jeu](#comment-jouer-au-jeu)
     * [Captures d’écran](#captures-décran)
 * [Cahier des charges](#cahier-des-charges)
     * [Outils utilisés](#outils-utilisés)
