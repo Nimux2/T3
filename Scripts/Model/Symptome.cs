@@ -127,7 +127,7 @@ public partial class Symptome : Node
         {
             return réponses.Find(x => x.Stress == 2);
         }
-        else if(stress > 60 && stress <= 100)
+        else if(stress > 60)
         {
             return réponses.Find(x => x.Stress == 3);
         }

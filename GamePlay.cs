@@ -225,6 +225,7 @@ public partial class GamePlay : Node2D
 	/// <returns></returns>
 	private void AppliquerRéponse(int diag, int stress, int temps)
 	{
+		GD.Print("Here");
 		questionsAffichage.ChangerEtatMasque(true);
 		patient.Diag += diag;
 		patient.Stress += stress;

@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="912178bc-7f11-4137-a32c-5a0ad2f92651" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Scripts/Database/Database.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Database/Database.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/T 3 Projet.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/T 3 Projet.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/mcdbdd.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/mcdbdd.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/uml.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/uml.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GamePlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GamePlay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Model/Symptome.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Model/Symptome.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +38,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;V3&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/trott/Documents/Cours/t3/T3_Projet/database_t3.db&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -107,6 +104,9 @@
       <workItem from="1703152123270" duration="1402000" />
       <workItem from="1703154297402" duration="389000" />
       <workItem from="1703164809964" duration="1174000" />
+      <workItem from="1703177892750" duration="4000" />
+      <workItem from="1703239144605" duration="79000" />
+      <workItem from="1703239237502" duration="417000" />
     </task>
     <servers />
   </component>
