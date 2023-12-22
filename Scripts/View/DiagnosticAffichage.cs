@@ -4,14 +4,14 @@ namespace T3Projet.Scripts.View;
 
 public partial class DiagnosticAffichage : Node2D
 {
-    // Liste des attributes pour le texte par défault.
+    // Liste des attributs pour le texte par défault.
     private const string DEFAULT_TEXT_DIAG = "Vous avez trouvé la maladie : [maladie]";
     private const string DEFAULT_TEXT_PAS_DIAG = "Vous n'avez pas trouvé la maladie : [maladie]";
     private const string DEFAULT_TEXT_RETARD = "Vous avez [temps] minutes de retard.";
     private const string DEFAULT_TEXT_AVANCE = "Vous avez [temps] minutes d'avance.";
     private const string DEFAULT_TEXT_DIAG_STRESS = "Vous n'avez pas trouvé la maladie : [maladie].\n Le patient est parti à cause du stress.";
 	
-    // Liste des attributes des éléments graphique.
+    // Liste des attributs des éléments graphique.
     private Label infoDiagnostic;
     private Label infoRetard;
     
