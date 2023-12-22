@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90f150ed-1f94-4d67-badf-b7bce434c30d" name="Changes" comment="Temp">
+    <list default="true" id="90f150ed-1f94-4d67-badf-b7bce434c30d" name="Changes" comment="Git fait chier">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.T 3 Projet/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/Database/Database.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Database/Database.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/Model/ImagesPatient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Model/ImagesPatient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/Model/Maladie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Model/Maladie.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/Model/Partie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Model/Partie.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/Model/Patient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Model/Patient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/Model/Question.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Model/Question.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/Model/RichTextLabelTimer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Model/RichTextLabelTimer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/Model/Réponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Model/Réponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagramme/uml.puml" beforeDir="false" afterPath="$PROJECT_DIR$/diagramme/uml.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/View/DiagnosticAffichage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/View/DiagnosticAffichage.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +52,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/yglady/Documents/T3&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/yglady/Documents/T3/img&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
@@ -113,7 +106,9 @@
       <workItem from="1702988120040" duration="143000" />
       <workItem from="1703063886328" duration="3599000" />
       <workItem from="1703071206067" duration="6234000" />
-      <workItem from="1703150217169" duration="3779000" />
+      <workItem from="1703150217169" duration="4789000" />
+      <workItem from="1703157388024" duration="4878000" />
+      <workItem from="1703236838798" duration="65000" />
     </task>
     <task id="LOCAL-00001" summary="Background 2">
       <created>1695987582280</created>
@@ -185,7 +180,63 @@
       <option name="project" value="LOCAL" />
       <updated>1703150520613</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Correction commentaires et uml 1">
+      <created>1703154153758</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1703154153758</updated>
+    </task>
+    <task id="LOCAL-00012" summary="MCD base de donnée">
+      <created>1703157612050</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1703157612050</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Corrections commentaires et UML 2">
+      <created>1703158410551</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1703158410551</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Mise à jour uml et mcd dans CdC">
+      <created>1703159044387</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1703159044387</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Correction CdC">
+      <created>1703159136910</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1703159136910</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Correction fautes d'orthographe.">
+      <created>1703161682364</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1703161682364</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Ajout evaluation">
+      <created>1703162639282</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1703162639282</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Git fait chier">
+      <created>1703162743474</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1703162743474</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +262,14 @@
     <MESSAGE value="Ajout cahier des charges" />
     <MESSAGE value="Ajout de l'UML dans le CDC" />
     <MESSAGE value="Temp" />
-    <option name="LAST_COMMIT_MESSAGE" value="Temp" />
+    <MESSAGE value="Correction commentaires et uml 1" />
+    <MESSAGE value="MCD base de donnée" />
+    <MESSAGE value="Corrections commentaires et UML 2" />
+    <MESSAGE value="Mise à jour uml et mcd dans CdC" />
+    <MESSAGE value="Correction CdC" />
+    <MESSAGE value="Correction fautes d'orthographe." />
+    <MESSAGE value="Ajout evaluation" />
+    <MESSAGE value="Git fait chier" />
+    <option name="LAST_COMMIT_MESSAGE" value="Git fait chier" />
   </component>
 </project>
