@@ -1,0 +1,17 @@
+@startuml
+class Question {
+    - ID : int
+    - ordre : int
+    - question : string
+    + QuestionText : string <<get>>
+    - effetStress : int
+    + EffetStress : int <<get>>
+    - effetDiag : int
+    + EffetDiag : int <<get>>
+    - effetTemps : int
+    + EffetTemps : int <<get>>
+    + Question()
+    + Question(ID:int)
+    - ChargerQuestion() : void
+}
+@enduml

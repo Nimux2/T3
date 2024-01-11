@@ -1,0 +1,21 @@
+@startuml
+class DiagnosticAffichage <<partial>> {
+    - <<const>> DEFAULT_TEXT_DIAG : string = "Vous avez trouvé la maladie : [maladie]"
+    - <<const>> DEFAULT_TEXT_PAS_DIAG : string = "Vous n'avez pas trouvé la maladie : [maladie]"
+    - <<const>> DEFAULT_TEXT_RETARD : string = "Vous avez [temps] minutes de retard."
+    - <<const>> DEFAULT_TEXT_AVANCE : string = "Vous avez [temps] minutes d'avance."
+    - <<const>> DEFAULT_TEXT_DIAG_STRESS : string = "Vous n'avez pas trouvé la maladie : [maladie].\n Le patient est parti à cause du stress."
+    + <<override>> _Ready() : void
+    + AfficherDiagnosticVraiRetard(maladie:string, retard:int) : void
+    + AfficherDiagnosticVraiAvance(maladie:string, avance:int) : void
+    + AfficherDiagnosticFauxRetard(maladie:string, retard:int) : void
+    + AfficherDiagnosticFauxAvance(maladie:string, avance:int) : void
+    + AfficherDiagnosticStressRetard(maladie:string, retard:int) : void
+    + AfficherDiagnosticStressAvance(maladie:string, avance:int) : void
+    + OnBoutonContinuerPressed() : void
+}
+Node2D <|-- DiagnosticAffichage
+DiagnosticAffichage --> "infoDiagnostic" Label
+DiagnosticAffichage --> "infoRetard" Label
+DiagnosticAffichage --> "instance" DiagnosticAffichage
+@enduml

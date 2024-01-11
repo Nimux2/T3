@@ -1,0 +1,6 @@
+@startuml
+class PasseButton <<partial>> {
+    + <<override>> _Pressed() : void
+}
+Button <|-- PasseButton
+@enduml

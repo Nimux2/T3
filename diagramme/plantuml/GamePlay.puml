@@ -1,0 +1,29 @@
+@startuml
+class GamePlay <<partial>> {
+    + <<override>> _Ready() : void
+    + ChangerVariableStaticDePartie() : void
+    - FermerApplication() : void
+    - JouerPartie() : void
+    - JouerConsultation() : void
+    - AjouterQuestion() : void
+    - FaireDiagnostic() : void
+    - AppliquerRéponse(diag:int, stress:int, temps:int) : void
+    - ContinuerPartie() : void
+    + OnBoutonFermerPressed() : void
+    + OnBoutonFermer2Pressed() : void
+    + OnBoutonContinuerPressed() : void
+    + OnBoutonDébutPressed() : void
+    + OnBoutonDiagnosticPressed() : void
+    + OnBoutonQuestionBoutonQuestionPressed(diag:int, stress:int, temps:int) : void
+    + OnTimerCharParCharFin() : void
+}
+Node2D <|-- GamePlay
+GamePlay --> "partie" Partie
+GamePlay --> "patient" Patient
+GamePlay --> "maladie" Maladie
+GamePlay --> "partieDataAffichage" PartieDataAffichage
+GamePlay --> "patientAffichage" PatientAffichage
+GamePlay --> "diagnosticAffichage" DiagnosticAffichage
+GamePlay --> "questionsAffichage" QuestionsAffichage
+GamePlay --> "débutAffichage" DébutAffichage
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class Symptome <<partial>> {
+    - ID : int
+    - nom : string
+    + Symptome(ID:int)
+    - ChargerNomSymptome() : void
+    - ChargerQuestions() : void
+    - ChargerRéponses() : void
+    + DonnerQuestions() : List<Question>
+    + DonnerRéponse(stress:int) : Réponse
+}
+class "List`1"<T> {
+}
+Node <|-- Symptome
+Symptome o-> "questions<Question>" "List`1"
+Symptome o-> "réponses<Réponse>" "List`1"
+@enduml

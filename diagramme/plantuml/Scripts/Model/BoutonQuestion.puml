@@ -1,0 +1,9 @@
+@startuml
+class BoutonQuestion <<partial>> {
+    + <<override>> _Ready() : void
+}
+Button <|-- BoutonQuestion
+BoutonQuestion --> "questionText" Label
+BoutonQuestion o-> "question" Question
+BoutonQuestion --> "Question" Question
+@enduml

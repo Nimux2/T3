@@ -1,0 +1,24 @@
+@startuml
+class Partie {
+    + NbConsultation : int <<get>> <<set>>
+    + NbPatient : int <<get>> <<set>>
+    + RetardAvance : int <<get>> <<set>>
+    + DiagFaux : int <<get>> <<set>>
+    + StressEleve : int <<get>> <<set>>
+    + Argent : double <<get>> <<set>>
+    + Temps : int <<get>> <<set>>
+    + {static} PRIX_CONSULTATION : double = 25.0
+    + {static} MIN_PATIENT : int = 8
+    + {static} MAX_PATIENT : int = 12
+    + {static} HEURE_DEPART : int = 8
+    + {static} MINUTE_DEPART : int = 0
+    + {static} HEURE_FIN : int = 12
+    + {static} MINUTE_FIN : int = 0
+    + Partie()
+    + ChangerInfoPartie(partieDataAffichage:PartieDataAffichage) : void
+    + ChangerTemps(partieDataAffichage:PartieDataAffichage) : void
+    + CalculRetardAvance() : void
+    + TempsEstPassee() : bool
+    + APlusDePatient() : bool
+}
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+class PatientAffichage <<partial>> {
+    + <<override>> _Ready() : void
+    - AutoPlacer() : void
+    + ChangerCaracterePatient(nomImage:string) : void
+    + FaireParlerPatient(parole:string, nom:string) : void
+    + FaireParlerPatientCharParChar(parole:string, nom:string) : void
+    + AjouterInstanceBarreDiagnostic(barreDiag:ProgressBar) : void
+    + ChangerValeurBarreDiagnostic(diag:int) : void
+    + AjouterInstanceBarreStress(barreStress:ProgressBar) : void
+    + ChangerValeurBarreStress(stress:int) : void
+}
+Node2D <|-- PatientAffichage
+PatientAffichage --> "marqueurHaut" Marker2D
+PatientAffichage --> "personnage" Sprite2D
+PatientAffichage --> "marqueurBas" Marker2D
+PatientAffichage --> "parolePersonnage" RichTextLabelTimer
+PatientAffichage --> "barreDiagnostic" ProgressBar
+PatientAffichage --> "barreStress" ProgressBar
+PatientAffichage --> "instance" PatientAffichage
+@enduml

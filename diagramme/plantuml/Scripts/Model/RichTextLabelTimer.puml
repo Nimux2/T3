@@ -1,0 +1,14 @@
+@startuml
+class RichTextLabelTimer <<partial>> {
+    - text : string
+    - index : int
+    - {static} charSpeed : double = 0.06
+    + {static} CharSpeed : double <<get>> <<set>>
+    + <<override>> _Ready() : void
+    + EcrireSimple(text:string) : void
+    + EcrireCharParChar(text:string) : void
+    - AfficherChar() : void
+}
+Timer <|-- RichTextLabelTimer
+RichTextLabelTimer --> "richTextLabelabel" RichTextLabel
+@enduml

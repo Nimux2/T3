@@ -1,0 +1,13 @@
+@startuml
+class DébutAffichage <<partial>> {
+    - <<const>> DEFAULT_TEXT_DEBUT : string = "Voulez-vous commencer une partie ?"
+    - <<const>> DEFAULT_TEXT_RECOMMENCE : string = "Voulez-vous recommencer une partie ?"
+    + <<override>> _Ready() : void
+    + AfficherDébutDébut() : void
+    + AfficherDébutRecommence() : void
+    + OnBoutonDébutPressed() : void
+}
+Node2D <|-- DébutAffichage
+DébutAffichage --> "infoDébut" Label
+DébutAffichage --> "instance" DébutAffichage
+@enduml

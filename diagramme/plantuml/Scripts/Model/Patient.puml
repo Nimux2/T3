@@ -1,0 +1,17 @@
+@startuml
+class Patient {
+    - ID : int
+    - nom : string
+    + Nom : string <<get>>
+    + Stress : int <<get>> <<set>>
+    + Diag : int <<get>> <<set>>
+    - imageID : int
+    + Patient(ID:int)
+    - ChargerInformationPatient() : void
+    - ChargerImagesPatient() : void
+    - FormaterNom(nom:string) : string
+    + DonnerNomImageCaractere(type:ImagesPatient.Types) : string
+    + {static} GenererRandomIdPatient() : int
+}
+Patient --> "images" ImagesPatient
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class Database {
+    - {static} conn : string
+    + {static} ConnectionString : string <<get>> <<set>>
+    - {static} ChargerNomDepuisConfig() : string
+    - {static} ChargerPathDepuisConfig() : string
+    - {static} CréerPathComplet() : string
+    - {static} ChargerLienTéléchargementDepuisConfig() : string
+    - {static} OuvrirConnection() : void
+    + {static} GetConnection() : SqliteConnection
+    + {static} FermerConnection() : void
+}
+Database --> "connection" SqliteConnection
+@enduml

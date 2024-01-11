@@ -1,0 +1,19 @@
+@startuml
+class PartieDataAffichage <<partial>> {
+    + <<override>> _Ready() : void
+    + ChangerTempsJeu(heure:int, minute:int) : void
+    + ChangerArgentMedecin(argent:double) : void
+    + ChangerPatientEnAttente(nbPatient:int) : void
+    + ChangerBonDiagnostic(bonDiagnostic:int) : void
+    + ChangerMauvaisDiagnostic(mauvaisDiagnostic:int) : void
+    + ChangerStressEleve(stressEleve:int) : void
+}
+Node2D <|-- PartieDataAffichage
+PartieDataAffichage --> "tempsData" Label
+PartieDataAffichage --> "argentData" Label
+PartieDataAffichage --> "patientData" Label
+PartieDataAffichage --> "bonDiagnosticData" Label
+PartieDataAffichage --> "mauvaisDiagnosticData" Label
+PartieDataAffichage --> "stressEleveData" Label
+PartieDataAffichage --> "instance" PartieDataAffichage
+@enduml

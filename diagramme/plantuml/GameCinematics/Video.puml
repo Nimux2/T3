@@ -1,0 +1,6 @@
+@startuml
+class Video <<partial>> {
+    + <<override>> _Process(delta:double) : void
+}
+VideoStreamPlayer <|-- Video
+@enduml

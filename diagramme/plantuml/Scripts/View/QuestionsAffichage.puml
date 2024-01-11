@@ -1,0 +1,16 @@
+@startuml
+class QuestionsAffichage <<partial>> {
+    + <<override>> _Ready() : void
+    + ChangerEtatMasque() : void
+    + ChangerEtatMasque(active:bool) : void
+    + AfficherQuestion(question:Question, index:int) : void
+    + AfficherQuestionReset() : void
+}
+Node2D <|-- QuestionsAffichage
+QuestionsAffichage --> "boutonQuestion1" BoutonQuestion
+QuestionsAffichage --> "boutonQuestion2" BoutonQuestion
+QuestionsAffichage --> "boutonQuestion3" BoutonQuestion
+QuestionsAffichage --> "boutonQuestion4" BoutonQuestion
+QuestionsAffichage --> "masque" ColorRect
+QuestionsAffichage --> "instance" QuestionsAffichage
+@enduml

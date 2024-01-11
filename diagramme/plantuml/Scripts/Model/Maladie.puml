@@ -1,0 +1,17 @@
+@startuml
+class Maladie {
+    - ID : int
+    - nom : string
+    + Nom : string <<get>>
+    + Maladie(ID:int)
+    - ChargerNomMaladie() : void
+    - ChargerSymptomes() : void
+    + {static} GenererRandomIdMaladie() : int
+    + DonnerQuestionsSuivante() : List<Question>
+    + DonnerRéponseAQuestion(stress:int) : Réponse
+}
+class "List`1"<T> {
+}
+Maladie o-> "symptomes<Symptome>" "List`1"
+Maladie --> "symptomeCourant" Symptome
+@enduml

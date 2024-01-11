@@ -1,0 +1,23 @@
+@startuml
+class ImagesPatient {
+    - imageDefault : string = null
+    - imageTriste : string = null
+    - imageContent : string = null
+    - imagePeur : string = null
+    - imageColere : string = null
+    + ImagesPatient()
+    + ImagesPatient(imageDefault:string)
+    + AjouterImage(image:string, index:int) : void
+    + GetImageForEnum(type:Types) : string
+}
+enum Types {
+    DEFAULT= 1,
+    TRISTE= 2,
+    CONTENT= 3,
+    PEUR= 4,
+    COLERE= 4,
+}
+ImagesPatient --> "actuelType" Types
+ImagesPatient --> "ActualType" Types
+ImagesPatient +-- Types
+@enduml

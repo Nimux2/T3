@@ -1,0 +1,11 @@
+@startuml
+class Réponse {
+    - ID : int
+    - réponse : string
+    + RéponseText : string <<get>>
+    - stress : int
+    + Stress : int <<get>>
+    + Réponse(ID:int)
+    - ChargerRéponse() : void
+}
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+!include ./GamePlay.puml
+!include ./GameCinematics/PasseButton.puml
+!include ./GameCinematics/Video.puml
+!include ./Scripts/Database/Database.puml
+!include ./Scripts/Model/BoutonQuestion.puml
+!include ./Scripts/Model/ImagesPatient.puml
+!include ./Scripts/Model/Maladie.puml
+!include ./Scripts/Model/Partie.puml
+!include ./Scripts/Model/Patient.puml
+!include ./Scripts/Model/Question.puml
+!include ./Scripts/Model/RichTextLabelTimer.puml
+!include ./Scripts/Model/Réponse.puml
+!include ./Scripts/Model/Symptome.puml
+!include ./Scripts/View/DiagnosticAffichage.puml
+!include ./Scripts/View/DébutAffichage.puml
+!include ./Scripts/View/PartieDataAffichage.puml
+!include ./Scripts/View/PatientAffichage.puml
+!include ./Scripts/View/QuestionsAffichage.puml
+@enduml
