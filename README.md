@@ -104,4 +104,4 @@ Lien vers la documentation : [Documentation](https://t3gooddoc.pages.unistra.fr/
 
 ## License
 
-Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
+Ce projet est sous licence MIT - voir le fichier [LICENSE](https://git.unistra.fr/T3GoodDoc/t3GoodDoc/-/blob/main/LICENSE.md) pour plus de détails.
