@@ -1,265 +1,233 @@
-```
 @startuml
-
-skinparam style strictuml
-skinparam classAttributeIconSize 0
-package View
-{
-    class DébutAffichage <<partial>>
-    {
-        -{static}DEFAULT_TEXT_DEBUT : String
-        -{static}DEFAULT_TEXT_RECOMMENCE : String
-        -infoDébut : Label
-        +_Ready()
-        +AfficheDébutDébut()
-        +AfficheDébutRecommence()
-        +OnBoutonDébutPressed()
-    }
-    DébutAffichage o--> "possède" DébutAffichage
-    class DiagnosticAffichage <<partial>>
-    {
-            -{static}DEFAULT_TEXT_DIAG : String
-            -{static}DEFAULT_TEXT_PAS_DIAG : String
-            -{static}DEFAULT_TEXT_RETARD : String
-            -{static}DEFAULT_TEXT_AVANCE : String
-            -{static}DEFAULT_TEXT_DIAG_STRESS : String
-            -infoDiagnostic : Label
-            -infoRetard : Label
-            +_Ready()
-            +AfficheDiagnosticVraiRetard( maladie : String, retard : Integer)
-            +AfficheDiagnosticVraiAvance(maladie : String,avance : Integer)
-            +AfficheDiagnosticFauxRetard(maladie : String,retard : Integer)
-            +AfficheDiagnosticFauxAvance(maladie : String,avance : Integer)
-            +AfficherDiagnosticStressRetard(maladie : String,avance : Integer)
-            +AfficherDiagnosticStressAvance(maladie : String,avance : Integer)
-            +OnBoutonContinuerPressed()
-    }
-    DiagnosticAffichage o--> "possède" DiagnosticAffichage
-    class PartieDataAffichage <<partial>>
-    {
-        -argentData : Label
-        -tempsData : Label
-        -patientData : Label
-        -bonDiagnosticData : Label
-        -mauvaisDiagnosticData : Label
-        -stressEleveData : Label
-        +_Ready()
-        +ChangerTempsJeu(heure : Integer, minute : Integer)
-        +ChangerArgentMedecin(argent : Integer)
-        +ChangerPatientEnAttente(nbPatient : Integer)
-        +ChangerBonDiagnostic(bonDiagnostic : Integer)
-        +ChangerMauvaisDiagnostic(mauvaisDiagnostic : Integer)
-        +ChangerStressEleve(stressEleve : Integer)
-    }
-    PartieDataAffichage o--> "possède" PartieDataAffichage
-
-    class PatientAffichage <<partial>>
-    {
-        -marqueurHaut : Marker2D
-        -personnage : Sprite2D
-        -marqueurBas : Marker2D
-        -barreDiagnostic : ProgressBar
-        -barreStress : ProgressBar
-        +_Ready()
-        +AutoPlacement()
-        +ChangerCaracterePatient(nomImage : String)
-        +FaireParlerPatient(parole : String, nom = null : String)
-        +FaireParlerPatientCharParChar(parole : String, nom = null : String)
-        +AjouterInstanceBarreDiagnostic(barreDiag : ProgressBar)
-        +ChangerValeurBarreDiagnostic(diag : Integer)
-        +AjouterInstanceBarreStress(barreStress : ProgressBar)
-        +ChangerValeurBarreStress(stress : Integer)
-    }
-    PatientAffichage o--> "possède" PatientAffichage
-    View.PatientAffichage o--> "possède" Models.RichTextLabelTimer
-
-    class QuestionsAffichage <<partial>>
-    {
-        -boutonQuestion1 : BoutonQuestion
-        -boutonQuestion2 : BoutonQuestion
-        -boutonQuestion3 : BoutonQuestion
-        -boutonQuestion4 : BoutonQuestion
-        -masque : ColorRect
-        +_Ready()
-        +ChangerEtatMasque()
-        +ChangerEtatMasque(active : Bool)
-        +AfficheQuestionA(question : Question, index : Integer)
-        +AfficherQuestionReset()
-    }
-        QuestionsAffichage o--> "possède" QuestionsAffichage
+class PasseButton <<partial>> {
+    + <<override>> _Pressed() : void
 }
-package Processed
-{
-    class TimerController <<partial>>
-    {
-        +{static}HEURE_DEPART : Integer
-        +{static}MINUTE_DEPART : Integer
-        +{static}HEURE_FIN : Integer
-        +{static}MINUTE_FIN : Integer
-        +{static}DUREE_CONSULTATION : Integer
-        -timerLabel : Label
-        -{static}heure : Integer
-        +{static}Heure() : Integer
-        -{static}minutes : Integer
-        +{static}Minutes() : Integer
-        +_Ready()
-        +ResetTimer()
-        +ActualiserTimer()
-        +OnBoutonDebutPressed()
-        +OnBoutonContinuerPressed()
-        +OnBoutonDiagnosticPressed()
-        +{static}CalculRetard(nbConsultation : Integer) : Integer
-        +{static}CalculNbConsultation() : Integer
-        +{static}TempsEstPasser() : Bool
-    }
+Button <|-- PasseButton
+class Video <<partial>> {
+    + <<override>> _Process(delta:double) : void
 }
-package Database
-{
-    class Database <<partial>>
-    {
-        -{static}connection : SqliteConnection
-        -{static}conn : String
-        -{static}ConnectionString() : String
-        -{static}ChargerNomDepuisConfig() : String
-        -{static}ChargerPathDepuisConfig() : String
-        -{static}CréerPathComplet() : String
-        -{static}ChargerLienTéléchargementDepuisConfig() : String
-        -{static}OuvrirConnection()
-        +{static}GetConnection() : SqliteConnection
-        +{static}FermerConnection()
-
-    }
+VideoStreamPlayer <|-- Video
+class Database {
+    - {static} conn : string
+    + {static} ConnectionString : string <<get>> <<set>>
+    - {static} ChargerNomDepuisConfig() : string
+    - {static} ChargerPathDepuisConfig() : string
+    - {static} CreerPathComplet() : string
+    - {static} ChargerLienTelechargementDepuisConfig() : string
+    - {static} OuvrirConnection() : void
+    + {static} GetConnection() : SqliteConnection
+    + {static} FermerConnection() : void
 }
-package Models
-{
-    class RichTextLabelTimer <<partial>>
-    {
-        
-        - {static}charSpeed : Double
-        + CharParCharFinEventHandler()
-        + {static}CharSpeed() : Double
-        - richTextLabelabel : RichTextLabel
-        - text : String
-        - index : Integer
-        + _Ready()
-        + EcrireSimple(text : string)
-        + EcrireCharParChar(text : string )
-        + AfficherChar()
-    }
+Database --> "connection" SqliteConnection
+class BoutonQuestion <<partial>> {
+    + <<override>> _Ready() : void
+}
+Button <|-- BoutonQuestion
+BoutonQuestion --> "questionText" Label
+BoutonQuestion o-> "question" Question
+BoutonQuestion --> "Question" Question
 class ImagesPatient {
-
-    - imageDefault : String
-    - imageTriste : String
-    - imageContent : String
-    - imagePeur : Strings
-    - imageColere : String
-    - actuelType : String
-    + ActualType() : Types
+    - imageDefault : string = null
+    - imageTriste : string = null
+    - imageContent : string = null
+    - imagePeur : string = null
+    - imageColere : string = null
     + ImagesPatient()
-    + ImagesPatient(imageDefault:String)
-    + AjouterImage(image:String, index:Integer) :
-    + GetImageForEnum(type:Types) : String
+    + ImagesPatient(imageDefault:string)
+    + AjouterImage(image:string, index:int) : void
+    + GetImageForEnum(type:Types) : string
 }
 enum Types {
-    DEFAULT,
-    TRISTE,
-    CONTENT,
-    PEUR,
-    COLERE,
+    DEFAULT= 1,
+    TRISTE= 2,
+    CONTENT= 3,
+    PEUR= 4,
+    COLERE= 4,
 }
 ImagesPatient --> "actuelType" Types
-class Partie {
-    + NbConsultation : Integer
-    + NbPatient : Integer
-    + RetardAvance : Integer
-    + DiagFaux : Integer
-    + StressEleve : Integer
-    + Temps : Integer
-    + Argent : Double
-    + Partie()
-    + ChangerInfoPartie(partieDataAffichage:PartieDataAffichage)
-    + ChangerTemps(partieDataAffichage:PartieDataAffichage)
-    + CalculRetardAvance()
-    + TempsEstPassee() : Boolean
-    + APlusDePatient() : Boolean
-}
+ImagesPatient --> "ActualType" Types
+ImagesPatient +-- Types
 class Maladie {
-    - ID : Integer
-    - nom : String
-    + Maladie(ID:Integer)
-    + Nom() : String
-    - ChargerNomMaladie() :
-    - ChargerSymptomes() :
-    + {static} GenererRandomIdMaladie() : Integer
+    - ID : int
+    - nom : string
+    + Nom : string <<get>>
+    + Maladie(ID:int)
+    - ChargerNomMaladie() : void
+    - ChargerSymptomes() : void
+    + {static} GenererRandomIdMaladie() : int
     + DonnerQuestionsSuivante() : List<Question>
-    + DonnerRéponseAQuestion(stress:Integer) : Réponse
+    + DonnerReponseAQuestion(stress:int) : Reponse
 }
-Maladie *--> "1\n-symptômeCurrent" Symptôme
-Maladie *--> "4\n-symptômes" Symptôme
-class Réponse {
-    - ID : Integer
-    - réponse : String
-    + RéponseText() : String
-    - stress : Integer
-    + Stress() : Integer
-    + Réponse(ID:Integer)
-    - ChargerRéponse() :
+class "List`1"<T> {
 }
-class Symptôme <<partial>> {
-    - ID : Integer
-    - nom : String
-    + Symptôme(ID:Integer)
-    - ChargerNomSymptome() :
-    - ChargerQuestions() :
-    - ChargerRéponses() :
-    + DonnerQuestions() : List<Question>
-    + DonnerRéponse(stress:Integer) : Réponse
-}
-Symptôme *--> "1..*\n-questionSymptôme" Question
-Symptôme *---> "1..*\n-questionRéponse" Réponse
-
-class BoutonQuestion <<partial>> extends Button{
-    -questionText : Label
-    -question : Question
-    +Question() : Question
-    + <<override>> _Ready()
-    +BoutonQuestionPressedEventHandler(diag : Integer, stress : Integer, temps : Integer)
-
-}
-
-BoutonQuestion o--> "Utilise" Question
-class Question {
-    - ID : Integer
-    - ordre : Integer
-    - question : String
-    + QuestionText() : String
-    - effetStress : Integer
-    + EffetStress() : Integer
-    - effetDiag : Integer
-    + EffetDiag() : Integer
-    - effetTemps : Integer
-    + EffetTemps() : Integer
-    + Question()
-    + Question(ID:Integer)
-    - ChargerQuestion()
+Maladie o-> "symptomes<Symptome>" "List`1"
+Maladie --> "symptomeCourant" Symptome
+class Partie {
+    + NbConsultation : int <<get>> <<set>>
+    + NbPatient : int <<get>> <<set>>
+    + RetardAvance : int <<get>> <<set>>
+    + DiagFaux : int <<get>> <<set>>
+    + StressEleve : int <<get>> <<set>>
+    + Argent : double <<get>> <<set>>
+    + Temps : int <<get>> <<set>>
+    + {static} PRIX_CONSULTATION : double = 25.0
+    + {static} MIN_PATIENT : int = 8
+    + {static} MAX_PATIENT : int = 12
+    + {static} HEURE_DEPART : int = 8
+    + {static} MINUTE_DEPART : int = 0
+    + {static} HEURE_FIN : int = 12
+    + {static} MINUTE_FIN : int = 0
+    + Partie()
+    + ChangerInfoPartie(partieDataAffichage:PartieDataAffichage) : void
+    + ChangerTemps(partieDataAffichage:PartieDataAffichage) : void
+    + CalculRetardAvance() : void
+    + TempsEstPassee() : bool
+    + APlusDePatient() : bool
 }
 class Patient {
-    - ID : Integer
-    - nom : String
-    + Nom : String
-    + Stress : Integer
-    + Diag : Integer
-    - imageID : Integer
-    + Patient(ID:Integer)
-    - ChargerInformationPatient() :
-    - ChargerImagesPatient() :
-    - FormatNom(nom:String) : String
-    + DonnerNomImageCaractere(type:ImagesPatient.Types) : String
-    + {static} GenererRandomIdPatient() : Integer
+    - ID : int
+    - nom : string
+    + Nom : string <<get>>
+    + Stress : int <<get>> <<set>>
+    + Diag : int <<get>> <<set>>
+    - imageID : int
+    + Patient(ID:int)
+    - ChargerInformationPatient() : void
+    - ChargerImagesPatient() : void
+    - FormaterNom(nom:string) : string
+    + DonnerNomImageCaractere(type:ImagesPatient.Types) : string
+    + {static} GenererRandomIdPatient() : int
 }
 Patient --> "images" ImagesPatient
-
-
+class Question {
+    - ID : int
+    - ordre : int
+    - question : string
+    + QuestionText : string <<get>>
+    - effetStress : int
+    + EffetStress : int <<get>>
+    - effetDiag : int
+    + EffetDiag : int <<get>>
+    - effetTemps : int
+    + EffetTemps : int <<get>>
+    + Question()
+    + Question(ID:int)
+    - ChargerQuestion() : void
 }
+class RichTextLabelTimer <<partial>> {
+    - text : string
+    - index : int
+    - {static} charSpeed : double = 0.06
+    + {static} CharSpeed : double <<get>> <<set>>
+    + <<override>> _Ready() : void
+    + EcrireSimple(text:string) : void
+    + EcrireCharParChar(text:string) : void
+    - AfficherChar() : void
+}
+Timer <|-- RichTextLabelTimer
+RichTextLabelTimer --> "richTextLabelabel" RichTextLabel
+class Reponse {
+    - ID : int
+    - reponse : string
+    + ReponseText : string <<get>>
+    - stress : int
+    + Stress : int <<get>>
+    + Reponse(ID:int)
+    - ChargerReponse() : void
+}
+class Symptome <<partial>> {
+    - ID : int
+    - nom : string
+    + Symptome(ID:int)
+    - ChargerNomSymptome() : void
+    - ChargerQuestions() : void
+    - ChargerReponses() : void
+    + DonnerQuestions() : List<Question>
+    + DonnerReponse(stress:int) : Reponse
+}
+class "List`1"<T> {
+}
+Node <|-- Symptome
+Symptome o-> "questions<Question>" "List`1"
+Symptome o-> "reponses<Reponse>" "List`1"
+class DiagnosticAffichage <<partial>> {
+    - <<const>> DEFAULT_TEXT_DIAG : string = "Vous avez trouve la maladie : [maladie]"
+    - <<const>> DEFAULT_TEXT_PAS_DIAG : string = "Vous n'avez pas trouve la maladie : [maladie]"
+    - <<const>> DEFAULT_TEXT_RETARD : string = "Vous avez [temps] minutes de retard."
+    - <<const>> DEFAULT_TEXT_AVANCE : string = "Vous avez [temps] minutes d'avance."
+    - <<const>> DEFAULT_TEXT_DIAG_STRESS : string = "Vous n'avez pas trouve la maladie : [maladie].\n Le patient est parti à cause du stress."
+    + <<override>> _Ready() : void
+    + AfficherDiagnosticVraiRetard(maladie:string, retard:int) : void
+    + AfficherDiagnosticVraiAvance(maladie:string, avance:int) : void
+    + AfficherDiagnosticFauxRetard(maladie:string, retard:int) : void
+    + AfficherDiagnosticFauxAvance(maladie:string, avance:int) : void
+    + AfficherDiagnosticStressRetard(maladie:string, retard:int) : void
+    + AfficherDiagnosticStressAvance(maladie:string, avance:int) : void
+    + OnBoutonContinuerPressed() : void
+}
+Node2D <|-- DiagnosticAffichage
+DiagnosticAffichage --> "infoDiagnostic" Label
+DiagnosticAffichage --> "infoRetard" Label
+DiagnosticAffichage --> "instance" DiagnosticAffichage
+class DebutAffichage <<partial>> {
+    - <<const>> DEFAULT_TEXT_DEBUT : string = "Voulez-vous commencer une partie ?"
+    - <<const>> DEFAULT_TEXT_RECOMMENCE : string = "Voulez-vous recommencer une partie ?"
+    + <<override>> _Ready() : void
+    + AfficherDebutDebut() : void
+    + AfficherDebutRecommence() : void
+    + OnBoutonDebutPressed() : void
+}
+Node2D <|-- DebutAffichage
+DebutAffichage --> "infoDebut" Label
+DebutAffichage --> "instance" DebutAffichage
+class PartieDataAffichage <<partial>> {
+    + <<override>> _Ready() : void
+    + ChangerTempsJeu(heure:int, minute:int) : void
+    + ChangerArgentMedecin(argent:double) : void
+    + ChangerPatientEnAttente(nbPatient:int) : void
+    + ChangerBonDiagnostic(bonDiagnostic:int) : void
+    + ChangerMauvaisDiagnostic(mauvaisDiagnostic:int) : void
+    + ChangerStressEleve(stressEleve:int) : void
+}
+Node2D <|-- PartieDataAffichage
+PartieDataAffichage --> "tempsData" Label
+PartieDataAffichage --> "argentData" Label
+PartieDataAffichage --> "patientData" Label
+PartieDataAffichage --> "bonDiagnosticData" Label
+PartieDataAffichage --> "mauvaisDiagnosticData" Label
+PartieDataAffichage --> "stressEleveData" Label
+PartieDataAffichage --> "instance" PartieDataAffichage
+class PatientAffichage <<partial>> {
+    + <<override>> _Ready() : void
+    - AutoPlacer() : void
+    + ChangerCaracterePatient(nomImage:string) : void
+    + FaireParlerPatient(parole:string, nom:string) : void
+    + FaireParlerPatientCharParChar(parole:string, nom:string) : void
+    + AjouterInstanceBarreDiagnostic(barreDiag:ProgressBar) : void
+    + ChangerValeurBarreDiagnostic(diag:int) : void
+    + AjouterInstanceBarreStress(barreStress:ProgressBar) : void
+    + ChangerValeurBarreStress(stress:int) : void
+}
+Node2D <|-- PatientAffichage
+PatientAffichage --> "marqueurHaut" Marker2D
+PatientAffichage --> "personnage" Sprite2D
+PatientAffichage --> "marqueurBas" Marker2D
+PatientAffichage --> "parolePersonnage" RichTextLabelTimer
+PatientAffichage --> "barreDiagnostic" ProgressBar
+PatientAffichage --> "barreStress" ProgressBar
+PatientAffichage --> "instance" PatientAffichage
+class QuestionsAffichage <<partial>> {
+    + <<override>> _Ready() : void
+    + ChangerEtatMasque() : void
+    + ChangerEtatMasque(active:bool) : void
+    + AfficherQuestion(question:Question, index:int) : void
+    + AfficherQuestionReset() : void
+}
+Node2D <|-- QuestionsAffichage
+QuestionsAffichage --> "boutonQuestion1" BoutonQuestion
+QuestionsAffichage --> "boutonQuestion2" BoutonQuestion
+QuestionsAffichage --> "boutonQuestion3" BoutonQuestion
+QuestionsAffichage --> "boutonQuestion4" BoutonQuestion
+QuestionsAffichage --> "masque" ColorRect
+QuestionsAffichage --> "instance" QuestionsAffichage
 @enduml
-```
