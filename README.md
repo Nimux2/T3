@@ -78,25 +78,25 @@ Lien vers le cahier des charges : [Cahier des charges](https://docs.google.com/d
 
 ## Installation
 
-Télécharger la dernier version du release pour votre system.
-Unzip l'archive.
+Téléchargez la dernière version du release pour votre system.
+Dé-zipez l'archive.
 
 * Il faut avoir une connection à Internet pour le premier lancement.
 
 ### Linux avec sudo
 
-* Si c'est votre premier lancement, lancer le script 'PackageInstaller.sh'
-* Ensuite lancer le script 'GoodDoc.sh'
+* Si c'est votre premier lancement, lancez le script 'PackageInstaller.sh'
+* Ensuite lancez le script 'GoodDoc.sh'
 
 ### Windows 
 
-* Lancer l'executable 'GoodDoc.exe'
+* Lancez l'executable 'GoodDoc.exe'
 
 ### MacOS
 
 Le jeu est compatible puce Intel (M1 a tester) à partir de la version MacOS High Sierra.
 
-* Lancer l'executable 'GoodDoc.app'
+* Lancez l'executable 'GoodDoc.app'
 
 ## Documentation
 
